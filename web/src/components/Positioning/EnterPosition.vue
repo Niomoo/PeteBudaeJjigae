@@ -7,14 +7,16 @@
       </div>
   </div>
   <div class="container">
-    <div class="content">請選擇你的定位方式</div>
-    <div class="block-btn">
-      <Button class="btn rounded ripple" :class="{btnBg: btnChoose==1}" @click="ChooseWay(1)">
-        自行輸入
-      </Button>
-      <Button class="btn rounded ripple" :class="{btnBg: btnChoose==2}" @click="ChooseWay(2)">
-        定位所在地
-      </Button>
+    <div class="content">請輸入你的出發地</div>
+    <div class="block">
+        <div class="inputbox">
+        <input v-model="place" 
+               class ="inputPlace" 
+               type="text"
+               @input="checkInput"
+        >
+        </div>
+        <div class="hint" :class="{active: checkInput}">請輸入高雄地標</div>
     </div>
   </div>
   <div class="step">
@@ -40,27 +42,23 @@ export default {
     data () {
         return {
             isChoose: false,
-            btnChoose: 0,
+            place: '',
+            isValid: false,
+            check: 0,
         };
     },
     
     methods: {
-        ChooseWay(way) {
-            this.btnChoose = way;
-            this.isChoose = true;
+        checkInput (){
+            if(this.isValid==true){
+                this.isChoose=true;
+            }
         },
         previous () {
             this.$router.go(-1);
         },
         next () {
-            if(this.btnChoose == 1)
-            {
-                this.$router.push('/positioning/enterPosition');
-            }
-            else if(this.btnChoose == 2)
-            {
-                this.$router.push('/positioning/getPosition');
-            }
+            this.$router.go('/');
         }
     }
 }
@@ -108,28 +106,39 @@ export default {
     text-align: center;
     color: #ffffff;
   }
-  .block-btn {
+  .block {
     position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
-    Button {
-      margin: 10px 0;
-      width: 120px;
-      height: 45px;
-      font-style: normal;
-      font-weight: normal;
-      font-size: 20px;
-      line-height: 23px;
-      letter-spacing: 0.15px;
-      color: #DBDBDB;
+    .inputbox {
+      padding: 16px 20px;
+      width: 210px;
+      height: 28px;
       border: 0;
-      background-color: transparent;
+      background-color: #EAEAEA;
+      border-radius: 10px;
+      align-content: center;
+      .inputPlace {
+        padding: 0;
+        height: 28px;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 20px;
+        letter-spacing: 0.15px;
+        color: #59575B;
+        background-color: transparent;
+        border: none;
+      }
     }
-    .btnBg {
-        color: #5164AB;
-        background-color: #ffffff;
-        border-radius: 10px;
+    .hint {
+      position: absolute;
+      margin: 22.5px;
+      font-size: 16px;
+      line-height: 18.75px;
+      color: #9E9E9E;
+      left: 38px;
+      top: 60px;
     }
   }
 }

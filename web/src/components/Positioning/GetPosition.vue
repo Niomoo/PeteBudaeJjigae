@@ -7,14 +7,16 @@
       </div>
   </div>
   <div class="container">
-    <div class="content">請選擇你的定位方式</div>
-    <div class="block-btn">
-      <Button class="btn rounded ripple" :class="{btnBg: btnChoose==1}" @click="ChooseWay(1)">
-        自行輸入
-      </Button>
-      <Button class="btn rounded ripple" :class="{btnBg: btnChoose==2}" @click="ChooseWay(2)">
-        定位所在地
-      </Button>
+    <div class="content">請確認你的出發地</div>
+    <div class="block">
+        <div class="inputbox">
+        <input v-model="place" 
+               class ="inputPlace" 
+               type="text"
+               @input="checkInput"
+        >{{place}}
+        </div>
+        <div class="hint" :class="{active: checkInput}">請輸入高雄地標</div>
     </div>
   </div>
   <div class="step">
@@ -40,27 +42,48 @@ export default {
     data () {
         return {
             isChoose: false,
-            btnChoose: 0,
+            place: '',
+            isValid: false,
+            check: 0,
         };
     },
     
     methods: {
-        ChooseWay(way) {
-            this.btnChoose = way;
-            this.isChoose = true;
+        getGeo(){
+            var latitude;
+            var longtitude;
+            var output = document.getElementById("out");
+
+            if (!navigator.geolocation) {
+                output.innerHTML = "<p>Geolocation is not supported by your browser</p>";
+                return;
+            }
+
+            function success(position) {
+                var lat1 = position.coords.latitude;
+                var long1 = position.coords.longitude;
+
+                output.innerHTML = '<p>Latitude is ' + lat1 + '° <br>Longitude is ' + long1 + '°</p>';
+                console.log(lat1,long1);
+                latitude=lat1;
+                longtitude=long1;
+                console.log(latitude,longtitude,"hi");
+            };
+
+            function error() {
+                output.innerHTML = "Unable to retrieve your location";
+            };
+
+            output.innerHTML = "<p>Locating…</p>";
+            navigator.geolocation.getCurrentPosition(success, error);
+            
+            console.log(latitude,longtitude,"001");
         },
         previous () {
             this.$router.go(-1);
         },
         next () {
-            if(this.btnChoose == 1)
-            {
-                this.$router.push('/positioning/enterPosition');
-            }
-            else if(this.btnChoose == 2)
-            {
-                this.$router.push('/positioning/getPosition');
-            }
+            this.$router.go('/');
         }
     }
 }
@@ -108,28 +131,39 @@ export default {
     text-align: center;
     color: #ffffff;
   }
-  .block-btn {
+  .block {
     position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
-    Button {
-      margin: 10px 0;
-      width: 120px;
-      height: 45px;
-      font-style: normal;
-      font-weight: normal;
-      font-size: 20px;
-      line-height: 23px;
-      letter-spacing: 0.15px;
-      color: #DBDBDB;
+    .inputbox {
+      padding: 16px 20px;
+      width: 210px;
+      height: 28px;
       border: 0;
-      background-color: transparent;
+      background-color: #EAEAEA;
+      border-radius: 10px;
+      align-content: center;
+      .inputPlace {
+        padding: 0;
+        height: 28px;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 20px;
+        letter-spacing: 0.15px;
+        color: #59575B;
+        background-color: transparent;
+        border: none;
+      }
     }
-    .btnBg {
-        color: #5164AB;
-        background-color: #ffffff;
-        border-radius: 10px;
+    .hint {
+      position: absolute;
+      margin: 22.5px;
+      font-size: 16px;
+      line-height: 18.75px;
+      color: #9E9E9E;
+      left: 38px;
+      top: 60px;
     }
   }
 }

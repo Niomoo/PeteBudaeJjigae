@@ -12,7 +12,7 @@ export default {
   methods: {
     start() {
       this.isStart = true;
-      this.$router.push('Positioning');
+      this.$router.push('positioning');
     }
   }
 }
