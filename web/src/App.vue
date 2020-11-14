@@ -1,30 +1,44 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </div>
+  <div>
+    <NavBar />
+    <Main />
   <router-view/>
+  </div>
 </template>
+<script>
+import Vue from 'vue'
+import axios from 'axios'
+import VueAxios from 'vue-axios'
+
+import NavBar from '@/components/NavBar.vue'
+import Main from '@/components/Main.vue'
+export default {
+  name: 'Home',
+    components: {
+      NavBar,
+      Main,
+  }
+}
+Vue.use(VueAxios, axios)
+</script>
 
 <style lang="scss">
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: Roboto, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  background: url("assets/Background.svg");
+  position: absolute;
+  right: 0;
+  left: 0;
+  top: 0;
+  widows: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-x: left;
+  background-position-y: center;
 }
 
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
-}
 </style>
