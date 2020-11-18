@@ -7,14 +7,14 @@
       </div>
   </div>
   <div class="container">
-    <div class="content">請確認你的出發地</div>
+    <div class="content">請輸入你的出發地</div>
     <div class="block">
         <div class="inputbox">
         <input v-model="place" 
                class ="inputPlace" 
                type="text"
                @input="checkInput"
-        >{{place}}
+        >
         </div>
         <div class="hint" :class="{active: checkInput}">請輸入高雄地標</div>
     </div>
@@ -49,35 +49,10 @@ export default {
     },
     
     methods: {
-        getGeo(){
-            var latitude;
-            var longtitude;
-            var output = document.getElementById("out");
-
-            if (!navigator.geolocation) {
-                output.innerHTML = "<p>Geolocation is not supported by your browser</p>";
-                return;
+        checkInput (){
+            if(this.isValid==true){
+                this.isChoose=true;
             }
-
-            function success(position) {
-                var lat1 = position.coords.latitude;
-                var long1 = position.coords.longitude;
-
-                output.innerHTML = '<p>Latitude is ' + lat1 + '° <br>Longitude is ' + long1 + '°</p>';
-                console.log(lat1,long1);
-                latitude=lat1;
-                longtitude=long1;
-                console.log(latitude,longtitude,"hi");
-            };
-
-            function error() {
-                output.innerHTML = "Unable to retrieve your location";
-            };
-
-            output.innerHTML = "<p>Locating…</p>";
-            navigator.geolocation.getCurrentPosition(success, error);
-            
-            console.log(latitude,longtitude,"001");
         },
         previous () {
             this.$router.go(-1);
@@ -124,7 +99,7 @@ export default {
   border-radius: 25px;
   .content {
     position: relative;
-    margin: 50px 50px;
+    margin: 68px 62px 32px 62px;
     line-height: 28px;
     font-size: 24px;
     font-weight: normal;

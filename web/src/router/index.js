@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/Home.vue'
+import ChooseTag from '../components/ChooseTag.vue'
 
 const routes = [
   {
@@ -15,12 +16,12 @@ const routes = [
   {
     path: '/positioning/enterPosition',
     name: 'EnterPosition',
-    component: () => import('@/components/Positioning/EnterPosition.vue')
+    component: () => import('@/components/EnterPosition.vue')
   },
   {
-    path: '/positioning/getPosition',
-    name: 'GetPosition',
-    component: () => import('@/components/Positioning/GetPosition.vue')
+    path: '/chooseTag',
+    name: 'ChooseTag',
+    component: ChooseTag
   }
 ]
 

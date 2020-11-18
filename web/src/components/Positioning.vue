@@ -18,12 +18,12 @@
     </div>
   </div>
   <div class="step">
-    <Button class="prev btn rounded ripple" @click="previous">
+    <button class="prev btn rounded ripple" @click="previous">
       上一步
-      </Button>
-    <Button class="next btn rounded ripple" :class="{active: isChoose}" @click="next">
+      </button>
+    <button class="next btn rounded ripple" :class="{active: isChoose}" @click="next">
       下一步
-    </Button>
+    </button>
   </div>
 </div>
 </template>
@@ -59,14 +59,14 @@ export default {
             }
             else if(this.btnChoose == 2)
             {
-                this.$router.push('/positioning/getPosition');
+                this.$router.push('chooseTag');
             }
         }
     }
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .page {
   position: relative;
   top: 14px;

@@ -5,7 +5,7 @@ var distance=100000000000000;
 var name;
 function searching(latitude,longtitude){
     latitude=latitude+0.0000001;
-    longtitude=longtitude++0.0000001;
+    longtitude=longtitude+0.0000001;
     console.log(latitude,longtitude,"helel");
 
 

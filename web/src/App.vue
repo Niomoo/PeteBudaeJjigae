@@ -6,10 +6,6 @@
   </div>
 </template>
 <script>
-import Vue from 'vue'
-import axios from 'axios'
-import VueAxios from 'vue-axios'
-
 import NavBar from '@/components/NavBar.vue'
 import Main from '@/components/Main.vue'
 export default {
@@ -19,7 +15,6 @@ export default {
       Main,
   }
 }
-Vue.use(VueAxios, axios)
 </script>
 
 <style lang="scss">
