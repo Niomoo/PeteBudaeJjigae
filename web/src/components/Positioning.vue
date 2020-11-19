@@ -9,12 +9,12 @@
   <div class="container">
     <div class="content">請選擇你的定位方式</div>
     <div class="block-btn">
-      <Button class="btn rounded ripple" :class="{btnBg: btnChoose==1}" @click="ChooseWay(1)">
+      <button class="btn rounded ripple" :class="{btnBg: btnChoose==1}" @click="ChooseWay(1)">
         自行輸入
-      </Button>
-      <Button class="btn rounded ripple" :class="{btnBg: btnChoose==2}" @click="ChooseWay(2)">
+      </button>
+      <button class="btn rounded ripple" :class="{btnBg: btnChoose==2}" @click="ChooseWay(2)">
         定位所在地
-      </Button>
+      </button>
     </div>
   </div>
   <div class="step">
@@ -30,39 +30,38 @@
 
 <script>
 export default {
-    name: 'Positioning',
-    props: {
-        isNext: {
-            type: Boolean,
-            default: false,
-        },
+  name: 'Positioning',
+  props: {
+    isNext: {
+      type: Boolean,
+      default: false,
     },
-    data () {
-        return {
-            isChoose: false,
-            btnChoose: 0,
-        };
+  },
+  data () {
+    return {
+      isChoose: false,
+      btnChoose: 0,
+    };
+  },  
+  methods: {
+    ChooseWay(way) {
+      this.btnChoose = way;
+      this.isChoose = true;
     },
-    
-    methods: {
-        ChooseWay(way) {
-            this.btnChoose = way;
-            this.isChoose = true;
-        },
-        previous () {
-            this.$router.go(-1);
-        },
-        next () {
-            if(this.btnChoose == 1)
-            {
-                this.$router.push('/positioning/enterPosition');
-            }
-            else if(this.btnChoose == 2)
-            {
-                this.$router.push('chooseTag');
-            }
-        }
+    previous () {
+      this.$router.go(-1);
+    },
+    next () {
+      if(this.btnChoose == 1)
+      {
+        this.$router.push('/positioning/enterPosition');
+      }
+      else if(this.btnChoose == 2)
+      {
+        this.$router.push('chooseTag');
+      }
     }
+  }
 }
 </script>
 

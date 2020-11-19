@@ -1,20 +1,14 @@
 <template>
-    <div class="main text-center">
-        <div class="block-btn">
-            <Button class="btn" :style="true" @click="start">開始旅遊規劃</Button>
-        </div>
+  <div class="main">
+    <div class="block-btn">
+      <button class="btn" :style="true" @click="this.$router.push('positioning')">開始旅遊規劃</button>
     </div>
+  </div>
 </template>
 
 <script>
 export default {
   name: 'Start',
-  methods: {
-    start() {
-      this.isStart = true;
-      this.$router.push('positioning');
-    }
-  }
 }
 </script>
 

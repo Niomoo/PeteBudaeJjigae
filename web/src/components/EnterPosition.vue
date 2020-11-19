@@ -20,12 +20,12 @@
     </div>
   </div>
   <div class="step">
-    <Button class="prev btn rounded ripple" @click="previous">
+    <button class="prev btn rounded ripple" @click="previous">
       上一步
-      </Button>
-    <Button class="next btn rounded ripple" :class="{active: isChoose}" @click="next">
+      </button>
+    <button class="next btn rounded ripple" :class="{active: isChoose}" @click="next">
       下一步
-    </Button>
+    </button>
   </div>
 </div>
 </template>
@@ -99,7 +99,7 @@ export default {
   border-radius: 25px;
   .content {
     position: relative;
-    margin: 68px 62px 32px 62px;
+    margin: 50px 62px 50px 62px;
     line-height: 28px;
     font-size: 24px;
     font-weight: normal;
@@ -113,7 +113,7 @@ export default {
     align-items: center;
     .inputbox {
       padding: 16px 20px;
-      width: 210px;
+      width: 200px;
       height: 28px;
       border: 0;
       background-color: #EAEAEA;
@@ -133,7 +133,7 @@ export default {
     }
     .hint {
       position: absolute;
-      margin: 22.5px;
+      margin: 32px 22.5px;
       font-size: 16px;
       line-height: 18.75px;
       color: #9E9E9E;

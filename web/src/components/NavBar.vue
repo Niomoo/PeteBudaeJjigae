@@ -5,7 +5,6 @@
       <span></span>
     </div>
     <div class="title">高雄旅遊推薦</div>
-    <router-view/>
   </div>
 </template>
 

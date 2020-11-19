@@ -10,44 +10,10 @@
       <div v-for="foo in preferences" 
         :key="foo.id" 
         @click="handleClick(foo)"
-        :class="{checked: foo.checked}">{{ foo.value }} - {{ foo.checked }}</div>
-    <!-- <div class="block">
-      <input type="checkbox" id="food123" value="美食小吃" class="checkbox" v-model="preferences">
-      <label for="food123">
-        <span>
-          <div class="pref">美食小吃</div>
-          <div class="check"></div>
-        </span>
-      </label>
-      <label for="nature">
-        <input type="checkbox" id="nature" value="自然風景" class="checkbox" v-model="preferences">
-        <span>
-          <div class="pref">自然風景</div>
-          <div class="check"></div>
-        </span>
-      </label>
-      <label for="shopping">
-        <input type="checkbox" id="shopping" value="購物消費" class="checkbox" v-model="preferences">
-        <span>
-          <div class="pref">購物消費</div>
-          <div class="check"></div>
-        </span>
-      </label>
-      <label for="entertain">
-        <input type="checkbox" id="entertain" value="休閒娛樂" class="checkbox" v-model="preferences">
-        <span>
-          <div class="pref">休閒娛樂</div>
-          <div class="check"></div>
-        </span>
-      </label>
-      <label for="art">
-        <input type="checkbox" id="art" value="藝術文化" class="checkbox" v-model="preferences">
-        <span>
-          <div class="pref">藝術文化</div>
-          <div class="check"></div>
-        </span>
-      </label>
-    </div> -->
+        class="pref check"
+        :class="{checked: foo.checked}">{{ foo.value }}
+        <div class="check" :class="{checked: foo.checked}"></div>
+      </div>
   <div class="step">
     <button class="prev btn rounded ripple" @click="previous">
       上一步
@@ -61,70 +27,49 @@
 
 <script>
 export default {
-    name: 'Positioning',
-    props: {
-        isNext: {
-            type: Boolean,
-            default: true,
-        },
+  name: 'Positioning',
+  props: {
+    isNext: {
+      type: Boolean,
+        default: false,
     },
-    data () {
-        return {
-            isChoose: false,
-            place: '',
-            isValid: false,
-            check: 0,
-            // preferences: ['美食小吃','自然風景','購物消費','休閒娛樂','藝術文化'],
-            preferences: [
-              {value: '美食小吃', checked: false, id: "1"},
-              {value: '自然風景', checked: false, id: "2"},
-              {value: '購物消費', checked: false, id: "3"},
-              {value: '休閒娛樂', checked: false, id: "4"},
-              {value: '藝術文化', checked: false, id: "5"}
-            ]
-        };
-    },
-    // computed: {
-    //   sortedPreferences() {
-    //     return this.preferences.slice().sort((a, b) => b.checked - a.checked);
-    //   }
-    // },
-    // watch: {
-    //   // preferences(newValue) {
-    //   //   this.preferences = newValue.sort((a, b) => b.checked - a.checked);
-    //   // }
-    //   preferences: {
-    //     handler(val) {
-    //       this.preferences = val.sort((a, b) => b.checked - a.checked);
-    //       console.table(this.preferences);
-    //     },
-    //     deep: true
-    //   }
-      
-    // },
-    methods: {
-        labelCheck() {
+  },
+  data () {
+    return {
+      isChoose: true,
+      place: '',
+      preferences: [
+        {value: '美食小吃', checked: true, id: "1"},
+        {value: '自然風景', checked: true, id: "2"},
+        {value: '購物消費', checked: true, id: "3"},
+        {value: '休閒娛樂', checked: true, id: "4"},
+        {value: '藝術文化', checked: true, id: "5"}
+     ]
+    };
+  },
 
-        },
-        previous () {
-            this.$router.go(-1);
-        },
-        next () {
-            this.$router.go('/');
-        },
-        handleClick(el) {
-          el.checked = !el.checked;
-          this.preferences = this.preferences.slice().sort((a, b) => b.checked - a.checked);
+  methods: {
+    handleClick(el) {
+      el.checked = !el.checked;
+      this.preferences = this.preferences.slice().sort((a, b) => b.checked - a.checked);
+    },
+    previous () {
+      this.$router.go(-1);
+    },
+    next () {
+      let tag = this.preferences;
+      for(var i = 0; i < this.preferences.length; i++){
+        if(tag[i].checked){
+          this.place += tag[i].value;
         }
+      }
+      //this.$router.go('/');
     }
+  }
 }
 </script>
 
 <style lang="scss" scoped>
-.checked {
-  background-color: lightblue;
-}
-
 
 .page {
   position: relative;
@@ -152,51 +97,36 @@ export default {
 
   .content {
     position: relative;
-    margin: 21px 50px 17px 50px;
+    margin: 21px 50px 22px 50px;
     line-height: 28px;
     font-size: 24px;
     font-weight: normal;
     text-align: center;
     color: #ffffff;
   }
-  .block {
+  .pref {
     position: relative;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    label {
-      margin: 7.5px 0;
-      cursor: pointer;
-    }
-    input[type=checkbox]{
-      display: none;
-    }
-    input[type=checkbox]+span {
-      display: inline-block;
-      width: 310px;
-      height: 40px;
-      background-color: #c4c4c4;
-      border-radius: 10px;
-      display: flex;
-      .pref {
-        position: relative;
-        margin: auto auto;
-        line-height: 28px;
-        font-size: 24px;
-        font-weight: normal;
-        text-align: center;
-        align-content: center;
-        color: #ffffff;
-      }
-      .check {
+    margin: 15px  auto;
+    width: 310px;
+    height: 40px;
+    background-color: #c4c4c4;
+    border-radius: 10px;
+    line-height: 40px;
+    font-size: 24px;
+    font-weight: normal;
+    text-align: center;
+    align-content: center;
+    color: #ffffff;
+    .check {
         position: absolute;
         margin: 5px 9px 5px 271px;
         width: 30px;
         height: 30px;
         background-image: url("../assets/check.svg");
-      }
     }
-    input[type=checkbox]:checked+span {
+    &.checked {
       background-color: #738EEB;
       .check {
         position: absolute;
@@ -210,7 +140,7 @@ export default {
 .step {
   position: relative;
   height: 60px;
-  margin: 30px auto;
+  margin: 40px auto;
   display: flex;
   flex-direction: row;
   justify-content: center;

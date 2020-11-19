@@ -1,23 +1,20 @@
 <template>
   <div>
     <NavBar />
-    <Main />
   <router-view/>
   </div>
 </template>
 <script>
 import NavBar from '@/components/NavBar.vue'
-import Main from '@/components/Main.vue'
 export default {
   name: 'Home',
     components: {
       NavBar,
-      Main,
   }
 }
 </script>
 
-<style lang="scss">
+<style lang="scss"> 
 #app {
   font-family: Roboto, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
