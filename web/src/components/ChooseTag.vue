@@ -60,9 +60,9 @@ export default {
       let tag = this.preferences;
       for(var i = 0; i < this.preferences.length; i++){
         if(tag[i].checked){
-          this.place += tag[i].value;
+          this.place = this.place + tag[i].value + ' ';
         }
-      }
+      }console.log(this.place);
       //this.$router.go('/');
     }
   }

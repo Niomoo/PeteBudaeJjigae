@@ -41,6 +41,9 @@ export default {
     return {
       isChoose: false,
       btnChoose: 0,
+      position: '',
+      latitude: 0,
+      longitude: 0,
     };
   },  
   methods: {
@@ -58,8 +61,17 @@ export default {
       }
       else if(this.btnChoose == 2)
       {
+        navigator.geolocation.getCurrentPosition(this.success, this.error);
         this.$router.push('chooseTag');
       }
+    },            
+    success(position) {
+        this.latitude = position.coords.latitude;
+        this.longitude = position.coords.longitude;
+        console.log(this.latitude, this.longitude);
+    },
+    error() {
+        console.log("fail to load location");
     }
   }
 }
