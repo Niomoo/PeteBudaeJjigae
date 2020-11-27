@@ -44,6 +44,7 @@ export default {
       position: '',
       latitude: 0,
       longitude: 0,
+      place: '成大',
     };
   },  
   methods: {
@@ -62,17 +63,19 @@ export default {
       else if(this.btnChoose == 2)
       {
         navigator.geolocation.getCurrentPosition(this.success, this.error);
-        this.$router.push('chooseTag');
+        this.$router.push({path:'ChooseTag', query:{place: this.place}});
       }
     },            
     success(position) {
         this.latitude = position.coords.latitude;
         this.longitude = position.coords.longitude;
         console.log(this.latitude, this.longitude);
+        axios.get('/findNearestLocation', {lat: this.latitude, long: this.longitude})
+          .then(response => {console.log(response)})
     },
     error() {
         console.log("fail to load location");
-    }
+    },
   }
 }
 </script>

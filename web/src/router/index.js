@@ -1,6 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/Home.vue'
-import ChooseTag from '../components/ChooseTag.vue'
 
 const routes = [
   {
@@ -21,7 +20,12 @@ const routes = [
   {
     path: '/chooseTag',
     name: 'ChooseTag',
-    component: ChooseTag
+    component: () => import('@/components/ChooseTag.vue')
+  },
+  {
+    path: '/routes',
+    name: 'Routes',
+    component: () => import('@/components/Routes.vue')
   }
 ]
 
