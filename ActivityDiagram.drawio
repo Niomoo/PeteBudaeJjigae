@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2020-11-28T05:44:09.446Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.66 Safari/537.36" etag="KyPTzrTGUL77jsWmtJVh" version="13.10.4" type="github" pages="3">
+<mxfile host="app.diagrams.net" modified="2020-11-28T08:46:21.768Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.66 Safari/537.36" etag="Or5ww2dXBxmqdKvSrPPY" version="13.10.4" type="github" pages="4">
   <diagram name="Page-1" id="e7e014a7-5840-1c2e-5031-d8a46d1fe8dd">
     <mxGraphModel dx="1038" dy="548" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="826" background="#ffffff" math="0" shadow="0">
       <root>
@@ -536,7 +536,7 @@
         <mxCell id="R_ZTZbJYzpSYL8Pqb_Zy-9" value="" style="shape=umlLifeline;participant=umlActor;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;verticalAlign=top;spacingTop=36;outlineConnect=0;" parent="R_ZTZbJYzpSYL8Pqb_Zy-1" vertex="1">
           <mxGeometry x="90" y="100" width="20" height="1040" as="geometry" />
         </mxCell>
-        <mxCell id="OCdAIPC2SkNj8lcA3i_n-10" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;" vertex="1" parent="R_ZTZbJYzpSYL8Pqb_Zy-9">
+        <mxCell id="OCdAIPC2SkNj8lcA3i_n-10" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;" parent="R_ZTZbJYzpSYL8Pqb_Zy-9" vertex="1">
           <mxGeometry x="5" y="812" width="10" height="68" as="geometry" />
         </mxCell>
         <mxCell id="R_ZTZbJYzpSYL8Pqb_Zy-10" value=":使用者介面&lt;span style=&quot;color: rgba(0 , 0 , 0 , 0) ; font-family: monospace ; font-size: 0px&quot;&gt;%3CmxGraphModel%3E%3Croot%3E%3CmxCell%20id%3D%220%22%2F%3E%3CmxCell%20id%3D%221%22%20parent%3D%220%22%2F%3E%3CmxCell%20id%3D%222%22%20value%3D%22%EF%BC%9A%E4%BD%BF%E7%94%A8%E8%80%85%E4%BB%8B%E9%9D%A2%22%20style%3D%22html%3D1%3B%22%20vertex%3D%221%22%20parent%3D%221%22%3E%3CmxGeometry%20x%3D%22230%22%20y%3D%2285%22%20width%3D%22110%22%20height%3D%2250%22%20as%3D%22geometry%22%2F%3E%3C%2FmxCell%3E%3C%2Froot%3E%3C%2FmxGraphModel%3E&lt;/span&gt;&lt;span style=&quot;color: rgba(0 , 0 , 0 , 0) ; font-family: monospace ; font-size: 0px&quot;&gt;%3CmxGraphModel%3E%3Croot%3E%3CmxCell%20id%3D%220%22%2F%3E%3CmxCell%20id%3D%221%22%20parent%3D%220%22%2F%3E%3CmxCell%20id%3D%222%22%20value%3D%22%EF%BC%9A%E4%BD%BF%E7%94%A8%E8%80%85%E4%BB%8B%E9%9D%A2%22%20style%3D%22html%3D1%3B%22%20vertex%3D%221%22%20parent%3D%221%22%3E%3CmxGeometry%20x%3D%22230%22%20y%3D%2285%22%20width%3D%22110%22%20height%3D%2250%22%20as%3D%22geometry%22%2F%3E%3C%2FmxCell%3E%3C%2Froot%3E%3C%2FmxGraphModel%3E&lt;/span&gt;&lt;span style=&quot;color: rgba(0 , 0 , 0 , 0) ; font-family: monospace ; font-size: 0px&quot;&gt;%3CmxGraphModel%3E%3Croot%3E%3CmxCell%20id%3D%220%22%2F%3E%3CmxCell%20id%3D%221%22%20parent%3D%220%22%2F%3E%3CmxCell%20id%3D%222%22%20value%3D%22%EF%BC%9A%E4%BD%BF%E7%94%A8%E8%80%85%E4%BB%8B%E9%9D%A2%22%20style%3D%22html%3D1%3B%22%20vertex%3D%221%22%20parent%3D%221%22%3E%3CmxGeometry%20x%3D%22230%22%20y%3D%2285%22%20width%3D%22110%22%20height%3D%2250%22%20as%3D%22geometry%22%2F%3E%3C%2FmxCell%3E%3C%2Froot%3E%3C%2FmxGraphModel%3E&lt;/span&gt;" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;" parent="R_ZTZbJYzpSYL8Pqb_Zy-1" vertex="1">
@@ -545,10 +545,10 @@
         <mxCell id="Zy257Ugc0vB8B6D-H9Uh-0" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;" parent="R_ZTZbJYzpSYL8Pqb_Zy-10" vertex="1">
           <mxGeometry x="45" y="380" width="10" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="IeXKC7F9G9kJZlEGQw7I-0" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;" vertex="1" parent="R_ZTZbJYzpSYL8Pqb_Zy-10">
+        <mxCell id="IeXKC7F9G9kJZlEGQw7I-0" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;" parent="R_ZTZbJYzpSYL8Pqb_Zy-10" vertex="1">
           <mxGeometry x="45" y="518" width="10" height="362" as="geometry" />
         </mxCell>
-        <mxCell id="OCdAIPC2SkNj8lcA3i_n-24" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;" vertex="1" parent="R_ZTZbJYzpSYL8Pqb_Zy-10">
+        <mxCell id="OCdAIPC2SkNj8lcA3i_n-24" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;" parent="R_ZTZbJYzpSYL8Pqb_Zy-10" vertex="1">
           <mxGeometry x="45" y="940" width="10" height="80" as="geometry" />
         </mxCell>
         <mxCell id="R_ZTZbJYzpSYL8Pqb_Zy-13" value=":定位系統" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;" parent="R_ZTZbJYzpSYL8Pqb_Zy-1" vertex="1">
@@ -566,16 +566,16 @@
         <mxCell id="vr1uJunSlInmoFWs_HX8-0" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;" parent="R_ZTZbJYzpSYL8Pqb_Zy-14" vertex="1">
           <mxGeometry x="45" y="380" width="10" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="_C1_EKjHWP91RH2J0EJw-0" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;" vertex="1" parent="R_ZTZbJYzpSYL8Pqb_Zy-14">
+        <mxCell id="_C1_EKjHWP91RH2J0EJw-0" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;" parent="R_ZTZbJYzpSYL8Pqb_Zy-14" vertex="1">
           <mxGeometry x="45" y="518" width="10" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="spbh-tWgJohbpgECNgyA-3" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;" vertex="1" parent="R_ZTZbJYzpSYL8Pqb_Zy-14">
+        <mxCell id="spbh-tWgJohbpgECNgyA-3" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;" parent="R_ZTZbJYzpSYL8Pqb_Zy-14" vertex="1">
           <mxGeometry x="45" y="660" width="10" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="OCdAIPC2SkNj8lcA3i_n-1" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;" vertex="1" parent="R_ZTZbJYzpSYL8Pqb_Zy-14">
+        <mxCell id="OCdAIPC2SkNj8lcA3i_n-1" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;" parent="R_ZTZbJYzpSYL8Pqb_Zy-14" vertex="1">
           <mxGeometry x="45" y="772" width="10" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="OCdAIPC2SkNj8lcA3i_n-26" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;" vertex="1" parent="R_ZTZbJYzpSYL8Pqb_Zy-14">
+        <mxCell id="OCdAIPC2SkNj8lcA3i_n-26" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;" parent="R_ZTZbJYzpSYL8Pqb_Zy-14" vertex="1">
           <mxGeometry x="45" y="940" width="10" height="80" as="geometry" />
         </mxCell>
         <mxCell id="R_ZTZbJYzpSYL8Pqb_Zy-15" value=":資料庫" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;collapsible=0;recursiveResize=0;outlineConnect=0;" parent="R_ZTZbJYzpSYL8Pqb_Zy-1" vertex="1">
@@ -590,10 +590,10 @@
         <mxCell id="vr1uJunSlInmoFWs_HX8-3" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;" parent="R_ZTZbJYzpSYL8Pqb_Zy-15" vertex="1">
           <mxGeometry x="45" y="380" width="10" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="_C1_EKjHWP91RH2J0EJw-3" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;" vertex="1" parent="R_ZTZbJYzpSYL8Pqb_Zy-15">
+        <mxCell id="_C1_EKjHWP91RH2J0EJw-3" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;" parent="R_ZTZbJYzpSYL8Pqb_Zy-15" vertex="1">
           <mxGeometry x="45" y="518" width="10" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="OCdAIPC2SkNj8lcA3i_n-7" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;" vertex="1" parent="R_ZTZbJYzpSYL8Pqb_Zy-15">
+        <mxCell id="OCdAIPC2SkNj8lcA3i_n-7" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;" parent="R_ZTZbJYzpSYL8Pqb_Zy-15" vertex="1">
           <mxGeometry x="45" y="772" width="10" height="80" as="geometry" />
         </mxCell>
         <mxCell id="R_ZTZbJYzpSYL8Pqb_Zy-17" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;" parent="R_ZTZbJYzpSYL8Pqb_Zy-1" vertex="1">
@@ -702,100 +702,312 @@
             <mxPoint x="310" y="556" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="IeXKC7F9G9kJZlEGQw7I-1" value="3:點選路線(選擇一條路線)" style="html=1;verticalAlign=bottom;startArrow=oval;endArrow=block;startSize=8;entryX=0.02;entryY=0.034;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" target="IeXKC7F9G9kJZlEGQw7I-0" parent="R_ZTZbJYzpSYL8Pqb_Zy-1">
+        <mxCell id="IeXKC7F9G9kJZlEGQw7I-1" value="3:點選路線(選擇一條路線)" style="html=1;verticalAlign=bottom;startArrow=oval;endArrow=block;startSize=8;entryX=0.02;entryY=0.034;entryDx=0;entryDy=0;entryPerimeter=0;" parent="R_ZTZbJYzpSYL8Pqb_Zy-1" target="IeXKC7F9G9kJZlEGQw7I-0" edge="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="99.5" y="629.56" as="sourcePoint" />
             <mxPoint x="300" y="629" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="_C1_EKjHWP91RH2J0EJw-1" value="3.1:更換景點(欲更換之景點)" style="html=1;verticalAlign=bottom;endArrow=block;entryX=-0.06;entryY=0.268;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" target="_C1_EKjHWP91RH2J0EJw-0" parent="R_ZTZbJYzpSYL8Pqb_Zy-1" source="IeXKC7F9G9kJZlEGQw7I-0">
+        <mxCell id="_C1_EKjHWP91RH2J0EJw-1" value="3.1:更換景點(欲更換之景點)" style="html=1;verticalAlign=bottom;endArrow=block;entryX=-0.06;entryY=0.268;entryDx=0;entryDy=0;entryPerimeter=0;" parent="R_ZTZbJYzpSYL8Pqb_Zy-1" source="IeXKC7F9G9kJZlEGQw7I-0" target="_C1_EKjHWP91RH2J0EJw-0" edge="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="575" y="618" as="sourcePoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="_C1_EKjHWP91RH2J0EJw-4" value="3.1.1:計算關聯度最高之景點(原路線)" style="html=1;verticalAlign=bottom;endArrow=block;entryX=-0.14;entryY=0.348;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" target="_C1_EKjHWP91RH2J0EJw-3" parent="R_ZTZbJYzpSYL8Pqb_Zy-1" source="_C1_EKjHWP91RH2J0EJw-0">
+        <mxCell id="_C1_EKjHWP91RH2J0EJw-4" value="3.1.1:計算關聯度最高之景點(原路線)" style="html=1;verticalAlign=bottom;endArrow=block;entryX=-0.14;entryY=0.348;entryDx=0;entryDy=0;entryPerimeter=0;" parent="R_ZTZbJYzpSYL8Pqb_Zy-1" source="_C1_EKjHWP91RH2J0EJw-0" target="_C1_EKjHWP91RH2J0EJw-3" edge="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="855" y="618" as="sourcePoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="_C1_EKjHWP91RH2J0EJw-5" value="回傳關聯度最高之景點" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;exitX=-0.06;exitY=0.628;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" source="_C1_EKjHWP91RH2J0EJw-3" parent="R_ZTZbJYzpSYL8Pqb_Zy-1" target="_C1_EKjHWP91RH2J0EJw-0">
+        <mxCell id="_C1_EKjHWP91RH2J0EJw-5" value="回傳關聯度最高之景點" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;exitX=-0.06;exitY=0.628;exitDx=0;exitDy=0;exitPerimeter=0;" parent="R_ZTZbJYzpSYL8Pqb_Zy-1" source="_C1_EKjHWP91RH2J0EJw-3" target="_C1_EKjHWP91RH2J0EJw-0" edge="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="855" y="694" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="_C1_EKjHWP91RH2J0EJw-2" value="顯示更換後的3個景點" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;exitX=-0.06;exitY=0.778;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" source="_C1_EKjHWP91RH2J0EJw-0" parent="R_ZTZbJYzpSYL8Pqb_Zy-1" target="IeXKC7F9G9kJZlEGQw7I-0">
+        <mxCell id="_C1_EKjHWP91RH2J0EJw-2" value="顯示更換後的3個景點" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;exitX=-0.06;exitY=0.778;exitDx=0;exitDy=0;exitPerimeter=0;" parent="R_ZTZbJYzpSYL8Pqb_Zy-1" source="_C1_EKjHWP91RH2J0EJw-0" target="IeXKC7F9G9kJZlEGQw7I-0" edge="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="575" y="694" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="spbh-tWgJohbpgECNgyA-4" value="3.2:新增景點()&lt;br&gt;//第一次點選新增景點" style="html=1;verticalAlign=bottom;endArrow=block;entryX=0.02;entryY=0.168;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" target="spbh-tWgJohbpgECNgyA-3" parent="R_ZTZbJYzpSYL8Pqb_Zy-1" source="IeXKC7F9G9kJZlEGQw7I-0">
+        <mxCell id="spbh-tWgJohbpgECNgyA-4" value="3.2:新增景點()&lt;br&gt;//第一次點選新增景點" style="html=1;verticalAlign=bottom;endArrow=block;entryX=0.02;entryY=0.168;entryDx=0;entryDy=0;entryPerimeter=0;" parent="R_ZTZbJYzpSYL8Pqb_Zy-1" source="IeXKC7F9G9kJZlEGQw7I-0" target="spbh-tWgJohbpgECNgyA-3" edge="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="315" y="762.0799999999999" as="sourcePoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="OCdAIPC2SkNj8lcA3i_n-2" value="3.3新增景點()" style="html=1;verticalAlign=bottom;endArrow=block;entryX=0.02;entryY=0.133;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" target="OCdAIPC2SkNj8lcA3i_n-1" parent="R_ZTZbJYzpSYL8Pqb_Zy-1">
+        <mxCell id="OCdAIPC2SkNj8lcA3i_n-2" value="3.3新增景點()" style="html=1;verticalAlign=bottom;endArrow=block;entryX=0.02;entryY=0.133;entryDx=0;entryDy=0;entryPerimeter=0;" parent="R_ZTZbJYzpSYL8Pqb_Zy-1" target="OCdAIPC2SkNj8lcA3i_n-1" edge="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="315" y="882.6400000000001" as="sourcePoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="OCdAIPC2SkNj8lcA3i_n-3" value="顯示所有可新增之景點" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;exitX=0.1;exitY=0.667;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" source="OCdAIPC2SkNj8lcA3i_n-1" parent="R_ZTZbJYzpSYL8Pqb_Zy-1">
+        <mxCell id="OCdAIPC2SkNj8lcA3i_n-3" value="顯示所有可新增之景點" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;exitX=0.1;exitY=0.667;exitDx=0;exitDy=0;exitPerimeter=0;" parent="R_ZTZbJYzpSYL8Pqb_Zy-1" source="OCdAIPC2SkNj8lcA3i_n-1" edge="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="315" y="925.3599999999999" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="OCdAIPC2SkNj8lcA3i_n-8" value="3.3.1:計算相關景點(原路線)" style="html=1;verticalAlign=bottom;endArrow=block;entryX=-0.06;entryY=0.257;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" target="OCdAIPC2SkNj8lcA3i_n-7" parent="R_ZTZbJYzpSYL8Pqb_Zy-1" source="OCdAIPC2SkNj8lcA3i_n-1">
+        <mxCell id="OCdAIPC2SkNj8lcA3i_n-8" value="3.3.1:計算相關景點(原路線)" style="html=1;verticalAlign=bottom;endArrow=block;entryX=-0.06;entryY=0.257;entryDx=0;entryDy=0;entryPerimeter=0;" parent="R_ZTZbJYzpSYL8Pqb_Zy-1" source="OCdAIPC2SkNj8lcA3i_n-1" target="OCdAIPC2SkNj8lcA3i_n-7" edge="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="855" y="872" as="sourcePoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="OCdAIPC2SkNj8lcA3i_n-9" value="回傳所有相關景點" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;exitX=0.1;exitY=0.557;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" source="OCdAIPC2SkNj8lcA3i_n-7" parent="R_ZTZbJYzpSYL8Pqb_Zy-1" target="OCdAIPC2SkNj8lcA3i_n-1">
+        <mxCell id="OCdAIPC2SkNj8lcA3i_n-9" value="回傳所有相關景點" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;exitX=0.1;exitY=0.557;exitDx=0;exitDy=0;exitPerimeter=0;" parent="R_ZTZbJYzpSYL8Pqb_Zy-1" source="OCdAIPC2SkNj8lcA3i_n-7" target="OCdAIPC2SkNj8lcA3i_n-1" edge="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="855" y="948" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="OCdAIPC2SkNj8lcA3i_n-11" value="得知所有可新增之景點" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;" edge="1" parent="R_ZTZbJYzpSYL8Pqb_Zy-1" target="OCdAIPC2SkNj8lcA3i_n-10">
+        <mxCell id="OCdAIPC2SkNj8lcA3i_n-11" value="得知所有可新增之景點" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;" parent="R_ZTZbJYzpSYL8Pqb_Zy-1" target="OCdAIPC2SkNj8lcA3i_n-10" edge="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="305" y="931.5" as="sourcePoint" />
             <mxPoint x="225" y="931.5" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="OCdAIPC2SkNj8lcA3i_n-12" value="3.3.2:點選欲新增之景點()" style="html=1;verticalAlign=bottom;endArrow=block;" edge="1" parent="R_ZTZbJYzpSYL8Pqb_Zy-1">
+        <mxCell id="OCdAIPC2SkNj8lcA3i_n-12" value="3.3.2:點選欲新增之景點()" style="html=1;verticalAlign=bottom;endArrow=block;" parent="R_ZTZbJYzpSYL8Pqb_Zy-1" edge="1">
           <mxGeometry width="80" relative="1" as="geometry">
             <mxPoint x="104" y="962" as="sourcePoint" />
             <mxPoint x="304" y="962" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="OCdAIPC2SkNj8lcA3i_n-14" value="&lt;span style=&quot;font-size: 12px ; background-color: rgb(248 , 249 , 250)&quot;&gt;顯示訊息&lt;/span&gt;&lt;br style=&quot;font-size: 12px ; background-color: rgb(248 , 249 , 250)&quot;&gt;&lt;span style=&quot;font-size: 12px ; background-color: rgb(248 , 249 , 250)&quot;&gt;「開始新增即無法再更換景點」&lt;/span&gt;" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;exitX=0.02;exitY=0.77;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="R_ZTZbJYzpSYL8Pqb_Zy-1" source="spbh-tWgJohbpgECNgyA-3">
+        <mxCell id="OCdAIPC2SkNj8lcA3i_n-14" value="&lt;span style=&quot;font-size: 12px ; background-color: rgb(248 , 249 , 250)&quot;&gt;顯示訊息&lt;/span&gt;&lt;br style=&quot;font-size: 12px ; background-color: rgb(248 , 249 , 250)&quot;&gt;&lt;span style=&quot;font-size: 12px ; background-color: rgb(248 , 249 , 250)&quot;&gt;「開始新增即無法再更換景點」&lt;/span&gt;" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;exitX=0.02;exitY=0.77;exitDx=0;exitDy=0;exitPerimeter=0;" parent="R_ZTZbJYzpSYL8Pqb_Zy-1" source="spbh-tWgJohbpgECNgyA-3" edge="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="315" y="806" as="targetPoint" />
             <mxPoint x="645.2" y="798.2" as="sourcePoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="OCdAIPC2SkNj8lcA3i_n-16" value="Opt" style="shape=umlFrame;whiteSpace=wrap;html=1;" vertex="1" parent="R_ZTZbJYzpSYL8Pqb_Zy-1">
+        <mxCell id="OCdAIPC2SkNj8lcA3i_n-16" value="Opt" style="shape=umlFrame;whiteSpace=wrap;html=1;" parent="R_ZTZbJYzpSYL8Pqb_Zy-1" vertex="1">
           <mxGeometry x="280" y="580" width="720" height="130" as="geometry" />
         </mxCell>
-        <mxCell id="OCdAIPC2SkNj8lcA3i_n-20" value="Alt" style="shape=umlFrame;whiteSpace=wrap;html=1;" vertex="1" parent="R_ZTZbJYzpSYL8Pqb_Zy-1">
+        <mxCell id="OCdAIPC2SkNj8lcA3i_n-20" value="Alt" style="shape=umlFrame;whiteSpace=wrap;html=1;" parent="R_ZTZbJYzpSYL8Pqb_Zy-1" vertex="1">
           <mxGeometry x="60" y="840" width="920" height="150" as="geometry" />
         </mxCell>
-        <mxCell id="OCdAIPC2SkNj8lcA3i_n-18" value="Opt" style="shape=umlFrame;whiteSpace=wrap;html=1;" vertex="1" parent="R_ZTZbJYzpSYL8Pqb_Zy-1">
+        <mxCell id="OCdAIPC2SkNj8lcA3i_n-18" value="Opt" style="shape=umlFrame;whiteSpace=wrap;html=1;" parent="R_ZTZbJYzpSYL8Pqb_Zy-1" vertex="1">
           <mxGeometry x="40" y="730" width="960" height="280" as="geometry" />
         </mxCell>
-        <mxCell id="OCdAIPC2SkNj8lcA3i_n-21" value="[當前景點數不超過6個]" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="R_ZTZbJYzpSYL8Pqb_Zy-1">
+        <mxCell id="OCdAIPC2SkNj8lcA3i_n-21" value="[當前景點數不超過6個]" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="R_ZTZbJYzpSYL8Pqb_Zy-1" vertex="1">
           <mxGeometry x="70" y="880" width="130" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="OCdAIPC2SkNj8lcA3i_n-25" value="4:確認路線()" style="html=1;verticalAlign=bottom;startArrow=oval;endArrow=block;startSize=8;entryX=-0.22;entryY=0.197;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" target="OCdAIPC2SkNj8lcA3i_n-24" parent="R_ZTZbJYzpSYL8Pqb_Zy-1" source="R_ZTZbJYzpSYL8Pqb_Zy-9">
+        <mxCell id="OCdAIPC2SkNj8lcA3i_n-25" value="4:確認路線()" style="html=1;verticalAlign=bottom;startArrow=oval;endArrow=block;startSize=8;entryX=-0.22;entryY=0.197;entryDx=0;entryDy=0;entryPerimeter=0;" parent="R_ZTZbJYzpSYL8Pqb_Zy-1" source="R_ZTZbJYzpSYL8Pqb_Zy-9" target="OCdAIPC2SkNj8lcA3i_n-24" edge="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="245" y="1040" as="sourcePoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="OCdAIPC2SkNj8lcA3i_n-27" value="4.1:確認最終路線()" style="html=1;verticalAlign=bottom;endArrow=block;entryX=0.1;entryY=0.367;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" target="OCdAIPC2SkNj8lcA3i_n-26" parent="R_ZTZbJYzpSYL8Pqb_Zy-1" source="OCdAIPC2SkNj8lcA3i_n-24">
+        <mxCell id="OCdAIPC2SkNj8lcA3i_n-27" value="4.1:確認最終路線()" style="html=1;verticalAlign=bottom;endArrow=block;entryX=0.1;entryY=0.367;entryDx=0;entryDy=0;entryPerimeter=0;" parent="R_ZTZbJYzpSYL8Pqb_Zy-1" source="OCdAIPC2SkNj8lcA3i_n-24" target="OCdAIPC2SkNj8lcA3i_n-26" edge="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="575" y="1040" as="sourcePoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="OCdAIPC2SkNj8lcA3i_n-28" value="顯示最終路線" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;exitX=0.1;exitY=0.757;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" source="OCdAIPC2SkNj8lcA3i_n-26" parent="R_ZTZbJYzpSYL8Pqb_Zy-1" target="OCdAIPC2SkNj8lcA3i_n-24">
+        <mxCell id="OCdAIPC2SkNj8lcA3i_n-28" value="顯示最終路線" style="html=1;verticalAlign=bottom;endArrow=open;dashed=1;endSize=8;exitX=0.1;exitY=0.757;exitDx=0;exitDy=0;exitPerimeter=0;" parent="R_ZTZbJYzpSYL8Pqb_Zy-1" source="OCdAIPC2SkNj8lcA3i_n-26" target="OCdAIPC2SkNj8lcA3i_n-24" edge="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="575" y="1116" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="7jvBy-55VJp40HLmLD_3" name="Page-4">
+    <mxGraphModel dx="1865" dy="548" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="gLt7wztcTnvLzlAMLVuR-0" />
+        <mxCell id="gLt7wztcTnvLzlAMLVuR-1" parent="gLt7wztcTnvLzlAMLVuR-0" />
+        <mxCell id="gLt7wztcTnvLzlAMLVuR-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="gLt7wztcTnvLzlAMLVuR-1" source="gLt7wztcTnvLzlAMLVuR-2" target="gLt7wztcTnvLzlAMLVuR-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="gLt7wztcTnvLzlAMLVuR-2" value="開始&lt;br&gt;從景點A出發" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.terminator;whiteSpace=wrap;" vertex="1" parent="gLt7wztcTnvLzlAMLVuR-1">
+          <mxGeometry x="370.25" y="30" width="87.5" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="gLt7wztcTnvLzlAMLVuR-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="gLt7wztcTnvLzlAMLVuR-1" source="gLt7wztcTnvLzlAMLVuR-3" target="gLt7wztcTnvLzlAMLVuR-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="gLt7wztcTnvLzlAMLVuR-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="gLt7wztcTnvLzlAMLVuR-1" source="gLt7wztcTnvLzlAMLVuR-3" target="gLt7wztcTnvLzlAMLVuR-9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="gLt7wztcTnvLzlAMLVuR-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="gLt7wztcTnvLzlAMLVuR-1" source="gLt7wztcTnvLzlAMLVuR-3" target="gLt7wztcTnvLzlAMLVuR-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="gLt7wztcTnvLzlAMLVuR-3" value="計算第二個景點" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;" vertex="1" parent="gLt7wztcTnvLzlAMLVuR-1">
+          <mxGeometry x="364" y="120" width="100" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="gLt7wztcTnvLzlAMLVuR-32" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="gLt7wztcTnvLzlAMLVuR-1" source="gLt7wztcTnvLzlAMLVuR-7" target="gLt7wztcTnvLzlAMLVuR-27">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="gLt7wztcTnvLzlAMLVuR-7" value="方法三&lt;br&gt;捷運站關聯" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;" vertex="1" parent="gLt7wztcTnvLzlAMLVuR-1">
+          <mxGeometry x="760" y="210" width="100" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="gLt7wztcTnvLzlAMLVuR-29" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="gLt7wztcTnvLzlAMLVuR-1" source="gLt7wztcTnvLzlAMLVuR-8" target="gLt7wztcTnvLzlAMLVuR-26">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="gLt7wztcTnvLzlAMLVuR-8" value="方法一&lt;br&gt;文字關聯" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;" vertex="1" parent="gLt7wztcTnvLzlAMLVuR-1">
+          <mxGeometry x="-30" y="210" width="100" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="gLt7wztcTnvLzlAMLVuR-30" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="gLt7wztcTnvLzlAMLVuR-1" source="gLt7wztcTnvLzlAMLVuR-9" target="gLt7wztcTnvLzlAMLVuR-28">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="gLt7wztcTnvLzlAMLVuR-9" value="方法二&lt;br&gt;距離計算" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;" vertex="1" parent="gLt7wztcTnvLzlAMLVuR-1">
+          <mxGeometry x="364" y="210" width="100" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="gLt7wztcTnvLzlAMLVuR-15" value="距離A最近之捷運站丙站&lt;br&gt;附近之所有景點" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=1;dashed=1;" vertex="1" parent="gLt7wztcTnvLzlAMLVuR-1">
+          <mxGeometry x="485.87" y="210" width="130" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="gLt7wztcTnvLzlAMLVuR-16" value="丙站關聯到的丁站&lt;br&gt;附近之所有景點" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=1;dashed=1;" vertex="1" parent="gLt7wztcTnvLzlAMLVuR-1">
+          <mxGeometry x="600.87" y="280" width="130" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="gLt7wztcTnvLzlAMLVuR-24" value="" style="endArrow=none;dashed=1;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="gLt7wztcTnvLzlAMLVuR-1" source="gLt7wztcTnvLzlAMLVuR-9" target="gLt7wztcTnvLzlAMLVuR-15">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="410" y="300" as="sourcePoint" />
+            <mxPoint x="460" y="250" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="gLt7wztcTnvLzlAMLVuR-36" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="gLt7wztcTnvLzlAMLVuR-1" source="gLt7wztcTnvLzlAMLVuR-26" target="gLt7wztcTnvLzlAMLVuR-33">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="gLt7wztcTnvLzlAMLVuR-26" value="產生第二個景點&lt;br&gt;景點B" style="shape=parallelogram;html=1;strokeWidth=2;perimeter=parallelogramPerimeter;whiteSpace=wrap;rounded=1;arcSize=12;size=0.23;dashed=1;" vertex="1" parent="gLt7wztcTnvLzlAMLVuR-1">
+          <mxGeometry x="-45" y="300" width="130" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="gLt7wztcTnvLzlAMLVuR-38" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="gLt7wztcTnvLzlAMLVuR-1" source="gLt7wztcTnvLzlAMLVuR-27" target="gLt7wztcTnvLzlAMLVuR-34">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="gLt7wztcTnvLzlAMLVuR-27" value="產生第二個景點&lt;br&gt;景點D" style="shape=parallelogram;html=1;strokeWidth=2;perimeter=parallelogramPerimeter;whiteSpace=wrap;rounded=1;arcSize=12;size=0.23;dashed=1;" vertex="1" parent="gLt7wztcTnvLzlAMLVuR-1">
+          <mxGeometry x="745" y="300" width="130" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="gLt7wztcTnvLzlAMLVuR-37" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="gLt7wztcTnvLzlAMLVuR-1" source="gLt7wztcTnvLzlAMLVuR-28" target="gLt7wztcTnvLzlAMLVuR-35">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="gLt7wztcTnvLzlAMLVuR-28" value="產生第二個景點&lt;br&gt;景點C" style="shape=parallelogram;html=1;strokeWidth=2;perimeter=parallelogramPerimeter;whiteSpace=wrap;rounded=1;arcSize=12;size=0.23;dashed=1;" vertex="1" parent="gLt7wztcTnvLzlAMLVuR-1">
+          <mxGeometry x="351" y="300" width="126" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="gLt7wztcTnvLzlAMLVuR-42" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="gLt7wztcTnvLzlAMLVuR-1" source="gLt7wztcTnvLzlAMLVuR-33" target="gLt7wztcTnvLzlAMLVuR-41">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="gLt7wztcTnvLzlAMLVuR-43" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="gLt7wztcTnvLzlAMLVuR-1" source="gLt7wztcTnvLzlAMLVuR-33" target="gLt7wztcTnvLzlAMLVuR-39">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="gLt7wztcTnvLzlAMLVuR-44" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="gLt7wztcTnvLzlAMLVuR-1" source="gLt7wztcTnvLzlAMLVuR-33" target="gLt7wztcTnvLzlAMLVuR-40">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="gLt7wztcTnvLzlAMLVuR-33" value="計算第三個景點" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;" vertex="1" parent="gLt7wztcTnvLzlAMLVuR-1">
+          <mxGeometry x="-30" y="390" width="100" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="gLt7wztcTnvLzlAMLVuR-113" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="gLt7wztcTnvLzlAMLVuR-1" source="gLt7wztcTnvLzlAMLVuR-34" target="gLt7wztcTnvLzlAMLVuR-109">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="gLt7wztcTnvLzlAMLVuR-115" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="gLt7wztcTnvLzlAMLVuR-1" source="gLt7wztcTnvLzlAMLVuR-34" target="gLt7wztcTnvLzlAMLVuR-105">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="gLt7wztcTnvLzlAMLVuR-116" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="gLt7wztcTnvLzlAMLVuR-1" source="gLt7wztcTnvLzlAMLVuR-34" target="gLt7wztcTnvLzlAMLVuR-107">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="gLt7wztcTnvLzlAMLVuR-34" value="計算第三個景點" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;" vertex="1" parent="gLt7wztcTnvLzlAMLVuR-1">
+          <mxGeometry x="760" y="390" width="100" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="gLt7wztcTnvLzlAMLVuR-92" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="gLt7wztcTnvLzlAMLVuR-1" source="gLt7wztcTnvLzlAMLVuR-35" target="gLt7wztcTnvLzlAMLVuR-88">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="gLt7wztcTnvLzlAMLVuR-93" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="gLt7wztcTnvLzlAMLVuR-1" source="gLt7wztcTnvLzlAMLVuR-35" target="gLt7wztcTnvLzlAMLVuR-84">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="gLt7wztcTnvLzlAMLVuR-94" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="gLt7wztcTnvLzlAMLVuR-1" source="gLt7wztcTnvLzlAMLVuR-35" target="gLt7wztcTnvLzlAMLVuR-86">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="gLt7wztcTnvLzlAMLVuR-35" value="計算第三個景點" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;" vertex="1" parent="gLt7wztcTnvLzlAMLVuR-1">
+          <mxGeometry x="364" y="390" width="100" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="gLt7wztcTnvLzlAMLVuR-51" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="gLt7wztcTnvLzlAMLVuR-1" source="gLt7wztcTnvLzlAMLVuR-39" target="gLt7wztcTnvLzlAMLVuR-48">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="gLt7wztcTnvLzlAMLVuR-39" value="方法二&lt;br&gt;距離計算" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;" vertex="1" parent="gLt7wztcTnvLzlAMLVuR-1">
+          <mxGeometry x="-30" y="480" width="100" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="gLt7wztcTnvLzlAMLVuR-52" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="gLt7wztcTnvLzlAMLVuR-1" source="gLt7wztcTnvLzlAMLVuR-40" target="gLt7wztcTnvLzlAMLVuR-49">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="gLt7wztcTnvLzlAMLVuR-40" value="方法三&lt;br&gt;捷運站關聯" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;" vertex="1" parent="gLt7wztcTnvLzlAMLVuR-1">
+          <mxGeometry x="100" y="480" width="100" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="gLt7wztcTnvLzlAMLVuR-50" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="gLt7wztcTnvLzlAMLVuR-1" source="gLt7wztcTnvLzlAMLVuR-41" target="gLt7wztcTnvLzlAMLVuR-45">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="gLt7wztcTnvLzlAMLVuR-41" value="方法一&lt;br&gt;文字關聯" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;" vertex="1" parent="gLt7wztcTnvLzlAMLVuR-1">
+          <mxGeometry x="-160" y="480" width="100" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="gLt7wztcTnvLzlAMLVuR-45" value="景點(A, B)之&lt;br&gt;關聯景點" style="shape=parallelogram;html=1;strokeWidth=2;perimeter=parallelogramPerimeter;whiteSpace=wrap;rounded=1;arcSize=12;size=0.23;dashed=1;" vertex="1" parent="gLt7wztcTnvLzlAMLVuR-1">
+          <mxGeometry x="-175" y="570" width="130" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="gLt7wztcTnvLzlAMLVuR-46" value="A景點關連到之&lt;br&gt;所有景點" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=1;dashed=1;" vertex="1" parent="gLt7wztcTnvLzlAMLVuR-1">
+          <mxGeometry x="126" y="210" width="130" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="gLt7wztcTnvLzlAMLVuR-47" value="" style="endArrow=none;dashed=1;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="gLt7wztcTnvLzlAMLVuR-1" target="gLt7wztcTnvLzlAMLVuR-46">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="70" y="235" as="sourcePoint" />
+            <mxPoint x="66" y="250" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="gLt7wztcTnvLzlAMLVuR-48" value="距離B最近之捷運站甲站&lt;br&gt;附近之所有景點" style="shape=parallelogram;html=1;strokeWidth=2;perimeter=parallelogramPerimeter;whiteSpace=wrap;rounded=1;arcSize=12;size=0.23;dashed=1;" vertex="1" parent="gLt7wztcTnvLzlAMLVuR-1">
+          <mxGeometry x="-45" y="570" width="130" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="gLt7wztcTnvLzlAMLVuR-49" value="甲站關聯到的乙站&lt;br&gt;附近之所有景點" style="shape=parallelogram;html=1;strokeWidth=2;perimeter=parallelogramPerimeter;whiteSpace=wrap;rounded=1;arcSize=12;size=0.23;dashed=1;" vertex="1" parent="gLt7wztcTnvLzlAMLVuR-1">
+          <mxGeometry x="85" y="570" width="130" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="gLt7wztcTnvLzlAMLVuR-83" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="gLt7wztcTnvLzlAMLVuR-1" source="gLt7wztcTnvLzlAMLVuR-84" target="gLt7wztcTnvLzlAMLVuR-90">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="gLt7wztcTnvLzlAMLVuR-84" value="方法二&lt;br&gt;距離計算" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;" vertex="1" parent="gLt7wztcTnvLzlAMLVuR-1">
+          <mxGeometry x="364" y="480" width="100" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="gLt7wztcTnvLzlAMLVuR-85" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="gLt7wztcTnvLzlAMLVuR-1" source="gLt7wztcTnvLzlAMLVuR-86" target="gLt7wztcTnvLzlAMLVuR-91">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="gLt7wztcTnvLzlAMLVuR-86" value="方法三&lt;br&gt;捷運站關聯" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;" vertex="1" parent="gLt7wztcTnvLzlAMLVuR-1">
+          <mxGeometry x="494" y="480" width="100" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="gLt7wztcTnvLzlAMLVuR-87" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="gLt7wztcTnvLzlAMLVuR-1" source="gLt7wztcTnvLzlAMLVuR-88" target="gLt7wztcTnvLzlAMLVuR-89">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="gLt7wztcTnvLzlAMLVuR-88" value="方法一&lt;br&gt;文字關聯" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;" vertex="1" parent="gLt7wztcTnvLzlAMLVuR-1">
+          <mxGeometry x="234" y="480" width="100" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="gLt7wztcTnvLzlAMLVuR-89" value="景點(A, C)之&lt;br&gt;關聯景點" style="shape=parallelogram;html=1;strokeWidth=2;perimeter=parallelogramPerimeter;whiteSpace=wrap;rounded=1;arcSize=12;size=0.23;dashed=1;" vertex="1" parent="gLt7wztcTnvLzlAMLVuR-1">
+          <mxGeometry x="219" y="570" width="130" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="gLt7wztcTnvLzlAMLVuR-90" value="距離C最近之捷運站丙站&lt;br&gt;附近之所有景點" style="shape=parallelogram;html=1;strokeWidth=2;perimeter=parallelogramPerimeter;whiteSpace=wrap;rounded=1;arcSize=12;size=0.23;dashed=1;" vertex="1" parent="gLt7wztcTnvLzlAMLVuR-1">
+          <mxGeometry x="344.5" y="570" width="139" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="gLt7wztcTnvLzlAMLVuR-91" value="丙站關聯到的丁站&lt;br&gt;附近之所有景點" style="shape=parallelogram;html=1;strokeWidth=2;perimeter=parallelogramPerimeter;whiteSpace=wrap;rounded=1;arcSize=12;size=0.23;dashed=1;" vertex="1" parent="gLt7wztcTnvLzlAMLVuR-1">
+          <mxGeometry x="480.75" y="570" width="126.5" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="gLt7wztcTnvLzlAMLVuR-104" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="gLt7wztcTnvLzlAMLVuR-1" source="gLt7wztcTnvLzlAMLVuR-105" target="gLt7wztcTnvLzlAMLVuR-111">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="gLt7wztcTnvLzlAMLVuR-105" value="方法二&lt;br&gt;距離計算" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;" vertex="1" parent="gLt7wztcTnvLzlAMLVuR-1">
+          <mxGeometry x="760.87" y="480" width="100" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="gLt7wztcTnvLzlAMLVuR-106" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="gLt7wztcTnvLzlAMLVuR-1" source="gLt7wztcTnvLzlAMLVuR-107" target="gLt7wztcTnvLzlAMLVuR-112">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="gLt7wztcTnvLzlAMLVuR-107" value="方法三&lt;br&gt;捷運站關聯" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;" vertex="1" parent="gLt7wztcTnvLzlAMLVuR-1">
+          <mxGeometry x="890.87" y="480" width="100" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="gLt7wztcTnvLzlAMLVuR-108" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="gLt7wztcTnvLzlAMLVuR-1" source="gLt7wztcTnvLzlAMLVuR-109" target="gLt7wztcTnvLzlAMLVuR-110">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="gLt7wztcTnvLzlAMLVuR-109" value="方法一&lt;br&gt;文字關聯" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;" vertex="1" parent="gLt7wztcTnvLzlAMLVuR-1">
+          <mxGeometry x="630.87" y="480" width="100" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="gLt7wztcTnvLzlAMLVuR-110" value="景點(A, D)之&lt;br&gt;關聯景點" style="shape=parallelogram;html=1;strokeWidth=2;perimeter=parallelogramPerimeter;whiteSpace=wrap;rounded=1;arcSize=12;size=0.23;dashed=1;" vertex="1" parent="gLt7wztcTnvLzlAMLVuR-1">
+          <mxGeometry x="615.87" y="570" width="130" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="gLt7wztcTnvLzlAMLVuR-111" value="距離D最近之捷運站丁站&lt;br&gt;附近之所有景點" style="shape=parallelogram;html=1;strokeWidth=2;perimeter=parallelogramPerimeter;whiteSpace=wrap;rounded=1;arcSize=12;size=0.23;dashed=1;" vertex="1" parent="gLt7wztcTnvLzlAMLVuR-1">
+          <mxGeometry x="741.37" y="570" width="139" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="gLt7wztcTnvLzlAMLVuR-112" value="(丙, 丁)關聯到的戊站&lt;br&gt;附近之所有景點" style="shape=parallelogram;html=1;strokeWidth=2;perimeter=parallelogramPerimeter;whiteSpace=wrap;rounded=1;arcSize=12;size=0.23;dashed=1;" vertex="1" parent="gLt7wztcTnvLzlAMLVuR-1">
+          <mxGeometry x="877.62" y="570" width="126.5" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="gLt7wztcTnvLzlAMLVuR-117" value="" style="endArrow=none;dashed=1;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="gLt7wztcTnvLzlAMLVuR-1" target="gLt7wztcTnvLzlAMLVuR-16">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="666" y="235" as="sourcePoint" />
+            <mxPoint x="665.8699999999999" y="275" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="gLt7wztcTnvLzlAMLVuR-118" value="" style="endArrow=none;dashed=1;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="gLt7wztcTnvLzlAMLVuR-1" target="gLt7wztcTnvLzlAMLVuR-7">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="665" y="235" as="sourcePoint" />
+            <mxPoint x="755" y="235" as="targetPoint" />
           </mxGeometry>
         </mxCell>
       </root>
