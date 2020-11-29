@@ -76,6 +76,20 @@ export default {
     error() {
         console.log("fail to load location");
     },
+    getNearestLocation() {
+      const path = 'http://localhost:8080/findNearestViewpoint/';
+      axios.get(path)
+        .then((response) => {
+          this.latitude = response.location.lat;
+          this.longitude = response.location.long;
+        })
+        .catch(error => {
+          console.log(error);
+        })
+    }
+  },
+  created() {
+    this.getNearestLocation();
   }
 }
 </script>
