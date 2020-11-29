@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2020-11-29T07:04:16.084Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0.1 Safari/605.1.15" etag="rT5l-crS2F3gp8NmsG9S" version="13.10.4" type="github" pages="5">
+<mxfile host="app.diagrams.net" modified="2020-11-29T07:51:00.944Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0.1 Safari/605.1.15" etag="3rZhexUTglJcx6M63hIT" version="13.10.4" type="github" pages="5">
   <diagram name="Page-1" id="e7e014a7-5840-1c2e-5031-d8a46d1fe8dd">
     <mxGraphModel dx="1186" dy="639" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="826" background="#ffffff" math="0" shadow="0">
       <root>
@@ -842,7 +842,7 @@
         <mxCell id="gLt7wztcTnvLzlAMLVuR-9" value="方法二&lt;br&gt;距離計算" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;" parent="gLt7wztcTnvLzlAMLVuR-1" vertex="1">
           <mxGeometry x="364" y="210" width="100" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="gLt7wztcTnvLzlAMLVuR-15" value="距離A最近之捷運站丙站&lt;br&gt;附近之所有景點" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=1;dashed=1;" parent="gLt7wztcTnvLzlAMLVuR-1" vertex="1">
+        <mxCell id="gLt7wztcTnvLzlAMLVuR-15" value="距離A最近之丙站&lt;br&gt;附近之所有景點" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=1;dashed=1;" parent="gLt7wztcTnvLzlAMLVuR-1" vertex="1">
           <mxGeometry x="485.87" y="210" width="130" height="50" as="geometry" />
         </mxCell>
         <mxCell id="gLt7wztcTnvLzlAMLVuR-16" value="丙站關聯到的丁站&lt;br&gt;附近之所有景點" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=1;dashed=1;" parent="gLt7wztcTnvLzlAMLVuR-1" vertex="1">
@@ -938,7 +938,7 @@
             <mxPoint x="66" y="250" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="gLt7wztcTnvLzlAMLVuR-48" value="距離B最近之捷運站甲站&lt;br&gt;附近之所有景點" style="shape=parallelogram;html=1;strokeWidth=2;perimeter=parallelogramPerimeter;whiteSpace=wrap;rounded=1;arcSize=12;size=0.23;dashed=1;" parent="gLt7wztcTnvLzlAMLVuR-1" vertex="1">
+        <mxCell id="gLt7wztcTnvLzlAMLVuR-48" value="距離B最近之甲站&lt;br&gt;附近之所有景點" style="shape=parallelogram;html=1;strokeWidth=2;perimeter=parallelogramPerimeter;whiteSpace=wrap;rounded=1;arcSize=12;size=0.23;dashed=1;" parent="gLt7wztcTnvLzlAMLVuR-1" vertex="1">
           <mxGeometry x="-45" y="570" width="130" height="50" as="geometry" />
         </mxCell>
         <mxCell id="gLt7wztcTnvLzlAMLVuR-49" value="甲站關聯到的乙站&lt;br&gt;附近之所有景點" style="shape=parallelogram;html=1;strokeWidth=2;perimeter=parallelogramPerimeter;whiteSpace=wrap;rounded=1;arcSize=12;size=0.23;dashed=1;" parent="gLt7wztcTnvLzlAMLVuR-1" vertex="1">
@@ -965,7 +965,7 @@
         <mxCell id="gLt7wztcTnvLzlAMLVuR-89" value="景點(A, C)之&lt;br&gt;關聯景點" style="shape=parallelogram;html=1;strokeWidth=2;perimeter=parallelogramPerimeter;whiteSpace=wrap;rounded=1;arcSize=12;size=0.23;dashed=1;" parent="gLt7wztcTnvLzlAMLVuR-1" vertex="1">
           <mxGeometry x="219" y="570" width="130" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="gLt7wztcTnvLzlAMLVuR-90" value="距離C最近之捷運站丙站&lt;br&gt;附近之所有景點" style="shape=parallelogram;html=1;strokeWidth=2;perimeter=parallelogramPerimeter;whiteSpace=wrap;rounded=1;arcSize=12;size=0.23;dashed=1;" parent="gLt7wztcTnvLzlAMLVuR-1" vertex="1">
+        <mxCell id="gLt7wztcTnvLzlAMLVuR-90" value="距離C最近之丙站&lt;br&gt;附近之所有景點" style="shape=parallelogram;html=1;strokeWidth=2;perimeter=parallelogramPerimeter;whiteSpace=wrap;rounded=1;arcSize=12;size=0.23;dashed=1;" parent="gLt7wztcTnvLzlAMLVuR-1" vertex="1">
           <mxGeometry x="344.5" y="570" width="139" height="50" as="geometry" />
         </mxCell>
         <mxCell id="gLt7wztcTnvLzlAMLVuR-91" value="丙站關聯到的丁站&lt;br&gt;附近之所有景點" style="shape=parallelogram;html=1;strokeWidth=2;perimeter=parallelogramPerimeter;whiteSpace=wrap;rounded=1;arcSize=12;size=0.23;dashed=1;" parent="gLt7wztcTnvLzlAMLVuR-1" vertex="1">
@@ -992,7 +992,7 @@
         <mxCell id="gLt7wztcTnvLzlAMLVuR-110" value="景點(A, D)之&lt;br&gt;關聯景點" style="shape=parallelogram;html=1;strokeWidth=2;perimeter=parallelogramPerimeter;whiteSpace=wrap;rounded=1;arcSize=12;size=0.23;dashed=1;" parent="gLt7wztcTnvLzlAMLVuR-1" vertex="1">
           <mxGeometry x="615.87" y="570" width="130" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="gLt7wztcTnvLzlAMLVuR-111" value="距離D最近之捷運站丁站&lt;br&gt;附近之所有景點" style="shape=parallelogram;html=1;strokeWidth=2;perimeter=parallelogramPerimeter;whiteSpace=wrap;rounded=1;arcSize=12;size=0.23;dashed=1;" parent="gLt7wztcTnvLzlAMLVuR-1" vertex="1">
+        <mxCell id="gLt7wztcTnvLzlAMLVuR-111" value="距離D最近之丁站&lt;br&gt;附近之所有景點" style="shape=parallelogram;html=1;strokeWidth=2;perimeter=parallelogramPerimeter;whiteSpace=wrap;rounded=1;arcSize=12;size=0.23;dashed=1;" parent="gLt7wztcTnvLzlAMLVuR-1" vertex="1">
           <mxGeometry x="741.37" y="570" width="139" height="50" as="geometry" />
         </mxCell>
         <mxCell id="gLt7wztcTnvLzlAMLVuR-112" value="(丙, 丁)關聯到的戊站&lt;br&gt;附近之所有景點" style="shape=parallelogram;html=1;strokeWidth=2;perimeter=parallelogramPerimeter;whiteSpace=wrap;rounded=1;arcSize=12;size=0.23;dashed=1;" parent="gLt7wztcTnvLzlAMLVuR-1" vertex="1">
