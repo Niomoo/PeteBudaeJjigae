@@ -57,13 +57,15 @@ export default {
       this.$router.go(-1);
     },
     next () {
+      let departure = this.$route.query.place;
       let tag = this.preferences;
       for(var i = 0; i < this.preferences.length; i++){
         if(tag[i].checked){
           this.place = this.place + tag[i].value + ' ';
         }
-      }console.log(this.place);
-      //this.$router.go('/');
+      }
+      console.log(departure);
+      this.$router.push({path:'Routes', query:{place: departure}});
     }
   }
 }
