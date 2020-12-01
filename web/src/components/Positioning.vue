@@ -29,6 +29,7 @@
 </template>
 
 <script>
+import axios from "axios"
 export default {
   name: 'Positioning',
   props: {
@@ -44,7 +45,7 @@ export default {
       position: '',
       latitude: 0,
       longitude: 0,
-      place: '成大',
+      place: '國立成功大學',
     };
   },  
   methods: {

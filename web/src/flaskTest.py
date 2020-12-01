@@ -16,7 +16,7 @@ from flask import Flask
 app = Flask(__name__)
 
 # 連接資料庫
-conn = pymysql.connect(host="localhost", port=3306, user="root", password="",db="tourism1")
+conn = pymysql.connect(host="sql12.freemysqlhosting.net", port=3306, user="sql12379125", password="JgrqLxSF6S",db="sql12379125")
 cursor = conn.cursor()
 
 # 抓DB資料存成list或dict
