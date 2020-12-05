@@ -1,1 +1,70 @@
-<mxfile host="app.diagrams.net" modified="2020-12-05T05:05:44.115Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36" version="13.10.9" etag="wJ6TI9kss9bqpDqfipoc" type="github"><diagram id="fnWIq7hL-EMY3ivvvQpz">UzV2zq1wL0osyPDNT0nNUTV2VTV2LsrPL4GwciucU3NyVI0MMlNUjV1UjYwMgFjVyA2HrCFY1qAgsSg1rwSLBiADYTaQg2Y1AA==</diagram></mxfile>
+<mxfile host="app.diagrams.net" modified="2020-12-05T05:19:38.266Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36" etag="NRSZAYKYbzHnBtt0FnEl" version="13.10.9" type="github">
+  <diagram id="fnWIq7hL-EMY3ivvvQpz" name="UseCaseDiagram">
+    <mxGraphModel dx="1038" dy="548" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="oZZ4UmCb3Qf0-lq2kgYp-1" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="320" y="120" width="280" height="350" as="geometry" />
+        </mxCell>
+        <mxCell id="oZZ4UmCb3Qf0-lq2kgYp-2" value="抓取景點" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="412" y="160" width="96" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="oZZ4UmCb3Qf0-lq2kgYp-3" value="定位起始點" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="412" y="230" width="96" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="oZZ4UmCb3Qf0-lq2kgYp-4" value="推薦路線" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="414" y="300" width="96" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="oZZ4UmCb3Qf0-lq2kgYp-5" value="user" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+          <mxGeometry x="240" y="225" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="oZZ4UmCb3Qf0-lq2kgYp-6" value="Google API" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+          <mxGeometry x="650" y="225" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="oZZ4UmCb3Qf0-lq2kgYp-19" value="新增景點" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="480" y="390" width="96" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="oZZ4UmCb3Qf0-lq2kgYp-20" value="更換景點" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="350" y="390" width="96" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="oZZ4UmCb3Qf0-lq2kgYp-22" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=1;entryDx=0;entryDy=0;dashed=1;" edge="1" parent="1" source="oZZ4UmCb3Qf0-lq2kgYp-20" target="oZZ4UmCb3Qf0-lq2kgYp-4">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="390" y="310" as="sourcePoint" />
+            <mxPoint x="440" y="260" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="oZZ4UmCb3Qf0-lq2kgYp-25" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=1;entryY=1;entryDx=0;entryDy=0;dashed=1;" edge="1" parent="1" source="oZZ4UmCb3Qf0-lq2kgYp-19" target="oZZ4UmCb3Qf0-lq2kgYp-4">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="408" y="400" as="sourcePoint" />
+            <mxPoint x="438.0588745030457" y="352.6776695296636" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="oZZ4UmCb3Qf0-lq2kgYp-26" value="《include》" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="394" y="360" width="40" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="oZZ4UmCb3Qf0-lq2kgYp-27" value="《include》" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="490" y="360" width="40" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="oZZ4UmCb3Qf0-lq2kgYp-29" value="" style="endArrow=none;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" target="oZZ4UmCb3Qf0-lq2kgYp-2">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="640" y="250" as="sourcePoint" />
+            <mxPoint x="440" y="260" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="oZZ4UmCb3Qf0-lq2kgYp-30" value="" style="endArrow=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" target="oZZ4UmCb3Qf0-lq2kgYp-3">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="280" y="260" as="sourcePoint" />
+            <mxPoint x="440" y="260" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="oZZ4UmCb3Qf0-lq2kgYp-31" value="" style="endArrow=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" target="oZZ4UmCb3Qf0-lq2kgYp-4">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="280" y="260" as="sourcePoint" />
+            <mxPoint x="440" y="260" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
