@@ -37,14 +37,14 @@ export default {
   data () {
     return {
       isChoose: true,
-      place: '',
       preferences: [
         {value: '美食小吃', checked: true, id: "1"},
         {value: '自然風景', checked: true, id: "2"},
         {value: '購物消費', checked: true, id: "3"},
         {value: '休閒娛樂', checked: true, id: "4"},
         {value: '藝術文化', checked: true, id: "5"}
-     ]
+     ],
+      inputTag: ''
     };
   },
 
@@ -61,11 +61,11 @@ export default {
       let tag = this.preferences;
       for(var i = 0; i < this.preferences.length; i++){
         if(tag[i].checked){
-          this.place = this.place + tag[i].value + ' ';
+          this.inputTag = this.inputTag + tag[i].value + " ";
         }
       }
-      console.log(departure);
-      this.$router.push({path:'Routes', query:{place: departure}});
+      console.log(departure, tag);
+      this.$router.push({path:'Routes', query:{place: departure, inputTags: this.inputTag}});
     }
   }
 }

@@ -4,7 +4,7 @@
       <span></span>
       <span></span>
     </div>
-    <div class="title">高雄旅遊推薦</div>
+    <div class="title" @click="$router.push('/')">高雄旅遊推薦</div>
   </div>
 </template>
 

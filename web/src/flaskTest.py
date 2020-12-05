@@ -12,8 +12,11 @@ from math import radians, cos, sin, asin, sqrt
 import copy
 import random
 from flask import Flask
+from flask_cors import CORS
+from flask import request
 
 app = Flask(__name__)
+CORS(app)
 
 # 連接資料庫
 conn = pymysql.connect(host="sql12.freemysqlhosting.net", port=3306, user="sql12379125", password="JgrqLxSF6S",db="sql12379125")
@@ -57,8 +60,9 @@ def haversine(lon1, lat1, lon2, lat2):
     r = 6371
     return c * r
 
-@app.route('/findAllViewpoint/userInput=<userInput>', methods=['GET'])
+@app.route('/findAllViewpoint', methods=['GET'])
 def findAllViewpoints(userInput):
+    userInput = request.args.get('userInput')
     viewList = {}
     cursor.execute("select aId,aName from attraction where aName like '%" + userInput + "%'")
     res = cursor.fetchall()
@@ -82,8 +86,10 @@ def findAllViewpoints(userInput):
             checkMrt.append(aId)
     return viewList
 
-@app.route('/findNearestViewpoint/lng=<lng>&lat=<lat>', methods=['GET'])
-def findNearestViewpoint(lng, lat):
+@app.route('/findNearestViewpoint', methods=['GET'])
+def findNearestViewpoint():
+    lng = request.args.get('lng')
+    lat = request.args.get('lat')
     minDist = 10000
     minId = 1
     for i in attraction:
@@ -91,7 +97,7 @@ def findNearestViewpoint(lng, lat):
         if d < minDist:
             minDist = d
             minId = i
-    return minId
+    return str(minId)
 
 def text(view, attraction, arelated, aList, aWeight, isTag):
     b = 0
@@ -161,8 +167,10 @@ def data(view, attraction, mrelated, aList, mWeight, isTag, mList, isMrt):
                     else:
                         aList[j] = (1/dist) * nextMrt[i] * mWeight * attraction[j][9]
 
-@app.route('/firstRecommend/start=<start>&inputTags=<tag>', methods=['GET'])
-def firstRecommend(start, tag):
+@app.route('/firstRecommend', methods=['GET'])
+def firstRecommend():
+    start = request.args.get('start')
+    inputTags = request.args.get('tag')
     mList = []              #紀錄計算過程中有用到的捷運站
     view = []               #暫存上一個點
     aList = {}              #暫存景點結果（景點id+加權後分數）
@@ -319,8 +327,10 @@ def changeTheLast(resId, index, view, aList, mList):
         print(attraction[aNew][1])              #印出更新後的景點
         print(result[index])                    #印出更新後的該條路線
         
-@app.route('/changePoint/changeIndex=<changeIndex>&change=<change>', methods=['GET'])
+@app.route('/changePoint', methods=['GET'])
 def changePoint(changeIndex, change):
+    changeIndex = request.args.get('changeIndex')
+    change = request.args.get('change')
     index = int(changeIndex)
     change = int(change)
     view = []
@@ -338,8 +348,9 @@ def changePoint(changeIndex, change):
     resTmp = ",".join(result[index])
     return resTmp
 
-@app.route('/addPoint/addIndex=<addIndex>', methods=['GET'])
+@app.route('/addPoint', methods=['GET'])
 def addPoint(addIndex):
+    addIndex = request.args.get('addIndex')
     index = int(addIndex)
     mList = []
     aList = {}

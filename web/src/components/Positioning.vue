@@ -43,15 +43,18 @@ export default {
       isChoose: false,
       btnChoose: 0,
       position: '',
-      latitude: 0,
-      longitude: 0,
-      place: '國立成功大學',
+      latitude: 0.0,
+      longitude: 0.0,
+      place: 0,
     };
-  },  
+  },
   methods: {
     ChooseWay(way) {
       this.btnChoose = way;
       this.isChoose = true;
+      if(this.btnChoose == 2) {
+        navigator.geolocation.getCurrentPosition(this.success, this.error);
+      }
     },
     previous () {
       this.$router.go(-1);
@@ -63,7 +66,6 @@ export default {
       }
       else if(this.btnChoose == 2)
       {
-        navigator.geolocation.getCurrentPosition(this.success, this.error);
         this.$router.push({path:'ChooseTag', query:{place: this.place}});
       }
     },            
@@ -71,27 +73,25 @@ export default {
         this.latitude = position.coords.latitude;
         this.longitude = position.coords.longitude;
         console.log(this.latitude, this.longitude);
-        axios.get('/findNearestLocation', {lat: this.latitude, long: this.longitude})
-          .then(response => {console.log(response)})
+        const url = 'http://127.0.0.1:5000/findNearestViewpoint';
+        axios.get(url, {
+          params: {
+            lng: this.longitude,
+            lat: this.latitude
+          }
+        })
+        .then((response) => {
+          this.place = response.data;
+          console.log(this.place);
+        })
+        .catch(error => {
+          console.log(error.response);
+        })
     },
     error() {
         console.log("fail to load location");
     },
-    getNearestLocation() {
-      const path = 'http://localhost:8080/findNearestViewpoint/';
-      axios.get(path)
-        .then((response) => {
-          this.latitude = response.location.lat;
-          this.longitude = response.location.long;
-        })
-        .catch(error => {
-          console.log(error);
-        })
-    }
   },
-  created() {
-    this.getNearestLocation();
-  }
 }
 </script>
 
