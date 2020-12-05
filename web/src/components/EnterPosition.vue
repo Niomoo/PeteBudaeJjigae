@@ -1,22 +1,22 @@
 <template>
 <div>
   <div class="page">
-      <div class="dot">
-        <span></span>
-        <span></span>
-      </div>
+    <div class="dot">
+      <span></span>
+      <span></span>
+    </div>
   </div>
   <div class="container">
     <div class="content">請輸入你的出發地</div>
     <div class="block">
-        <div class="inputbox">
-        <input v-model="place" 
-               class ="inputPlace" 
-               type="text"
-               @input="checkInput"
-        >
-        </div>
-        <div class="hint" :class="{active: checkInput}">請輸入高雄地標</div>
+      <div class="inputbox">
+      <input v-model="place" 
+             class ="inputPlace" 
+             type="text"
+             @input="checkInput"
+      >
+      </div>
+      <div class="hint" :class="{active: checkInput}">請輸入高雄地標</div>
     </div>
   </div>
   <div class="step">
@@ -32,35 +32,35 @@
 
 <script>
 export default {
-    name: 'Positioning',
-    props: {
-        isNext: {
-            type: Boolean,
-            default: false,
-        },
+  name: 'Positioning',
+  props: {
+    isNext: {
+      type: Boolean,
+      default: false,
     },
-    data () {
-        return {
-            isChoose: false,
-            place: '',
-            isValid: false,
-            check: 0,
-        };
-    },
+  },
+  data () {
+    return {
+      isChoose: false,
+      place: '',
+      isValid: false,
+      check: 0,
+    };
+  },
     
-    methods: {
-        checkInput (){
-            if(this.isValid==true){
-                this.isChoose=true;
-            }
-        },
-        previous () {
-            this.$router.go(-1);
-        },
-        next () {
-            this.$router.go('/');
-        }
+  methods: {
+    checkInput (){
+      if(this.isValid==true){
+        this.isChoose=true;
+      }
+    },
+    previous () {
+      this.$router.go(-1);
+    },
+    next () {
+      this.$router.go('/');
     }
+  }
 }
 </script>
 
@@ -70,23 +70,23 @@ export default {
   top: 14px;
   padding: 18px 100px;
   height: 44px;
-    .dot{
-      span{
-        display: inline-flex;
-        justify-content: space-around;
-        width: 8px;
-        height: 8px;
-        border-radius: 50%;
-        background-color: #ffffff;
-        margin: 18px 10px;
-      }
+  .dot{
+    span{
+      display: inline-flex;
+      justify-content: space-around;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: #ffffff;
+      margin: 18px 10px;
     }
-    span:nth-child(1) {
-        opacity: 1;
-    }
-    span:nth-child(2) {
-      opacity: 0.2;
-    }
+  }
+  span:nth-child(1) {
+    opacity: 1;
+  }
+  span:nth-child(2) {
+    opacity: 0.2;
+  }
 }
 .container {
   position: relative;

@@ -61,7 +61,7 @@ def haversine(lon1, lat1, lon2, lat2):
     return c * r
 
 @app.route('/findAllViewpoint', methods=['GET'])
-def findAllViewpoints(userInput):
+def findAllViewpoints():
     userInput = request.args.get('userInput')
     viewList = {}
     cursor.execute("select aId,aName from attraction where aName like '%" + userInput + "%'")
@@ -170,7 +170,7 @@ def data(view, attraction, mrelated, aList, mWeight, isTag, mList, isMrt):
 @app.route('/firstRecommend', methods=['GET'])
 def firstRecommend():
     start = request.args.get('start')
-    inputTags = request.args.get('tag')
+    inputTags = request.args.get('inputTags')
     mList = []              #紀錄計算過程中有用到的捷運站
     view = []               #暫存上一個點
     aList = {}              #暫存景點結果（景點id+加權後分數）
@@ -241,7 +241,7 @@ def firstRecommend():
             print("查無景點路線")
     
     routeStr = ",".join(route)
-    return routeStr
+    return str(routeStr)
 
 def changeTheSecond(resId, index, view, aList, maxDist):
     # 可能一（文字關聯）
@@ -328,7 +328,7 @@ def changeTheLast(resId, index, view, aList, mList):
         print(result[index])                    #印出更新後的該條路線
         
 @app.route('/changePoint', methods=['GET'])
-def changePoint(changeIndex, change):
+def changePoint():
     changeIndex = request.args.get('changeIndex')
     change = request.args.get('change')
     index = int(changeIndex)
@@ -349,7 +349,7 @@ def changePoint(changeIndex, change):
     return resTmp
 
 @app.route('/addPoint', methods=['GET'])
-def addPoint(addIndex):
+def addPoint():
     addIndex = request.args.get('addIndex')
     index = int(addIndex)
     mList = []

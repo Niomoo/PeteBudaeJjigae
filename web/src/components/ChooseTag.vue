@@ -61,10 +61,10 @@ export default {
       let tag = this.preferences;
       for(var i = 0; i < this.preferences.length; i++){
         if(tag[i].checked){
-          this.inputTag = this.inputTag + tag[i].value + " ";
+          this.inputTag += tag[i].value + " ";
         }
       }
-      console.log(departure, tag);
+      console.log(departure, this.inputTag);
       this.$router.push({path:'Routes', query:{place: departure, inputTags: this.inputTag}});
     }
   }
