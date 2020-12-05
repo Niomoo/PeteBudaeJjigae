@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2020-12-05T06:08:55.746Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36" etag="uRETPx1wPv2KN-97Pq9e" version="13.10.9" type="github" pages="5">
+<mxfile host="app.diagrams.net" modified="2020-12-05T06:12:10.687Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36" etag="9uVo_i44RM7CrzgTye4C" version="13.10.9" type="github" pages="6">
   <diagram id="fnWIq7hL-EMY3ivvvQpz" name="UseCase">
     <mxGraphModel dx="1038" dy="548" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -75,6 +75,9 @@
             <mxPoint x="424" y="525" as="sourcePoint" />
             <mxPoint x="640" y="360" as="targetPoint" />
           </mxGeometry>
+        </mxCell>
+        <mxCell id="fQ-OTdBeqzNatWR3_NAD-1" value="智慧化旅遊路線推薦系統" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="391" y="160" width="142" height="20" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
@@ -662,6 +665,103 @@
         </mxCell>
         <mxCell id="-oa-Kcy25g0agXs9Ki02-60" value="Opt" style="shape=umlFrame;whiteSpace=wrap;html=1;" vertex="1" parent="-oa-Kcy25g0agXs9Ki02-1">
           <mxGeometry x="40" y="411" width="880" height="280" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="cacel5Y7lozc4GERccG8" name="SystemArchitecture">
+    <mxGraphModel dx="1038" dy="548" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="QwZiYOImxieGf40oiMuy-0" />
+        <mxCell id="QwZiYOImxieGf40oiMuy-1" parent="QwZiYOImxieGf40oiMuy-0" />
+        <mxCell id="QwZiYOImxieGf40oiMuy-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="QwZiYOImxieGf40oiMuy-1" source="QwZiYOImxieGf40oiMuy-3" target="QwZiYOImxieGf40oiMuy-26">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="QwZiYOImxieGf40oiMuy-3" value="[Data Mining]&lt;br&gt;Smart Card&lt;br&gt;旅運量資料" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;" vertex="1" parent="QwZiYOImxieGf40oiMuy-1">
+          <mxGeometry x="130" y="100" width="110" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="QwZiYOImxieGf40oiMuy-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="QwZiYOImxieGf40oiMuy-1" source="QwZiYOImxieGf40oiMuy-5" target="QwZiYOImxieGf40oiMuy-28">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="QwZiYOImxieGf40oiMuy-5" value="[Text Mining]&lt;br&gt;旅遊文章" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;" vertex="1" parent="QwZiYOImxieGf40oiMuy-1">
+          <mxGeometry x="130" y="200" width="110" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="QwZiYOImxieGf40oiMuy-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="QwZiYOImxieGf40oiMuy-1" source="QwZiYOImxieGf40oiMuy-7" target="QwZiYOImxieGf40oiMuy-9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="QwZiYOImxieGf40oiMuy-7" value="Google Map API" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;" vertex="1" parent="QwZiYOImxieGf40oiMuy-1">
+          <mxGeometry x="130" y="300" width="110" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="QwZiYOImxieGf40oiMuy-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="QwZiYOImxieGf40oiMuy-1" source="QwZiYOImxieGf40oiMuy-9" target="QwZiYOImxieGf40oiMuy-28">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="QwZiYOImxieGf40oiMuy-9" value="&amp;nbsp; 景點詳細資訊" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.multi-document;whiteSpace=wrap;align=left;" vertex="1" parent="QwZiYOImxieGf40oiMuy-1">
+          <mxGeometry x="305.5" y="300" width="99" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="QwZiYOImxieGf40oiMuy-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="QwZiYOImxieGf40oiMuy-1" source="QwZiYOImxieGf40oiMuy-11" target="QwZiYOImxieGf40oiMuy-13">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="525" y="210" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="QwZiYOImxieGf40oiMuy-11" value="關聯規則計算" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;" vertex="1" parent="QwZiYOImxieGf40oiMuy-1">
+          <mxGeometry x="470" y="100" width="110" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="QwZiYOImxieGf40oiMuy-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="QwZiYOImxieGf40oiMuy-1" source="QwZiYOImxieGf40oiMuy-13" target="QwZiYOImxieGf40oiMuy-15">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="QwZiYOImxieGf40oiMuy-13" value="&lt;br&gt;旅遊規則&lt;br&gt;知識庫" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.database;whiteSpace=wrap;align=center;" vertex="1" parent="QwZiYOImxieGf40oiMuy-1">
+          <mxGeometry x="490" y="195" width="70" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="QwZiYOImxieGf40oiMuy-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="QwZiYOImxieGf40oiMuy-1" source="QwZiYOImxieGf40oiMuy-15" target="QwZiYOImxieGf40oiMuy-16">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="QwZiYOImxieGf40oiMuy-15" value="路線推薦規則" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;" vertex="1" parent="QwZiYOImxieGf40oiMuy-1">
+          <mxGeometry x="470" y="300" width="110" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="QwZiYOImxieGf40oiMuy-16" value="推薦系統呈現" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;" vertex="1" parent="QwZiYOImxieGf40oiMuy-1">
+          <mxGeometry x="640" y="300" width="110" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="QwZiYOImxieGf40oiMuy-17" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" vertex="1" parent="QwZiYOImxieGf40oiMuy-1">
+          <mxGeometry x="130" y="70" width="110" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="QwZiYOImxieGf40oiMuy-18" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" vertex="1" parent="QwZiYOImxieGf40oiMuy-1">
+          <mxGeometry x="640" y="70" width="110" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="QwZiYOImxieGf40oiMuy-19" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" vertex="1" parent="QwZiYOImxieGf40oiMuy-1">
+          <mxGeometry x="470" y="70" width="110" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="QwZiYOImxieGf40oiMuy-20" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" vertex="1" parent="QwZiYOImxieGf40oiMuy-1">
+          <mxGeometry x="300" y="70" width="110" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="QwZiYOImxieGf40oiMuy-21" value="資料搜集" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="QwZiYOImxieGf40oiMuy-1">
+          <mxGeometry x="147.5" y="50" width="75" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="QwZiYOImxieGf40oiMuy-22" value="資料呈現" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="QwZiYOImxieGf40oiMuy-1">
+          <mxGeometry x="657.5" y="50" width="75" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="QwZiYOImxieGf40oiMuy-23" value="資料分析" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="QwZiYOImxieGf40oiMuy-1">
+          <mxGeometry x="487.5" y="50" width="75" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="QwZiYOImxieGf40oiMuy-24" value="資料處理" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="QwZiYOImxieGf40oiMuy-1">
+          <mxGeometry x="317.5" y="50" width="75" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="QwZiYOImxieGf40oiMuy-25" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="QwZiYOImxieGf40oiMuy-1" source="QwZiYOImxieGf40oiMuy-26" target="QwZiYOImxieGf40oiMuy-11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="QwZiYOImxieGf40oiMuy-26" value="資料前處理—&lt;br&gt;過濾資料" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;" vertex="1" parent="QwZiYOImxieGf40oiMuy-1">
+          <mxGeometry x="300" y="100" width="110" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="QwZiYOImxieGf40oiMuy-27" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="QwZiYOImxieGf40oiMuy-1" source="QwZiYOImxieGf40oiMuy-28" target="QwZiYOImxieGf40oiMuy-11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="QwZiYOImxieGf40oiMuy-28" value="資料前處理—&lt;br&gt;統一景點名稱" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;" vertex="1" parent="QwZiYOImxieGf40oiMuy-1">
+          <mxGeometry x="300" y="200" width="110" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="QwZiYOImxieGf40oiMuy-29" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="QwZiYOImxieGf40oiMuy-1" source="QwZiYOImxieGf40oiMuy-30" target="QwZiYOImxieGf40oiMuy-16">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="QwZiYOImxieGf40oiMuy-30" value="個人化偏好設定" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;dashed=1;" vertex="1" parent="QwZiYOImxieGf40oiMuy-1">
+          <mxGeometry x="640" y="200" width="110" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
