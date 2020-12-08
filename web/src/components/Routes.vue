@@ -68,11 +68,11 @@ export default {
   .routes {
     position: relative;
     margin: 18px auto;
-    width: 294px;
+    width: 320px;
     padding: 10px 10px;
     background-color: #738EEB;
     border-radius: 5px;
-    line-height: 28px;
+    line-height: 38.4px;
     font-size: 24px;
     font-weight: normal;
     text-align: left;

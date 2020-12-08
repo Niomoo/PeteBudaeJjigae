@@ -6,8 +6,8 @@
 				:key="item.id">
 				<div class="number">景點{{item.number}}</div>
 				<div class="block">
-					<div class="more"></div>
-					<div class="name">{{item}}</div>
+					<button class="more" @click="getInformation(item.id)"></button>
+					<div class="name">{{item.name}}</div>
 				</div>
 				<div class="address"></div>
 				<button class="change">更換地點</button>
@@ -23,10 +23,11 @@ export default {
   data() {
     return {
 			route: this.$route.query.route,
+			points:[],
 			viewpoint: [
-				{ id: 1, number: '一'}, 
-				{ id: 2, number: '二'}, 
-				{ id: 3, number: '三'}
+				{ id: 0, number: '一'}, 
+				{ id: 1, number: '二'}, 
+				{ id: 2, number: '三'}
 			],
     }
 	},
@@ -35,8 +36,14 @@ export default {
 	},
 	methods: {
 		getViewpoint() {
-			this.viewpoint = this.route.split('>').map(point => point);
+			this.points = this.route.split('>').map(point => point);
+			for(var i =0;i<this.viewpoint.length;i++) {
+			this.viewpoint[i].name = this.points[i];
+			}
 			console.log(this.viewpoint);
+		},
+		getInformation(id){
+			this.$router.push({path:'Information', query:{viewpoint: this.viewpoint[id].name}});
 		}
 	}
 }
@@ -75,14 +82,17 @@ export default {
 				margin: 16px 0px;
 				justify-content: flex-start;
 				align-content: center;
-				.more {
+				button {
 					z-index: 9999;
 					margin: 2px 14px 0px 0px;
 					width: 27px;
 					height: 27px;
+					border: none;
+					background-color: transparent;
 					background-image: url("../assets/info.svg");
 				}
 				.name {
+					width: 224px;
 					text-align: left;
 					font-size: 24px;
 					color: #ffffff;

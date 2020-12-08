@@ -39,12 +39,12 @@ export default {
     return {
       isChoose: true,
       preferences: [
-        {value: '美食小吃', checked: true, id: "1"},
-        {value: '自然風景', checked: true, id: "2"},
-        {value: '購物消費', checked: true, id: "3"},
-        {value: '休閒娛樂', checked: true, id: "4"},
-        {value: '藝術文化', checked: true, id: "5"},
-        {value: '歷史古蹟', checked: true, id: "6"}
+        {value: '美食小吃', checked: false, id: "1"},
+        {value: '自然風景', checked: false, id: "2"},
+        {value: '購物消費', checked: false, id: "3"},
+        {value: '休閒娛樂', checked: false, id: "4"},
+        {value: '藝術文化', checked: false, id: "5"},
+        {value: '歷史古蹟', checked: false, id: "6"}
       ],
       departure: '',
       inputTag: '',
@@ -148,7 +148,7 @@ export default {
       margin: 5px 9px 5px 271px;
       width: 30px;
       height: 30px;
-      background-image: url("../assets/check.svg");
+      //background-image: url("../assets/cross.svg");
     }
     &.checked {
       background-color: #738EEB;
@@ -156,7 +156,7 @@ export default {
         position: absolute;
         width: 30px;
         height: 30px;
-        background-image: url("../assets/cross.svg");
+        background-image: url("../assets/check.svg");
       }
     }
   }
