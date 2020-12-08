@@ -242,6 +242,15 @@ def firstRecommend():
     routeStr = ",".join(route)
     return str(routeStr)
 
+@app.route('/findAddress', methods=['GET'])
+def findAddress():
+    aName = request.args.get('aName')
+    cursor.execute("select address from attraction where aName = " + aName)
+    res = cursor.fetchone()
+    for row in res:
+        name = row[0]
+    return name
+
 def changeTheSecond(resId, index, view, aList, maxDist):
     # 可能一（文字關聯）
     tmp = []
