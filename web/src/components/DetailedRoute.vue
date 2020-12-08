@@ -23,6 +23,7 @@ export default {
   data() {
     return {
 			route: this.$route.query.route,
+			id: this.$route.query.id,
 			points:[],
 			viewpoint: [
 				{ id: 0, number: '一'}, 
@@ -33,6 +34,7 @@ export default {
 	},
 	mounted() {
 		this.getViewpoint();
+		this.getAddress();
 	},
 	methods: {
 		getViewpoint() {
@@ -40,25 +42,29 @@ export default {
 			for(var i = 0;i < this.viewpoint.length;i++) {
 				this.viewpoint[i].name = this.points[i];
 				console.log(this.viewpoint[i].name);
-				this.getAddress(i, this.viewpoint[i].name);
-				
+				// this.getAddress(i, this.viewpoint[i].name);			
 				// console.log(this.viewpoint[i].address);
 			}
+			console.log(this.id);
 		},
-		getAddress(index, name) {
+		getAddress() {
 			const url = 'http://127.0.0.1:5000/findAddress';
-			name = String(name);
-			console.log(index, name);
+			// name = "'" + name + "'";
       axios.get(url, {
         params: {
-          aName: name,
+					Id: this.id,
         }
       })
       .then((response) => {
-				let a = response.data;
-				console.log(a);
-				//this.viewpoint[index].address = response.data;
-				//console.log(this.viewpoint[index].address);
+				let data = response.data.split('>').map(point => point);
+				console.log(data);
+				for(var i = 0;i < this.viewpoint.length;i++) {
+					this.viewpoint[i].address = data[i];
+					console.log(this.viewpoint[i].address);
+				}
+				// this.viewpoint[index].address = response.data;
+				// console.log(this.viewpoint[index].address);
+				
       })
       .catch(error => {
 				console.log("fail");

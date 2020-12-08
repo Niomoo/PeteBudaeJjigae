@@ -171,6 +171,8 @@ def data(view, attraction, mrelated, aList, mWeight, isTag, mList, isMrt):
 def firstRecommend():
     start = request.args.get('start')
     inputTags = request.args.get('inputTags')
+    # result = [[] for i in range(5)]
+    # resId = [[] for i in range(5)]
     mList = []              #紀錄計算過程中有用到的捷運站
     view = []               #暫存上一個點
     aList = {}              #暫存景點結果（景點id+加權後分數）
@@ -244,12 +246,14 @@ def firstRecommend():
 
 @app.route('/findAddress', methods=['GET'])
 def findAddress():
-    aName = request.args.get('aName')
-    cursor.execute("select address from attraction where aName = " + aName + "")
-    res = cursor.fetchall()
-    for row in res:
-        name = row[0]
-    return str(name)
+    routeId = request.args.get('Id')
+    routeId = int(routeId)
+    address = []
+    for i in resId[routeId]:
+        address.append(attraction[i][2])
+    resAddress = ">".join(address)
+    return resAddress
+
 
 def changeTheSecond(resId, index, view, aList, maxDist):
     # 可能一（文字關聯）

@@ -3,12 +3,12 @@
   <div class="content">
 		<div class="name"></div>
 		<div class="image"></div>
-		<div class="info">
-			<div class="info 1">地址：{{viewpoint}}</div>			
-			<div class="info 2">評價星數：</div>
-			<div class="info 3">評價人數：</div>			
-			<div class="info 4">分類：</div>
-			<div class="info 5">簡介：</div>
+		<div class="info">{{viewpoint}}
+			<div class="info 1">地址：{{viewpoint.address}}</div>		
+			<div class="info 2"></div>	
+			<div class="info 3">評價星數：{{viewpoint.star}}</div>
+			<div class="info 4">評價人數：{{viewpoint.comments}}</div>			
+			<div class="info 5">簡介：{{viewpoint.info}}</div>
 		</div>
   </div>
 </div>
@@ -21,7 +21,10 @@ export default {
 		return {
 			viewpoint: this.$route.query.viewpoint,
 		}
-	}
+	},
+	mounted() {
+		fetch('../intro.json')
+	},
 }
 </script>
 

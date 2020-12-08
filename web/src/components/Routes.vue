@@ -3,9 +3,9 @@
   <div class="content">推薦旅遊路線</div>
     <div class="recommendation">
     <div>
-      <div v-for="route in routes"
+      <div v-for="(route, index) in routes"
           :key="route"
-          @click="handleClick(route)"
+          @click="handleClick(route, index)"
           class="routes">{{ route }}
       </div>
     </div>
@@ -19,32 +19,30 @@ export default {
   data () {
     return {
       routes: this.$route.query.routes,
-      recommendation: [
-        {value:'', viewpoint: ' ', id: "1"},
-        {value:'', viewpoint: ' ', id: "2"},
-        {value:'', viewpoint: ' ', id: "3"},
-        {value:'', viewpoint: ' ', id: "4"},
-        {value:'', viewpoint: ' ', id: "5"}
-      ],
+      // recommendation: [
+      //   {value:'', viewpoint: ' ', id: "1"},
+      //   {value:'', viewpoint: ' ', id: "2"},
+      //   {value:'', viewpoint: ' ', id: "3"},
+      //   {value:'', viewpoint: ' ', id: "4"},
+      //   {value:'', viewpoint: ' ', id: "5"}
+      // ],
       chooseRoute: []
     };
   },
-  beforeMount() {
-    this.listRoutes();
-  },
+  
   methods: {
-    listRoutes() {
-      this.recommendation.value = this.routes;
-      for(var i = 0; i < 5; i++) {
-        for(var j = 0; j < 3; j++) {
-          this.recommendation.viewpoint = this.recommendation.value[i].split(' ');
-        }
-      }
-      console.log(this.recommendation.viewpoint[0]);
-    },
-    handleClick(el) {
+    // listRoutes() {
+    //   this.recommendation.value = this.routes;
+    //   for(var i = 0; i < 5; i++) {
+    //     for(var j = 0; j < 3; j++) {
+    //       this.recommendation.viewpoint = this.recommendation.value[i].split(' ');
+    //     }
+    //   }
+    //   console.log(this.recommendation.viewpoint[0]);
+    // },
+    handleClick(el, index) {
       this.chooseRoute = el;
-      this.$router.push({path:'DetailedRoute', query:{route: this.chooseRoute}});
+      this.$router.push({path:'DetailedRoute', query:{route: this.chooseRoute, id: index}});
     }
   }
 }
