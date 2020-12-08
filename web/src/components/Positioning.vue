@@ -183,6 +183,7 @@ export default {
     color: #ffffff;
     border: 0;
     border-radius: 10px;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
   }
   Button:nth-child(1) {
       background-color: #738EEB;

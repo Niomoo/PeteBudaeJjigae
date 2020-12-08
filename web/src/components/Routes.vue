@@ -2,12 +2,10 @@
 <div>
   <div class="content">推薦旅遊路線</div>
     <div class="recommendation">
-    <div>
       <div v-for="(route, index) in routes"
           :key="route"
           @click="handleClick(route, index)"
           class="routes">{{ route }}
-      </div>
     </div>
     </div>
 </div>
@@ -51,7 +49,7 @@ export default {
 <style lang="scss" scoped>
 .content {
   position: relative;
-  margin: 35px auto;
+  margin: 35px auto 23px auto;
   line-height: 28px;
   font-size: 24px;
   font-weight: normal;
@@ -60,10 +58,11 @@ export default {
 }
 .recommendation {
   position: relative;
-  margin: 23px auto;
+  padding: 0 8px;
+  overflow: auto;
+  height: 555px;
   .routes {
-    position: relative;
-    margin: 18px auto;
+    margin: 0px auto 18px auto;
     width: 320px;
     padding: 10px 10px;
     background-color: #738EEB;
