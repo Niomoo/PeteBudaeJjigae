@@ -41,8 +41,6 @@ export default {
         }
       }
       console.log(this.recommendation.viewpoint[0]);
-      console.log(this.recommendation.viewpoint[1]);
-      console.log(this.recommendation.viewpoint[2]);
     },
     handleClick(el) {
       this.chooseRoute = el;

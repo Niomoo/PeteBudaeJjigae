@@ -245,11 +245,11 @@ def firstRecommend():
 @app.route('/findAddress', methods=['GET'])
 def findAddress():
     aName = request.args.get('aName')
-    cursor.execute("select address from attraction where aName = " + aName)
-    res = cursor.fetchone()
+    cursor.execute("select address from attraction where aName = " + aName + "")
+    res = cursor.fetchall()
     for row in res:
         name = row[0]
-    return name
+    return str(name)
 
 def changeTheSecond(resId, index, view, aList, maxDist):
     # 可能一（文字關聯）

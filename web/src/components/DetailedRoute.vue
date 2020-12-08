@@ -9,7 +9,7 @@
 					<button class="more" @click="getInformation(item.id)"></button>
 					<div class="name">{{item.name}}</div>
 				</div>
-				<div class="address"></div>
+				<div class="address">{{item.address}}</div>
 				<button class="change">更換地點</button>
 			</div>
 		</div>
@@ -17,7 +17,7 @@
 </template>
 
 <script>
-//import axios from "axios"
+import axios from "axios"
 export default {
 	name: 'DetailedRoute',
   data() {
@@ -37,10 +37,33 @@ export default {
 	methods: {
 		getViewpoint() {
 			this.points = this.route.split('>').map(point => point);
-			for(var i =0;i<this.viewpoint.length;i++) {
-			this.viewpoint[i].name = this.points[i];
+			for(var i = 0;i < this.viewpoint.length;i++) {
+				this.viewpoint[i].name = this.points[i];
+				console.log(this.viewpoint[i].name);
+				this.getAddress(i, this.viewpoint[i].name);
+				
+				// console.log(this.viewpoint[i].address);
 			}
-			console.log(this.viewpoint);
+		},
+		getAddress(index, name) {
+			const url = 'http://127.0.0.1:5000/findAddress';
+			name = String(name);
+			console.log(index, name);
+      axios.get(url, {
+        params: {
+          aName: name,
+        }
+      })
+      .then((response) => {
+				let a = response.data;
+				console.log(a);
+				//this.viewpoint[index].address = response.data;
+				//console.log(this.viewpoint[index].address);
+      })
+      .catch(error => {
+				console.log("fail");
+        console.log(error.response);
+      })
 		},
 		getInformation(id){
 			this.$router.push({path:'Information', query:{viewpoint: this.viewpoint[id].name}});
