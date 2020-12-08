@@ -371,12 +371,11 @@ def changePoint():
         view.append(resId[index][2])
         maxDist = haversine(attraction[view[0]][6], attraction[view[0]][5], attraction[view[1]][6], attraction[view[1]][5])
         changeTheSecond(resId, index, view, aList, maxDist)
+        return str(result[index][1])
     elif change == 2:
         view.append(resId[index][1])
         changeTheLast(resId, index, view, aList, mList)
-    
-    resTmp = ",".join(result[index])
-    return resTmp
+        return str(result[index][2])
 
 @app.route('/addPoint', methods=['GET'])
 def addPoint():
@@ -414,6 +413,16 @@ def pointDetail():
     detail.append(str(attraction[aId][4]))
     resDetail = ">".join(detail)
     return str(resDetail)
+
+@app.route('/changeOrAddAddress', methods=['GET'])
+def changeOrAddAddress():
+    routeIdx = request.args.get('routeIdx')
+    pointIdx = request.args.get('pointIdx')
+    routeIdx = int(routeIdx)
+    pointIdx = int(pointIdx)
+    newId = resId[routeIdx][pointIdx]
+    newAddress = attraction[newId][2]
+    return str(newAddress)
 
 # 隨輸入更改之參數
 userInput = "高雄車站"       #使用者輸入關鍵字找出最近景點
