@@ -171,8 +171,6 @@ def data(view, attraction, mrelated, aList, mWeight, isTag, mList, isMrt):
 def firstRecommend():
     start = request.args.get('start')
     inputTags = request.args.get('inputTags')
-    # result = [[] for i in range(5)]
-    # resId = [[] for i in range(5)]
     mList = []              #紀錄計算過程中有用到的捷運站
     view = []               #暫存上一個點
     aList = {}              #暫存景點結果（景點id+加權後分數）
@@ -180,15 +178,27 @@ def firstRecommend():
     start = int(start)
     if len(checkMrt) > 0:
         start = checkMrt[0]
-        for i in range(5):
-            result[i].append(mrt[start][1])
-            resId[i].append(start)
-            allList.append(start)
+        if len(result[0]) > 0:
+            for i in range(5):
+                result[i][0] = mrt[start][1]
+                resId[i][0] = start
+                allList.append(start)
+        else:
+            for i in range(5):
+                result[i].append(mrt[start][1])
+                resId[i].append(start)
+                allList.append(start)
     else:
-        for i in range(5):               #第一層景點（使用者輸入的）
-            result[i].append(attraction[start][1])
-            resId[i].append(start)
-            allList.append(start)
+        if len(result[0]) > 0:
+            for i in range(5):
+                result[i][0] = attraction[start][1]
+                resId[i][0] = start
+                allList.append(start)
+        else:
+            for i in range(5):               #第一層景點（使用者輸入的）
+                result[i].append(attraction[start][1])
+                resId[i].append(start)
+                allList.append(start)
     tag = [n for n in inputTags.split()] #記錄所有tag
     if len(tag) != 0:                    #有輸入tag
         for i in tags:
@@ -210,7 +220,11 @@ def firstRecommend():
     copyOfmList = copy.copy(mList)
 
     for i in range(5):
-        if len(resList) > i:
+        if len(resList) > i and len(result[i]) > 1:
+            result[i][1] = attraction[resList[i][0]][1]
+            resId[i][1] = resList[i][0]
+            allList.append(resList[i][0])
+        elif len(resList) > i:
             result[i].append(attraction[resList[i][0]][1])
             resId[i].append(resList[i][0])
             allList.append(resList[i][0])
@@ -231,8 +245,12 @@ def firstRecommend():
 
         if len(aList) != 0:
             maxScore = max(aList, key=aList.get)
-            result[i].append(attraction[maxScore][1])
-            resId[i].append(maxScore)
+            if len(result[i]) > 2:
+                result[i][2] = attraction[maxScore][1]
+                resId[i][2] = maxScore
+            else:
+                result[i].append(attraction[maxScore][1])
+                resId[i].append(maxScore)
             allList.append(maxScore)
         if len(result[i]) > 1:
             tmpStr = ">".join(result[i])
@@ -385,6 +403,17 @@ def addPoint():
     
     resTmp = ",".join(result[index])
     return resTmp
+
+@app.route('/pointDetail', methods=['GET'])
+def pointDetail():
+    aId = request.args.get('aId')
+    aId = int(aId)
+    detail = []
+    detail.append(attraction[aId][2])
+    detail.append(str(attraction[aId][3]))
+    detail.append(str(attraction[aId][4]))
+    resDetail = ">".join(detail)
+    return str(resDetail)
 
 # 隨輸入更改之參數
 userInput = "高雄車站"       #使用者輸入關鍵字找出最近景點
