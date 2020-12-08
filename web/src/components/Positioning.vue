@@ -121,7 +121,7 @@ export default {
 }
 .container {
   position: relative;
-  margin: 30px auto;
+  margin: 51px auto;
   width: 316px;
   height: 311px;
   display: flex;
@@ -165,7 +165,7 @@ export default {
 .step {
   position: relative;
   height: 60px;
-  margin: 30px auto;
+  margin: 64px auto;
   display: flex;
   flex-direction: row;
   justify-content: center;

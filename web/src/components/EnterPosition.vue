@@ -10,11 +10,13 @@
     <div class="content">請輸入你的出發地</div>
     <div class="block">
       <div class="inputbox">
-      <input v-model="place" 
+      <input v-model="inputPlace" 
+             placeholder="請輸入你的出發地"
              class ="inputPlace" 
              type="text"
-             @input="checkInput"
-      >
+             @input = "inputDeparture" 
+      >{{inputPlace}}
+      <div v-for="item in searchPlace" :key="item">{{item.name}}</div>
       </div>
       <div class="hint" :class="{active: checkInput}">請輸入高雄地標</div>
     </div>
@@ -31,6 +33,7 @@
 </template>
 
 <script>
+import axios from "axios";
 export default {
   name: 'Positioning',
   props: {
@@ -42,12 +45,16 @@ export default {
   data () {
     return {
       isChoose: false,
-      place: '',
+      inputPlace: '',
       isValid: false,
       check: 0,
+      searchPlace: [{
+        id: 0,
+        name: ''
+      }],
+      departure: '',
     };
-  },
-    
+  }, 
   methods: {
     checkInput (){
       if(this.isValid==true){
@@ -59,6 +66,21 @@ export default {
     },
     next () {
       this.$router.go('/');
+    },
+    inputDeparture() {
+      const url = 'http://127.0.0.1:5000/findAllViewpoint';
+        axios.get(url, {
+          params: {
+            userInput: this.inputPlace 
+          }
+        })
+        .then((response) => {
+          this.searchPlace = response.data;
+          console.log(this.searchPlace);
+        })
+        .catch(error => {
+          console.log(error.response);
+        })
     }
   }
 }
@@ -90,7 +112,7 @@ export default {
 }
 .container {
   position: relative;
-  margin: 30px auto;
+  margin: 51px auto;
   width: 316px;
   height: 311px;
   display: flex;
@@ -145,7 +167,7 @@ export default {
 .step {
   position: relative;
   height: 60px;
-  margin: 30px auto;
+  margin: 64px auto;
   display: flex;
   flex-direction: row;
   justify-content: center;

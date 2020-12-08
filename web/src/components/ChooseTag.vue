@@ -26,6 +26,7 @@
 </template>
 
 <script>
+import axios from "axios"
 export default {
   name: 'Positioning',
   props: {
@@ -42,9 +43,12 @@ export default {
         {value: '自然風景', checked: true, id: "2"},
         {value: '購物消費', checked: true, id: "3"},
         {value: '休閒娛樂', checked: true, id: "4"},
-        {value: '藝術文化', checked: true, id: "5"}
-     ],
-      inputTag: ''
+        {value: '藝術文化', checked: true, id: "5"},
+        {value: '歷史古蹟', checked: true, id: "6"}
+      ],
+      departure: '',
+      inputTag: '',
+      routes: []
     };
   },
 
@@ -57,15 +61,33 @@ export default {
       this.$router.go(-1);
     },
     next () {
-      let departure = this.$route.query.place;
+      this.departure = this.$route.query.place;
       let tag = this.preferences;
       for(var i = 0; i < this.preferences.length; i++){
         if(tag[i].checked){
           this.inputTag += tag[i].value + " ";
         }
       }
-      console.log(departure, this.inputTag);
-      this.$router.push({path:'Routes', query:{place: departure, inputTags: this.inputTag}});
+      console.log(this.departure, this.inputTag);
+      this.listRoutes();
+    },
+    listRoutes () {
+      const url = 'http://127.0.0.1:5000/firstRecommend';
+      axios.get(url, {
+        params: {
+          start: this.departure,
+          inputTags: this.inputTag,
+        }
+      })
+      .then((response) => {
+          let routes = response.data.split(',');
+          this.routes = routes;
+          console.log(routes[0]);
+          this.$router.push({path:'Routes', query:{routes: routes}});
+      })
+      .catch(error => {
+        console.log(error.response);
+      })
     }
   }
 }
@@ -122,11 +144,11 @@ export default {
     align-content: center;
     color: #ffffff;
     .check {
-        position: absolute;
-        margin: 5px 9px 5px 271px;
-        width: 30px;
-        height: 30px;
-        background-image: url("../assets/check.svg");
+      position: absolute;
+      margin: 5px 9px 5px 271px;
+      width: 30px;
+      height: 30px;
+      background-image: url("../assets/check.svg");
     }
     &.checked {
       background-color: #738EEB;

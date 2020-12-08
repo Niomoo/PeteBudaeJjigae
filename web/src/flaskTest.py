@@ -19,7 +19,7 @@ app = Flask(__name__)
 CORS(app)
 
 # 連接資料庫
-conn = pymysql.connect(host="sql12.freemysqlhosting.net", port=3306, user="sql12379125", password="JgrqLxSF6S",db="sql12379125")
+conn = pymysql.connect(host="remotemysql.com", port=3306, user="p8LeiouBvk", password="a8ELsuTVty",db="p8LeiouBvk")
 cursor = conn.cursor()
 
 # 抓DB資料存成list或dict
@@ -233,13 +233,12 @@ def firstRecommend():
             resId[i].append(maxScore)
             allList.append(maxScore)
         if len(result[i]) > 1:
-            tmpStr = " ".join(result[i])
+            tmpStr = ">".join(result[i])
             route.append(tmpStr)
             print(result[i])
         else:
             route.append("查無景點路線")
             print("查無景點路線")
-    
     routeStr = ",".join(route)
     return str(routeStr)
 
