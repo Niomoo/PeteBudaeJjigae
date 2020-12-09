@@ -10,8 +10,10 @@
 					<div class="name">{{item.name}}</div>
 				</div>
 				<div class="address">{{item.address}}</div>
-				<button class="change">更換地點</button>
+				<button class="change" v-if="item.isChanged">更換地點</button>
 			</div>
+			<button class="add"></button>
+			<button class="finish">規劃完成</button>
 		</div>
   </div>
 </template>
@@ -26,9 +28,9 @@ export default {
 			id: this.$route.query.id,
 			points:[],
 			viewpoint: [
-				{ id: 0, number: '一'}, 
-				{ id: 1, number: '二'}, 
-				{ id: 2, number: '三'}
+				{ id: 0, isChanged: false, number: '一'}, 
+				{ id: 1, isChanged: true, number: '二'}, 
+				{ id: 2, isChanged: true, number: '三'}
 			],
     }
 	},
@@ -72,7 +74,7 @@ export default {
       })
 		},
 		getInformation(id){
-			this.$router.push({path:'Information', query:{viewpoint: this.viewpoint[id].name}});
+			this.$router.push({path:'Information', query:{name: this.viewpoint[id].name,address: this.viewpoint[id].address}});
 		}
 	}
 }
@@ -83,14 +85,16 @@ export default {
 	position: relative;
 	margin: 30px auto;
 	width: 300px;
-	height: 550px;
+	height: 580px;
 	background-color: #5164AB;
 	border-radius: 20px;
-	padding: 19px 30px;
+	padding: 19px 30px 19px 30px;
 	.detail {
-		position: relative;
 		display: flex;
 		flex-direction: column;
+		overflow: scroll;
+		width: 300px;
+		height: 100%;
 		.viewpoint {
 			.number {
 				width: 123px;
@@ -107,11 +111,10 @@ export default {
 			.block {
 				display: flex;
 				flex-direction: row;
-				height: 40px;
-				margin: 16px 0px;
+				margin: 16px 0px 0px 0px;
 				justify-content: flex-start;
 				align-content: center;
-				button {
+				.more {
 					z-index: 9999;
 					margin: 2px 14px 0px 0px;
 					width: 27px;
@@ -125,16 +128,18 @@ export default {
 					text-align: left;
 					font-size: 24px;
 					color: #ffffff;
-					
+					margin-bottom: 10px;
 				}
 			}
 			.address {
+				display: flex;
+				justify-content: flex-start;
+				margin-bottom: 10px;
+				font-size: 20px;
 				color: #ffffff;
 			}
-			button {
-				position: relative;
-				margin: 10px 0px 3px 164px;
-				right: 0px;
+			.change {
+				margin: 0px 0px 3px 190px;
 				padding: 5px 10px;
 				width: 101px;
 				height: 33px;
@@ -146,6 +151,32 @@ export default {
 				letter-spacing: 0.15px;
 				font-size: 20px;
 			}
+		}
+		.add {
+			z-index: 9999;
+			padding: 31px 0;
+			width: 62px;
+			height: 62px;
+			border: none;
+			margin: 10px auto;
+			background-color: transparent;
+			background-image: url("../assets/addBtn.svg");
+		}
+		.finish {
+			position: relative;
+			width: 177px;
+			height: 60px;
+			padding: 10px;
+			margin: 13px auto;
+			text-align: center;
+			font-size: 34px;
+			line-height: 40px;
+			letter-spacing: 0.25px;
+			color: #ffffff;
+			border: 0;
+			border-radius: 10px;
+			background-color: #738EEB;
+			box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
 		}
 	}
 }
