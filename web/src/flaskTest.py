@@ -383,25 +383,33 @@ def addPoint():
     index = int(addIndex)
     mList = []
     aList = {}
-    allChoice = {}
+    allChoice = []
 
     text(resId[index], attraction, arelated, aList, aWeight, isTag)
     nearby(resId[index], attraction, aList, dWeight, isTag, mList)
     data(resId[index], attraction, mrelated, aList, mWeight, isTag, mList, isMrt)
 
     if len(aList) == 0:
-        print("沒有更好的景點了！")
         print(result[index])
+        return "沒有更好的景點了！"
     elif len(resId[index]) < 6:
         for i in aList:
-            allChoice[i] = attraction[i][1]
-        return allChoice    #所有可新增的路線
+            tmpStr = str(i) + "," + attraction[i][1]
+            allChoice.append(tmpStr)
+        resChoice = ">".join(allChoice)
+        return str(resChoice)    #所有可新增的路線
     else:
-        print("已達景點數上限！")
         print(result[index])
-    
-    resTmp = ",".join(result[index])
-    return resTmp
+        return "已達景點數上限！"
+
+@app.route('/verifyAddPoint', methods=['GET'])
+def verifyAddPoint():
+    routeIdx= request.args.get('routeIdx')
+    idx= request.args.get('idx')
+    routeIdx = int(routeIdx)
+    idx = int(idx)
+    result[routeIdx].append(attraction[idx][1])
+    resId[routeIdx].append(idx)
 
 @app.route('/pointDetail', methods=['GET'])
 def pointDetail():
