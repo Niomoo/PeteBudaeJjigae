@@ -1,4 +1,5 @@
 <template>
+	<div>
   <div class="container">
 		<div class="detail">
 			<div class="viewpoint" 
@@ -12,18 +13,32 @@
 				<div class="address">{{item.address}}</div>
 				<button class="change" @click="getChangeViewpoint(item.id)" v-if="item.isChanged">更換地點</button>
 			</div>
-			<button class="add"></button>
+			<button class="add" @click="showAddPointConfirm = true"></button>
 			<button class="finish">規劃完成</button>
 		</div>
   </div>
+	<Modal
+		:show="showAddPointConfirm"
+    cancel-text="取消"
+    ok-text="確定"
+    @ok="getNewViewpoint"
+    @cancel="showAddPointConfirm = false">
+		<div>開始新增後就無法更換囉</div>
+	</Modal>
+	</div>
 </template>
 
 <script>
 import axios from "axios"
+import Modal from "./Modal"
 export default {
 	name: 'DetailedRoute',
+	components: {
+		Modal
+	},
   data() {
     return {
+			showAddPointConfirm: false,
 			route: JSON.parse(this.$route.query.route),
 			id: this.$route.query.id,
 			points:[],
@@ -76,13 +91,36 @@ export default {
         }
       })
       .then((response) => {
-				let data = response.data;
-				console.log(data);
+				let data = response.data.split(',');
+				this.viewpoint[index].pid = data[0];
+				this.viewpoint[index].name = data[1];
+				this.getNewAddress(index);
 			})
       .catch(error => {
 				console.log("fail");
         console.log(error.response);
       })
+		},
+		getNewAddress(index) {
+			const url = 'http://127.0.0.1:5000/changeOrAddAddress';
+      axios.get(url, {
+        params: {
+					routeIdx: this.id,
+					pointIdx: index
+        }
+      })
+      .then((response) => {
+				let data = response.data;
+				this.viewpoint[index].address = data;
+			})
+      .catch(error => {
+				console.log("fail");
+        console.log(error.response);
+      })
+		},
+		getNewViewpoint(){
+			this.viewpoint.isChanged = false;
+			this.$router.push({path:'AddPoint', query: {id: this.id}});
 		}
 	}
 }
@@ -123,7 +161,6 @@ export default {
 				justify-content: flex-start;
 				align-content: center;
 				.more {
-					z-index: 9999;
 					margin: 2px 14px 0px 0px;
 					width: 27px;
 					height: 27px;
@@ -161,7 +198,6 @@ export default {
 			}
 		}
 		.add {
-			z-index: 9999;
 			padding: 31px 0;
 			width: 62px;
 			height: 62px;
