@@ -175,6 +175,7 @@ def firstRecommend():
     view = []               #暫存上一個點
     aList = {}              #暫存景點結果（景點id+加權後分數）
     route = []              #回傳所有路線
+    idName = [[] for i in range(5)]
     start = int(start)
     if len(checkMrt) > 0:
         start = checkMrt[0]
@@ -253,7 +254,10 @@ def firstRecommend():
                 resId[i].append(maxScore)
             allList.append(maxScore)
         if len(result[i]) > 1:
-            tmpStr = ">".join(result[i])
+            for n in range(len(result[i])):
+                tmp = str(resId[i][n]) + "@" + result[i][n]
+                idName[i].append(tmp)
+            tmpStr = ">".join(idName[i])
             route.append(tmpStr)
             print(result[i])
         else:
@@ -371,11 +375,13 @@ def changePoint():
         view.append(resId[index][2])
         maxDist = haversine(attraction[view[0]][6], attraction[view[0]][5], attraction[view[1]][6], attraction[view[1]][5])
         changeTheSecond(resId, index, view, aList, maxDist)
-        return str(result[index][1])
+        anotherPoint = str(resId[index][1]) + "," + result[index][1]
+        return str(anotherPoint)
     elif change == 2:
         view.append(resId[index][1])
         changeTheLast(resId, index, view, aList, mList)
-        return str(result[index][2])
+        anotherPoint = str(resId[index][2]) + "," + result[index][2]
+        return str(anotherPoint)
 
 @app.route('/addPoint', methods=['GET'])
 def addPoint():
@@ -449,6 +455,7 @@ addIndex = 0            #以result第一筆作為更改範例
 checkMrt =[]                         #判斷使用者是否輸入捷運站作為關鍵字
 result = [[] for i in range(5)]      #紀錄最後路線結果
 resId = [[] for i in range(5)]       #紀錄最後路線結果id
+idName = [[] for i in range(5)]      #id+名字
 allList = []                         #記錄景點id（判斷用）
 isTag = []                           #紀錄符合tag的景點們
 copyOfmList = []                     #紀錄最初捷運站（跑後面的路線會用到）
