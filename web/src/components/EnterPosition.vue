@@ -14,8 +14,10 @@
              placeholder="請輸入你的出發地"
              class ="inputPlace" 
              type="text"
-             @input = "inputDeparture" 
-      >{{inputPlace}}
+      >
+      <select name="searchPlace.name" id="searchPlace.id" class="searchPlace">
+        <option value="searchPlace">{{searchPlace.name}}</option>
+      </select>
       <div v-for="item in searchPlace" :key="item">{{item.name}}</div>
       </div>
       <div class="hint" :class="{active: checkInput}">請輸入高雄地標</div>
@@ -48,13 +50,15 @@ export default {
       inputPlace: '',
       isValid: false,
       check: 0,
-      searchPlace: [{
-        id: 0,
-        name: ''
-      }],
+      searchPlace: [],
       departure: '',
     };
   }, 
+  watch: {
+    inputPlace() {
+      this.inputDeparture();
+    }
+  },
   methods: {
     checkInput (){
       if(this.isValid==true){
@@ -75,7 +79,12 @@ export default {
           }
         })
         .then((response) => {
-          this.searchPlace = response.data;
+          let data = response.data;
+          for(var i = 0;i < this.data.length;i++) {
+            this.searchPlace[i].id = data[i];
+            this.searchPlace[i].name = data[i];
+            console.log(this.searchPlace[i].id, this.searchPlace[i].name);
+          }	
           console.log(this.searchPlace);
         })
         .catch(error => {
