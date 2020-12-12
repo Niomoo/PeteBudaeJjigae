@@ -49,6 +49,22 @@ export default {
 					console.log(error);
 			});
 		},
+		getDetail() {
+			const url = 'http://127.0.0.1:5000/point';
+      axios.get(url, {
+        params: {
+					aId: this.id
+        }
+      })
+      .then((response) => {
+				let data = response.data;
+				console.log(data);
+			})
+      .catch(error => {
+				console.log("fail");
+        console.log(error.response);
+      })
+		}
 	}
 }
 </script>
@@ -78,6 +94,7 @@ export default {
 			color: #ffffff;
 			font-size: 20px;
 			line-height: 25px;
+			word-break: break-all;
 			.d {
 				margin-top: 25px;
 			}

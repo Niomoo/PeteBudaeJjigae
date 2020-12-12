@@ -10,7 +10,7 @@
 					<div class="name">{{item.name}}</div>
 				</div>
 				<div class="address">{{item.address}}</div>
-				<button class="change" v-if="item.isChanged">更換地點</button>
+				<button class="change" @click="getChangeViewpoint(item.id)" v-if="item.isChanged">更換地點</button>
 			</div>
 			<button class="add"></button>
 			<button class="finish">規劃完成</button>
@@ -63,10 +63,7 @@ export default {
 				for(var i = 0;i < this.viewpoint.length;i++) {
 					this.viewpoint[i].address = data[i];
 					console.log(this.viewpoint[i].address);
-				}
-				// this.viewpoint[index].address = response.data;
-				// console.log(this.viewpoint[index].address);
-				
+				}				
       })
       .catch(error => {
 				console.log("fail");
@@ -75,6 +72,23 @@ export default {
 		},
 		getInformation(id){
 			this.$router.push({path:'Information', query:{name: this.viewpoint[id].name,address: this.viewpoint[id].address}});
+		},
+		getChangeViewpoint(index){
+			const url = 'http://127.0.0.1:5000/changePoint';
+      axios.get(url, {
+        params: {
+					changeIndex: this.id,
+					change: index
+        }
+      })
+      .then((response) => {
+				let data = response.data;
+				console.log(data);
+			})
+      .catch(error => {
+				console.log("fail");
+        console.log(error.response);
+      })
 		}
 	}
 }
@@ -124,7 +138,7 @@ export default {
 					background-image: url("../assets/info.svg");
 				}
 				.name {
-					width: 224px;
+					width: 270px;
 					text-align: left;
 					font-size: 24px;
 					color: #ffffff;
