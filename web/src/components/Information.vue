@@ -4,9 +4,9 @@
 		<div class="name">{{name}}</div>
 		<img :src="imgUrl"/>
 		<div class="info">
-			<div class="info a">地址：{{address}}</div>	
-			<div class="info b">評價星數：{{star}}</div>
-			<div class="info c">評價人數：{{comments}}</div>			
+			<div class="info a">地址：{{detail.address}}</div>	
+			<div class="info b">評價星數：{{detail.star}}</div>
+			<div class="info c">評價人數：{{detail.comments}}</div>			
 			<div class="info d">簡介：{{info}}</div>
 		</div>
   </div>
@@ -19,16 +19,16 @@ export default {
 	name: 'Information',
 	data() {
 		return {
+			pid: this.$route.query.pid,
 			name: this.$route.query.name,
-			address: this.$route.query.address,
-			star: 0.0,
-			comments: 0,
+			detail: [],
 			info: "",
 			imgUrl: "",
 			data: [],
 		}
 	},
 	mounted() {
+		this.getDetail();
 		this.getInformation();
 	},
 	methods: {
@@ -37,9 +37,7 @@ export default {
 			.then(response => {
 				this.data = response.data;
 				for(var i = 0; i < this.data.length; i++) {
-				if (this.data[i].aName == this.name) {
-					console.log(this.data[i].aImage)
-					console.log(this.data[i].aIntroduction);
+				if (this.data[i].aId == this.pid) {
 					this.imgUrl = this.data[i].aImage;
 					this.info = this.data[i].aIntroduction;
 				}				
@@ -50,15 +48,18 @@ export default {
 			});
 		},
 		getDetail() {
-			const url = 'http://127.0.0.1:5000/point';
+			const url = 'http://127.0.0.1:5000/pointDetail';
       axios.get(url, {
         params: {
-					aId: this.id
+					aId: this.pid
         }
       })
       .then((response) => {
-				let data = response.data;
-				console.log(data);
+				let data = response.data.split('>').map((point) => point);
+				this.detail.address = data[0];
+				this.detail.star = data[1];
+				this.detail.comments = data[2];
+				console.log(this.detail);
 			})
       .catch(error => {
 				console.log("fail");

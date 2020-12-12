@@ -82,7 +82,6 @@ export default {
       .then((response) => {
           let routes = response.data.split(',');
           this.routes = routes;
-          console.log(routes[0]);
           this.$router.push({path:'Routes', query:{routes: routes}});
       })
       .catch(error => {

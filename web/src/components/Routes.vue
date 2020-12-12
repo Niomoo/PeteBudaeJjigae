@@ -1,33 +1,113 @@
 <template>
-<div>
-  <div class="content">推薦旅遊路線</div>
+  <div>
+    <div class="content">推薦旅遊路線</div>
     <div class="recommendation">
-      <div v-for="(route, index) in routes"
-          :key="route"
-          @click="handleClick(route, index)"
-          class="routes">{{ route }}
+      <div
+        v-for="(item, index) in route"
+        :key="item"
+        @click="handleClick(item, index)"
+        :pid="item.viewpoint.pid"
+        :pname="item.viewpoint.name"
+        class="routes"
+      >
+        {{ item.display }}
+      </div>
     </div>
-    </div>
-</div>
+  </div>
 </template>
 
 <script>
 export default {
-  name: 'Routes',
-  data () {
+  name: "Routes",
+  data() {
     return {
       routes: this.$route.query.routes,
-      chooseRoute: []
+      route: [
+        {
+          id: 1,
+          viewpoint: [
+            { pid: 0, isEnd: false, name: "" },
+            { pid: 1, isEnd: false, name: "" },
+            { pid: 2, isEnd: true, name: "" },
+          ],
+          display: "",
+        },
+        {
+          id: 2,
+          viewpoint: [
+            { pid: 0, isEnd: false, name: "" },
+            { pid: 1, isEnd: false, name: "" },
+            { pid: 2, isEnd: true, name: "" },
+          ],
+          display: "",
+        },
+        {
+          id: 3,
+          viewpoint: [
+            { pid: 0, isEnd: false, name: "" },
+            { pid: 1, isEnd: false, name: "" },
+            { pid: 2, isEnd: true, name: "" },
+          ],
+          display: "",
+        },
+        {
+          id: 4,
+          viewpoint: [
+            { pid: 0, isEnd: false, name: "" },
+            { pid: 1, isEnd: false, name: "" },
+            { pid: 2, isEnd: true, name: "" },
+          ],
+          display: "",
+        },
+        {
+          id: 5,
+          viewpoint: [
+            { pid: 0, isEnd: false, name: "" },
+            { pid: 1, isEnd: false, name: "" },
+            { pid: 2, isEnd: true, name: "" },
+          ],
+          display: "",
+        },
+      ],
+      chooseRoute: [],
     };
   },
-  
+  mounted() {
+    this.getRoute();
+  },
   methods: {
+    getRoute() {
+      for (var i = 0; i < this.routes.length; i++) {
+        let route = this.routes[i].split(">").map((point) => point);
+        for (var j = 0; j < route.length; j++) {
+          let data = route[j];
+          let point = data.split("@").map((point) => point);
+          this.route[i].viewpoint[j].pid = point[0];
+          this.route[i].viewpoint[j].name = point[1];
+        }
+      }
+      this.displayRoute();
+    },
+    displayRoute() {
+      for (var i = 0; i < this.route.length; i++) {
+        for (var j = 0; j < this.route[i].viewpoint.length; j++) {
+          this.route[i].display += this.route[i].viewpoint[j].name;
+          if (this.route[i].viewpoint[j].isEnd == false) {
+            this.route[i].display += " > ";
+          }
+        }
+      }
+      console.log(this.route);
+    },
     handleClick(el, index) {
-      this.chooseRoute = el;
-      this.$router.push({path:'DetailedRoute', query:{route: this.chooseRoute, id: index}});
-    }
-  }
-}
+      this.chooseRoute = el.viewpoint;
+      this.$router.push({
+        path: "DetailedRoute",
+        query: { route: JSON.stringify(this.chooseRoute), id: index },
+      });
+    },
+  },
+};
 </script>
 
 <style lang="scss" scoped>
@@ -49,7 +129,7 @@ export default {
     margin: 0px auto 18px auto;
     width: 320px;
     padding: 10px 10px;
-    background-color: #738EEB;
+    background-color: #738eeb;
     border-radius: 5px;
     line-height: 38.4px;
     font-size: 24px;
@@ -57,6 +137,6 @@ export default {
     text-align: left;
     align-content: center;
     color: #ffffff;
-  };
+  }
 }
 </style>

@@ -24,7 +24,7 @@ export default {
 	name: 'DetailedRoute',
   data() {
     return {
-			route: this.$route.query.route,
+			route: JSON.parse(this.$route.query.route),
 			id: this.$route.query.id,
 			points:[],
 			viewpoint: [
@@ -40,18 +40,13 @@ export default {
 	},
 	methods: {
 		getViewpoint() {
-			this.points = this.route.split('>').map(point => point);
-			for(var i = 0;i < this.viewpoint.length;i++) {
-				this.viewpoint[i].name = this.points[i];
-				console.log(this.viewpoint[i].name);
-				// this.getAddress(i, this.viewpoint[i].name);			
-				// console.log(this.viewpoint[i].address);
+			for(var i = 0;i < this.viewpoint.length;i++){
+				this.viewpoint[i].pid = this.route[i].pid;
+				this.viewpoint[i].name = this.route[i].name;
 			}
-			console.log(this.id);
 		},
 		getAddress() {
 			const url = 'http://127.0.0.1:5000/findAddress';
-			// name = "'" + name + "'";
       axios.get(url, {
         params: {
 					Id: this.id,
@@ -59,11 +54,10 @@ export default {
       })
       .then((response) => {
 				let data = response.data.split('>').map(point => point);
-				console.log(data);
 				for(var i = 0;i < this.viewpoint.length;i++) {
 					this.viewpoint[i].address = data[i];
-					console.log(this.viewpoint[i].address);
 				}				
+				console.log(this.viewpoint);
       })
       .catch(error => {
 				console.log("fail");
@@ -71,7 +65,7 @@ export default {
       })
 		},
 		getInformation(id){
-			this.$router.push({path:'Information', query:{name: this.viewpoint[id].name,address: this.viewpoint[id].address}});
+			this.$router.push({path:'Information', query:{pid: this.viewpoint[id].pid, name: this.viewpoint[id].name}});
 		},
 		getChangeViewpoint(index){
 			const url = 'http://127.0.0.1:5000/changePoint';

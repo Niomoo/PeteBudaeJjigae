@@ -51,7 +51,6 @@ export default {
   methods: {
     ChooseWay(way) {
       this.btnChoose = way;
-      this.isChoose = true;
       if(this.btnChoose == 2) {
         navigator.geolocation.getCurrentPosition(this.success, this.error);
       }
@@ -83,6 +82,7 @@ export default {
         .then((response) => {
           this.place = response.data;
           console.log(this.place);
+          this.isChoose = true;
         })
         .catch(error => {
           console.log(error.response);
