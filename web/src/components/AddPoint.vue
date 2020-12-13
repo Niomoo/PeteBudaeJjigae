@@ -96,7 +96,8 @@ export default {
 		},
 		confirmAddition(el){
 			const url = "http://127.0.0.1:5000/verifyAddPoint";
-			console.log(el);
+      console.log(el);
+      console.log(this.id);
       axios
         .get(url, {
           params: {

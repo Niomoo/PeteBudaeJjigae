@@ -416,6 +416,7 @@ def verifyAddPoint():
     idx = int(idx)
     result[routeIdx].append(attraction[idx][1])
     resId[routeIdx].append(idx)
+    return str(idx)
 
 @app.route('/pointDetail', methods=['GET'])
 def pointDetail():
