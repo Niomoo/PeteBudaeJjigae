@@ -2,21 +2,21 @@
   <div>
     <div class="content">新增景點{{ choose.name }}</div>
     <div class="container">
-      <div
+      <span
         v-for="item in viewpoint"
         :key="item"
         class="viewpoint"
-        :class="{ active: item.checked }"
-      >
+				:class="{ active: item.checked }"
+			>
         <div class="block">
           <div class="name">{{ item[1] }}</div>
-          <button class="more" @click="getInformation(item.id)"></button>
+          <button class="more" @click="getInformation(item[0], item[1])"></button>
         </div>
-        <div class="address">{{ item.address }}</div>
-        <button class="add" @click="handleClick(item)">選擇加入</button>
-      </div>
+        <div class="address">{{ item[3] }}</div>
+				<button class="add" @click="handleClick(item)">選擇加入</button>
+      </span>
     </div>
-    <button class="confirm" :class="{ active: isChoose }">確定更改</button>
+    <button class="confirm" @click="confirmAddition(choose[0])" :class="{ active: isChoose }">確定更改</button>
   </div>
 </template>
 
@@ -34,7 +34,7 @@ export default {
     };
   },
   mounted() {
-    this.getNewPoint();
+		this.getNewPoint();
   },
   methods: {
     getNewPoint() {
@@ -48,21 +48,71 @@ export default {
         .then((response) => {
           this.data = response.data.split(">").map((point) => point);
           for (var i = 0; i < this.data.length; i++) {
-						this.viewpoint[i] = this.data[i].split(",").map((point) => point);
-						this.viewpoint[i].push({checked: false});
-          }
-          console.log(this.viewpoint);
+            this.viewpoint[i] = this.data[i].split(",").map((point) => point);
+						this.viewpoint[i].push({ checked: false });
+						this.getNewAddress(i, this.viewpoint[i][0]);
+						// this.viewpoint[i].push({ address: this.getNewAddress(i, this.viewpoint[i][0])});
+					}
+					console.log(this.viewpoint);
         })
         .catch((error) => {
           console.log("fail");
           console.log(error.response);
         });
-    },
+		},
+		getNewAddress(index, id) {
+      const url = "http://127.0.0.1:5000/addPointAddress";
+      axios
+        .get(url, {
+          params: {
+            aId: id,
+          },
+        })
+        .then((response) => {
+					let result = response.data;
+					result = String(result);
+					this.viewpoint[index].push(result);
+        })
+        .catch((error) => {
+          console.log("fail");
+          console.log(error.response);
+        });
+		},
+		getInformation(id, name){
+			this.$router.push({path:'Information', query:{pid: id, name: name}});
+		},
     handleClick(el) {
-			this.isChoose = !this.isChoose;
-			el.checked = !el.checked;
-      this.choose = el;
-    },
+			this.choose = el;
+			this.isChoose = true;
+			for(var i = 0; i < this.viewpoint.length; i++){
+				if(this.viewpoint[i] == el){
+					this.viewpoint[i].checked = true;
+				}
+				else{
+					this.viewpoint[i].checked = false;
+				}
+			}
+			console.log(this.choose);
+		},
+		confirmAddition(el){
+			const url = "http://127.0.0.1:5000/verifyAddPoint";
+			console.log(el);
+      axios
+        .get(url, {
+          params: {
+						routeIdx: this.id,
+						idx: el,
+          },
+        })
+        .then((response) => {
+					console.log(response);
+					// this.$router.push({path:'DetailedRoute'});
+        })
+        .catch((error) => {
+          console.log("fail");
+          console.log(error.response);
+        });
+		}
   },
 };
 </script>
@@ -91,7 +141,7 @@ export default {
     background-color: #738eeb;
     border-radius: 20px;
     &.active {
-      background-color: #40559F;
+      background-color: #40559f;
     }
     .block {
       display: flex;
@@ -118,6 +168,7 @@ export default {
     }
     .address {
       display: flex;
+			margin-left: 30px;
       justify-content: flex-start;
       margin-bottom: 10px;
       font-size: 20px;

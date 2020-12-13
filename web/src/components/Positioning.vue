@@ -21,7 +21,7 @@
     <button class="prev btn rounded ripple" @click="previous">
       上一步
       </button>
-    <button class="next btn rounded ripple" :class="{active: isChoose}" @click="next">
+    <button class="next btn rounded ripple" :disabled="!isChoose" :class="{active: isChoose}" @click="next">
       下一步
     </button>
   </div>
