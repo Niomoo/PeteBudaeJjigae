@@ -438,6 +438,13 @@ def changeOrAddAddress():
     newAddress = attraction[newId][2]
     return str(newAddress)
 
+@app.route('/addPointAddress', methods=['GET'])
+def addPointAddress():
+    aId = request.args.get('aId')
+    aId = int(aId)
+    newAddress = attraction[aId][2]
+    return str(newAddress)
+
 # 隨輸入更改之參數
 userInput = "高雄車站"       #使用者輸入關鍵字找出最近景點
 lng = float(125)        #定位使用者經度
