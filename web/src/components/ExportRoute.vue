@@ -83,44 +83,6 @@ export default {
 				font-size: 20px;
 				color: #ffffff;
 			}
-			.change {
-				margin: 0px 0px 3px 190px;
-				padding: 5px 10px;
-				width: 101px;
-				height: 33px;
-				background-color: #ffffff;
-				color: #5164AB;
-				border: none;
-				border-radius: 10px;
-				line-height: 23px;
-				letter-spacing: 0.15px;
-				font-size: 20px;
-			}
-		}
-		.add {
-			padding: 31px 0;
-			width: 62px;
-			height: 62px;
-			border: none;
-			margin: 10px auto;
-			background-color: transparent;
-			background-image: url("../assets/addBtn.svg");
-		}
-		.finish {
-			position: relative;
-			width: 177px;
-			height: 60px;
-			padding: 10px;
-			margin: 13px auto;
-			text-align: center;
-			font-size: 34px;
-			line-height: 40px;
-			letter-spacing: 0.25px;
-			color: #ffffff;
-			border: 0;
-			border-radius: 10px;
-			background-color: #738EEB;
-			box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
 		}
 	}
 }

@@ -179,19 +179,6 @@ export default {
 				font-size: 20px;
 				color: #ffffff;
 			}
-			.change {
-				margin: 0px 0px 3px 190px;
-				padding: 5px 10px;
-				width: 101px;
-				height: 33px;
-				background-color: #ffffff;
-				color: #5164AB;
-				border: none;
-				border-radius: 10px;
-				line-height: 23px;
-				letter-spacing: 0.15px;
-				font-size: 20px;
-			}
 		}
 		.add {
 			padding: 31px 0;
