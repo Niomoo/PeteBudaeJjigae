@@ -22,7 +22,6 @@ export default {
     return {
       route: JSON.parse(this.$route.query.route),
       id: this.$route.query.id,
-      points: [],
     };
   },
   methods: {
