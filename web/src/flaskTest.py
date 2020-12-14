@@ -414,9 +414,15 @@ def verifyAddPoint():
     idx= request.args.get('idx')
     routeIdx = int(routeIdx)
     idx = int(idx)
+    resRoute = ""
     result[routeIdx].append(attraction[idx][1])
     resId[routeIdx].append(idx)
-    return str(idx)
+    for i in range(len(result[routeIdx])):
+        if i < len(result[routeIdx]) - 1:
+            resRoute += (str(resId[routeIdx][i]) + "@false@" + result[routeIdx][i] + ">")
+        else:
+            resRoute += (str(resId[routeIdx][i]) + "@true@" + result[routeIdx][i])
+    return str(resRoute)
 
 @app.route('/pointDetail', methods=['GET'])
 def pointDetail():
