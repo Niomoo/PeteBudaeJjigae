@@ -197,6 +197,8 @@ def firstRecommend():
                 result[i][0] = attraction[start][1]
                 resId[i][0] = start
                 allList.append(start)
+                if len(result[i]) > 3:
+                    del result[i][len(result[i])-1]
         else:
             for i in range(5):               #第一層景點（使用者輸入的）
                 result[i].append(attraction[start][1])
