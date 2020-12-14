@@ -12,20 +12,11 @@
 					<div class="name">{{item.name}}</div>
 				</div>
 				<div class="address">{{item.address}}</div>
-				<button class="change" @click="getChangeViewpoint(item.id)" v-if="item.isChanged">更換地點</button>
 			</div>
-			<button class="add" @click="showAddPointConfirm = true"></button>
+			<button class="add" @click="getNewViewpoint"></button>
 			<button class="finish" @click="showFinishConfirm = true">規劃完成</button>
 		</div>
   </div>
-	<Modal
-		:show="showAddPointConfirm"
-    cancel-text="取消"
-    ok-text="確定"
-    @ok="getNewViewpoint"
-    @cancel="showAddPointConfirm = false">
-		<div>開始新增後就無法更換囉</div>
-	</Modal>
 	<Modal
 		:show="showFinishConfirm"
     cancel-text="取消"
@@ -41,8 +32,8 @@
 import axios from "axios"
 import Modal from "./Modal"
 export default {
-	name: 'DetailedRoute',
-	components: {
+	name: 'DetailedRoute_5',
+	components: { 
 		Modal
 	},
   data() {
@@ -53,9 +44,11 @@ export default {
 			id: this.$route.query.id,
 			points:[],
 			viewpoint: [
-				{ id: 0, isChanged: false, number: '一'}, 
-				{ id: 1, isChanged: true, number: '二'}, 
-				{ id: 2, isChanged: true, number: '三'}, 
+				{ id: 0, isChanged: false, number: "一" },
+        { id: 1, isChanged: false, number: "二" },
+        { id: 2, isChanged: false, number: "三" },
+        { id: 3, isChanged: false, number: "四" },
+        { id: 4, isChanged: false, number: "五" },
 			],
     }
 	},
@@ -65,10 +58,14 @@ export default {
 	},
 	methods: {
 		getViewpoint() {
-			for(var i = 0;i < this.viewpoint.length;i++){
-				this.viewpoint[i].pid = this.route[i].pid;
-				this.viewpoint[i].name = this.route[i].name;
-			}
+			let route = this.route.split(">").map((point) => point);
+      for (var i = 0; i < route.length; i++) {
+          let data = route[i];
+          let point = data.split("@").map((point) => point);
+          this.viewpoint[i].pid = point[0];
+					this.viewpoint[i].isEnd = point[1];
+					this.viewpoint[i].name = point[2];
+        }
 		},
 		getAddress() {
 			const url = 'http://127.0.0.1:5000/findAddress';
@@ -92,25 +89,6 @@ export default {
 		getInformation(id){
 			this.$router.push({path:'Information', query:{pid: this.viewpoint[id].pid, name: this.viewpoint[id].name}});
 		},
-		getChangeViewpoint(index){
-			const url = 'http://127.0.0.1:5000/changePoint';
-      axios.get(url, {
-        params: {
-					changeIndex: this.id,
-					change: index
-        }
-      })
-      .then((response) => {
-				let data = response.data.split(',');
-				this.viewpoint[index].pid = data[0];
-				this.viewpoint[index].name = data[1];
-				this.getNewAddress(index);
-			})
-      .catch(error => {
-				console.log("fail");
-        console.log(error.response);
-      })
-		},
 		getNewAddress(index) {
 			const url = 'http://127.0.0.1:5000/changeOrAddAddress';
       axios.get(url, {
@@ -129,7 +107,6 @@ export default {
       })
 		},
 		getNewViewpoint(){
-			this.viewpoint.isChanged = false;
 			this.$router.push({
 				path:'AddPoint', 
 				query: {id: this.id, route: JSON.stringify(this.route)}

@@ -33,6 +33,21 @@ const routes = [
     component: () => import('@/components/DetailedRoute.vue')
   },
   {
+    path: '/detailedRoute_4',
+    name: 'DetailedRoute_4',
+    component: () => import('@/components/DetailedRoute_4.vue')
+  },
+  {
+    path: '/detailedRoute_5',
+    name: 'DetailedRoute_5',
+    component: () => import('@/components/DetailedRoute_5.vue')
+  },
+  {
+    path: '/detailedRoute_6',
+    name: 'DetailedRoute_6',
+    component: () => import('@/components/DetailedRoute_6.vue')
+  },
+  {
     path: '/information',
     name: 'Information',
     component: () => import('@/components/Information.vue')
@@ -41,6 +56,11 @@ const routes = [
     path: '/addPoint',
     name: 'AddPoint',
     component: () => import('@/components/AddPoint.vue')
+  },
+  {
+    path: '/exportRoute',
+    name: 'ExportRoute',
+    component: () => import('@/components/ExportRoute.vue')
   }
 ]
 

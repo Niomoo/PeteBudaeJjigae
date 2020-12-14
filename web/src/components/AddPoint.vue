@@ -107,11 +107,30 @@ export default {
           },
         })
         .then((response) => {
-					console.log(response);
-					this.$router.push({
-						path:'DetailedRoute', 
-						query: { id: this.id, route: JSON.stringify(this.chooseRoute)},
-					})
+					let data = response.data.split('~');
+					let count = Number(data[0]);
+					this.chooseRoute = data[1];
+					console.log(this.chooseRoute);
+					switch (count) {
+						case 4:
+							this.$router.push({
+								path:'DetailedRoute_4', 
+								query: { id: this.id, route: JSON.stringify(this.chooseRoute)}
+							});
+							break;
+						case 5:
+							this.$router.push({
+								path:'DetailedRoute_5', 
+								query: { id: this.id, route: JSON.stringify(this.chooseRoute)},
+							});
+							break;
+						case 6:
+							this.$router.push({
+								path:'DetailedRoute_6', 
+								query: { id: this.id, route: JSON.stringify(this.chooseRoute)},
+							});
+							break;
+					}
         })
         .catch((error) => {
           console.log("fail");
