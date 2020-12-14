@@ -33,6 +33,7 @@ export default {
       color: #FFFFFF;
       background-color: #738EEB;
       border-radius: 10px;
+      border: none;
     }
   }
 }

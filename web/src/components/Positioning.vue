@@ -21,17 +21,23 @@
     <button class="prev btn rounded ripple" @click="previous">
       上一步
       </button>
-    <button class="next btn rounded ripple" :disabled="!isChoose" :class="{active: isChoose}" @click="next">
+    <button class="next btn rounded ripple" :disabled="isChoose == false" :class="{active: isChoose}" @click="next">
       下一步
     </button>
   </div>
+  <Modal
+		:show="showPositioning">
+		<div style="margin-top: 20px;">定位中...</div>
+	</Modal>
 </div>
 </template>
 
 <script>
 import axios from "axios"
+import Modal from "./Modal"
 export default {
   name: 'Positioning',
+  components: { Modal },
   props: {
     isNext: {
       type: Boolean,
@@ -40,6 +46,7 @@ export default {
   },
   data () {
     return {
+      showPositioning: false,
       isChoose: false,
       btnChoose: 0,
       position: '',
@@ -51,7 +58,12 @@ export default {
   methods: {
     ChooseWay(way) {
       this.btnChoose = way;
+      if(this.btnChoose == 1) {
+        this.isChoose = true;
+      }
       if(this.btnChoose == 2) {
+        this.isChoose = false;
+        this.showPositioning = true;
         navigator.geolocation.getCurrentPosition(this.success, this.error);
       }
     },
@@ -83,6 +95,7 @@ export default {
           this.place = response.data;
           console.log(this.place);
           this.isChoose = true;
+          this.showPositioning = false;
         })
         .catch(error => {
           console.log(error.response);
