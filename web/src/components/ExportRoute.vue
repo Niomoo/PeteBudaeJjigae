@@ -6,7 +6,7 @@
           <div class="number">景點{{ item.number }}</div>
           <div class="name">{{ item.name }}</div>
           <div class="address">{{ item.address }}</div>
-          <button class="change" @click="getInformation(item.id)">
+          <button class="detail" @click="getInformation(item.id)">
             詳細資訊
           </button>
         </div>
@@ -82,6 +82,19 @@ export default {
 				margin-bottom: 10px;
 				font-size: 20px;
 				color: #ffffff;
+			}
+			.detail {
+				margin: 0px 0px 3px 190px;
+				padding: 5px 10px;
+				width: 101px;
+				height: 33px;
+				background-color: #ffffff;
+				color: #5164AB;
+				border: none;
+				border-radius: 10px;
+				line-height: 23px;
+				letter-spacing: 0.15px;
+				font-size: 20px;
 			}
 		}
 	}
