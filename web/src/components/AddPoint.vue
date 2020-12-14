@@ -30,7 +30,8 @@ export default {
       data: [],
       isChoose: false,
       viewpoint: [],
-      choose: [],
+			choose: [],
+			chooseRoute: JSON.parse(this.$route.query.route),
     };
   },
   mounted() {
@@ -94,7 +95,7 @@ export default {
 			}
 			console.log(this.choose);
 		},
-		confirmAddition(el){
+		confirmAddition(el) {
 			const url = "http://127.0.0.1:5000/verifyAddPoint";
       console.log(el);
       console.log(this.id);
@@ -107,12 +108,15 @@ export default {
         })
         .then((response) => {
 					console.log(response);
-					// this.$router.push({path:'DetailedRoute'});
+					this.$router.push({
+						path:'DetailedRoute', 
+						query: { id: this.id, route: JSON.stringify(this.chooseRoute)},
+					})
         })
         .catch((error) => {
           console.log("fail");
           console.log(error.response);
-        });
+				});
 		}
   },
 };

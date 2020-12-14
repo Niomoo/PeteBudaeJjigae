@@ -120,7 +120,10 @@ export default {
 		},
 		getNewViewpoint(){
 			this.viewpoint.isChanged = false;
-			this.$router.push({path:'AddPoint', query: {id: this.id}});
+			this.$router.push({
+				path:'AddPoint', 
+				query: {id: this.id, route: JSON.stringify(this.route),}
+			});
 		}
 	}
 }
