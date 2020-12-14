@@ -2,7 +2,7 @@
   <div>
     <div class="container">
       <div class="detail">
-        <div class="viewpoint" v-for="item in viewpoint" :key="item.id">
+        <div class="viewpoint" v-for="item in route" :key="item.id">
           <div class="number">景點{{ item.number }}</div>
           <div class="name">{{ item.name }}</div>
           <div class="address">{{ item.address }}</div>
@@ -23,38 +23,13 @@ export default {
       route: JSON.parse(this.$route.query.route),
       id: this.$route.query.id,
       points: [],
-      viewpoint: [
-        { id: 0, number: "一" },
-        { id: 1, number: "二" },
-        { id: 2, number: "三" },
-        { id: 3, number: "四" },
-        { id: 4, number: "五" },
-        { id: 5, number: "六" },
-      ],
     };
   },
-  mounted() {
-    this.getViewpoint();
-  },
   methods: {
-    getViewpoint() {
-      for (var i = 0; i < this.route.length; i++) {
-        this.viewpoint[i].pid = this.route[i].pid;
-        this.viewpoint[i].name = this.route[i].name;
-        this.viewpoint[i].number = this.route[i].number;
-        this.viewpoint[i].address = this.route[i].address;
-      }
-    },
     getInformation(id) {
       this.$router.push({
         path: "Information",
         query: { pid: this.viewpoint[id].pid, name: this.viewpoint[id].name },
-      });
-    },
-    getCompleteRoute() {
-      this.$router.push({
-        path: "ExportRoute",
-        query: { route: JSON.stringify(this.route) },
       });
     },
   },
