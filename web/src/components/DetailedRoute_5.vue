@@ -175,6 +175,7 @@ export default {
 			.address {
 				display: flex;
 				justify-content: flex-start;
+				text-align: left;
 				margin-bottom: 10px;
 				font-size: 20px;
 				color: #ffffff;

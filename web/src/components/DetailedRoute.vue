@@ -102,6 +102,7 @@ export default {
       })
       .then((response) => {
 				let data = response.data.split(',');
+				console.log(data);
 				this.viewpoint[index].pid = data[0];
 				this.viewpoint[index].name = data[1];
 				this.getNewAddress(index);
@@ -198,6 +199,7 @@ export default {
 			.address {
 				display: flex;
 				justify-content: flex-start;
+				text-align: left;
 				margin-bottom: 10px;
 				font-size: 20px;
 				color: #ffffff;

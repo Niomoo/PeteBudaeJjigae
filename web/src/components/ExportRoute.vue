@@ -28,7 +28,7 @@ export default {
     getInformation(id) {
       this.$router.push({
         path: "Information",
-        query: { pid: this.viewpoint[id].pid, name: this.viewpoint[id].name },
+        query: { pid: this.route[id].pid, name: this.route[id].name },
       });
     },
   },
@@ -79,6 +79,7 @@ export default {
 			.address {
 				display: flex;
 				justify-content: flex-start;
+				text-align: left;
 				margin-bottom: 10px;
 				font-size: 20px;
 				color: #ffffff;
