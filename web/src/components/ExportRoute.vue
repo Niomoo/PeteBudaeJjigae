@@ -36,68 +36,67 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.container{
-	position: relative;
-	margin: 30px auto;
-	width: 300px;
-	height: 580px;
-	background-color: #5164AB;
-	border-radius: 20px;
-	padding: 19px 30px 19px 30px;
-	.detail {
-		display: flex;
-		flex-direction: column;
-		overflow: scroll;
-		width: 300px;
-		height: 100%;
-		.viewpoint {
-			.number {
-				width: 123px;
-				height: 52px;
-				padding: 6px 10px 6px 10px;
-				left: 0;
-				background-color: #28335C;
-				border-radius: 5px;
-				font-size: 34px;
-				line-height: 52px;
-				letter-spacing: 0.25px;
-				color: #FFFFFF;
-			}
-			.name {
-				display: flex;
-				flex-direction: row;
-				margin: 16px 0px 0px 0px;
-				justify-content: flex-start;
-				align-content: center;
-				width: 270px;
-				text-align: left;
-				font-size: 24px;
-				color: #ffffff;
-				margin-bottom: 10px;
-				
-			}
-			.address {
-				display: flex;
-				justify-content: flex-start;
-				text-align: left;
-				margin-bottom: 10px;
-				font-size: 20px;
-				color: #ffffff;
-			}
-			.detail {
-				margin: 0px 0px 3px 190px;
-				padding: 5px 10px;
-				width: 101px;
-				height: 33px;
-				background-color: #ffffff;
-				color: #5164AB;
-				border: none;
-				border-radius: 10px;
-				line-height: 23px;
-				letter-spacing: 0.15px;
-				font-size: 20px;
-			}
-		}
-	}
+.container {
+  position: relative;
+  margin: 30px auto;
+  width: 300px;
+  height: 580px;
+  background-color: #5164ab;
+  border-radius: 20px;
+  padding: 19px 30px 19px 30px;
+  .detail {
+    display: flex;
+    flex-direction: column;
+    overflow: scroll;
+    width: 300px;
+    height: 100%;
+    .viewpoint {
+      .number {
+        width: 123px;
+        height: 52px;
+        padding: 6px 10px 6px 10px;
+        left: 0;
+        background-color: #28335c;
+        border-radius: 5px;
+        font-size: 34px;
+        line-height: 52px;
+        letter-spacing: 0.25px;
+        color: #ffffff;
+      }
+      .name {
+        display: flex;
+        flex-direction: row;
+        margin: 16px 0px 0px 0px;
+        justify-content: flex-start;
+        align-content: center;
+        width: 270px;
+        text-align: left;
+        font-size: 24px;
+        color: #ffffff;
+        margin-bottom: 10px;
+      }
+      .address {
+        display: flex;
+        justify-content: flex-start;
+        text-align: left;
+        margin-bottom: 10px;
+        font-size: 20px;
+        color: #ffffff;
+      }
+      .detail {
+        margin: 0px 0px 3px 190px;
+        padding: 5px 10px;
+        width: 101px;
+        height: 33px;
+        background-color: #ffffff;
+        color: #5164ab;
+        border: none;
+        border-radius: 10px;
+        line-height: 23px;
+        letter-spacing: 0.15px;
+        font-size: 20px;
+      }
+    }
+  }
 }
 </style>
