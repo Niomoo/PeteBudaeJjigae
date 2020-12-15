@@ -14,6 +14,7 @@ import random
 from flask import Flask
 from flask_cors import CORS
 from flask import request
+import json
 
 app = Flask(__name__)
 CORS(app)
@@ -84,7 +85,7 @@ def findAllViewpoints():
             viewList[aId] = aName
             checkMrt.append(mrtId)
             checkMrt.append(aId)
-    return viewList
+    return json.dumps(viewList)
 
 @app.route('/findNearestViewpoint', methods=['GET'])
 def findNearestViewpoint():

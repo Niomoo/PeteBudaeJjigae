@@ -1,42 +1,52 @@
 <template>
-<div>
-  <div class="page">
+  <div>
+    <div class="page">
       <div class="dot">
         <span></span>
         <span></span>
       </div>
-  </div>
-  <div class="container">
-    <div class="content">請選擇你的定位方式</div>
-    <div class="block-btn">
-      <button class="btn rounded ripple" :class="{btnBg: btnChoose==1}" @click="ChooseWay(1)">
-        自行輸入
-      </button>
-      <button class="btn rounded ripple" :class="{btnBg: btnChoose==2}" @click="ChooseWay(2)">
-        定位所在地
+    </div>
+    <div class="container">
+      <div class="content">請選擇你的定位方式</div>
+      <div class="block-btn">
+        <button
+          class="btn rounded ripple"
+          :class="{ btnBg: btnChoose == 1 }"
+          @click="ChooseWay(1)"
+        >
+          自行輸入
+        </button>
+        <button
+          class="btn rounded ripple"
+          :class="{ btnBg: btnChoose == 2 }"
+          @click="ChooseWay(2)"
+        >
+          定位所在地
+        </button>
+      </div>
+    </div>
+    <div class="step">
+      <button class="prev btn rounded ripple" @click="previous">上一步</button>
+      <button
+        class="next btn rounded ripple"
+        :disabled="isChoose == false"
+        :class="{ active: isChoose }"
+        @click="next"
+      >
+        下一步
       </button>
     </div>
+    <Modal :show="showPositioning">
+      <div style="margin-top: 20px">定位中...</div>
+    </Modal>
   </div>
-  <div class="step">
-    <button class="prev btn rounded ripple" @click="previous">
-      上一步
-      </button>
-    <button class="next btn rounded ripple" :disabled="isChoose == false" :class="{active: isChoose}" @click="next">
-      下一步
-    </button>
-  </div>
-  <Modal
-		:show="showPositioning">
-		<div style="margin-top: 20px;">定位中...</div>
-	</Modal>
-</div>
 </template>
 
 <script>
-import axios from "axios"
-import Modal from "./Modal"
+import axios from "axios";
+import Modal from "./Modal";
 export default {
-  name: 'Positioning',
+  name: "Positioning",
   components: { Modal },
   props: {
     isNext: {
@@ -44,12 +54,12 @@ export default {
       default: false,
     },
   },
-  data () {
+  data() {
     return {
       showPositioning: false,
       isChoose: false,
       btnChoose: 0,
-      position: '',
+      position: "",
       latitude: 0.0,
       longitude: 0.0,
       place: 0,
@@ -58,38 +68,36 @@ export default {
   methods: {
     ChooseWay(way) {
       this.btnChoose = way;
-      if(this.btnChoose == 1) {
+      if (this.btnChoose == 1) {
         this.isChoose = true;
       }
-      if(this.btnChoose == 2) {
+      if (this.btnChoose == 2) {
         this.isChoose = false;
         this.showPositioning = true;
         navigator.geolocation.getCurrentPosition(this.success, this.error);
       }
     },
-    previous () {
+    previous() {
       this.$router.go(-1);
     },
-    next () {
-      if(this.btnChoose == 1)
-      {
-        this.$router.push('/positioning/enterPosition');
+    next() {
+      if (this.btnChoose == 1) {
+        this.$router.push("/positioning/enterPosition");
+      } else if (this.btnChoose == 2) {
+        this.$router.push({ path: "ChooseTag", query: { place: this.place } });
       }
-      else if(this.btnChoose == 2)
-      {
-        this.$router.push({path:'ChooseTag', query:{place: this.place}});
-      }
-    },            
+    },
     success(position) {
-        this.latitude = position.coords.latitude;
-        this.longitude = position.coords.longitude;
-        console.log(this.latitude, this.longitude);
-        const url = 'http://127.0.0.1:5000/findNearestViewpoint';
-        axios.get(url, {
+      this.latitude = position.coords.latitude;
+      this.longitude = position.coords.longitude;
+      console.log(this.latitude, this.longitude);
+      const url = "http://127.0.0.1:5000/findNearestViewpoint";
+      axios
+        .get(url, {
           params: {
             lng: this.longitude,
-            lat: this.latitude
-          }
+            lat: this.latitude,
+          },
         })
         .then((response) => {
           this.place = response.data;
@@ -97,15 +105,15 @@ export default {
           this.isChoose = true;
           this.showPositioning = false;
         })
-        .catch(error => {
+        .catch((error) => {
           console.log(error.response);
-        })
+        });
     },
     error() {
-        console.log("fail to load location");
+      console.log("fail to load location");
     },
   },
-}
+};
 </script>
 
 <style lang="scss" scoped>
@@ -114,23 +122,23 @@ export default {
   top: 14px;
   padding: 18px 100px;
   height: 44px;
-    .dot{
-      span{
-        display: inline-flex;
-        justify-content: space-around;
-        width: 8px;
-        height: 8px;
-        border-radius: 50%;
-        background-color: #ffffff;
-        margin: 18px 10px;
-      }
+  .dot {
+    span {
+      display: inline-flex;
+      justify-content: space-around;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: #ffffff;
+      margin: 18px 10px;
     }
-    span:nth-child(1) {
-        opacity: 1;
-    }
-    span:nth-child(2) {
-      opacity: 0.2;
-    }
+  }
+  span:nth-child(1) {
+    opacity: 1;
+  }
+  span:nth-child(2) {
+    opacity: 0.2;
+  }
 }
 .container {
   position: relative;
@@ -139,7 +147,7 @@ export default {
   height: 311px;
   display: flex;
   flex-direction: column;
-  background-color: #59575B;
+  background-color: #59575b;
   border-radius: 25px;
   .content {
     position: relative;
@@ -164,14 +172,14 @@ export default {
       font-size: 20px;
       line-height: 23px;
       letter-spacing: 0.15px;
-      color: #DBDBDB;
+      color: #dbdbdb;
       border: 0;
       background-color: transparent;
     }
     .btnBg {
-        color: #5164AB;
-        background-color: #ffffff;
-        border-radius: 10px;
+      color: #5164ab;
+      background-color: #ffffff;
+      border-radius: 10px;
     }
   }
 }
@@ -199,13 +207,13 @@ export default {
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
   }
   Button:nth-child(1) {
-      background-color: #738EEB;
+    background-color: #738eeb;
   }
   Button:nth-child(2) {
-      background-color: #9F9F9F;
-      &.active {
-          background-color: #738EEB;
-      }
+    background-color: #9f9f9f;
+    &.active {
+      background-color: #738eeb;
+    }
   }
 }
 </style>

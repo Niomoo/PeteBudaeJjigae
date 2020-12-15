@@ -1,98 +1,108 @@
 <template>
-<div>
-  <div class="page">
-    <div class="dot">
-      <span></span>
-      <span></span>
-    </div>
-  </div>
-  <div class="container">
-    <div class="content">請輸入你的出發地</div>
-    <div class="block">
-      <div class="inputbox">
-      <input v-model="inputPlace" 
-             placeholder="請輸入你的出發地"
-             class ="inputPlace" 
-             type="text"
-      >
-      <select name="searchPlace.name" id="searchPlace.id" class="searchPlace">
-        <option value="searchPlace">{{searchPlace.name}}</option>
-      </select>
-      <div v-for="item in searchPlace" :key="item">{{item.name}}</div>
+  <div>
+    <div class="page">
+      <div class="dot">
+        <span></span>
+        <span></span>
       </div>
-      <div class="hint" :class="{active: checkInput}">請輸入高雄地標</div>
+    </div>
+    <div class="container">
+      <div class="content">請輸入你的出發地</div>
+      <div class="block">
+        <div class="inputbox">
+          <input
+            v-model="inputPlace"
+            placeholder="請輸入你的出發地"
+            class="inputPlace"
+            type="text"
+          />
+          <select
+            name="searchPlace.name"
+            id="searchPlace.id"
+            class="searchPlace"
+            v-for="item in searchPlace"
+            :key="item.id"
+          >
+            <option value="searchPlace">{{ item.name }}</option>
+          </select>
+          <div v-for="item in searchPlace" :key="item">{{ item.name }}</div>
+        </div>
+        <div class="hint" :class="{ active: checkInput }">請輸入高雄地標</div>
+      </div>
+    </div>
+    <div class="step">
+      <button class="prev btn rounded ripple" @click="previous">上一步</button>
+      <button
+        class="next btn rounded ripple"
+        :class="{ active: isChoose }"
+        @click="next"
+      >
+        下一步
+      </button>
     </div>
   </div>
-  <div class="step">
-    <button class="prev btn rounded ripple" @click="previous">
-      上一步
-      </button>
-    <button class="next btn rounded ripple" :class="{active: isChoose}" @click="next">
-      下一步
-    </button>
-  </div>
-</div>
 </template>
 
 <script>
 import axios from "axios";
 export default {
-  name: 'Positioning',
+  name: "Positioning",
   props: {
     isNext: {
       type: Boolean,
       default: false,
     },
   },
-  data () {
+  data() {
     return {
       isChoose: false,
-      inputPlace: '',
+      inputPlace: "",
       isValid: false,
       check: 0,
       searchPlace: [],
-      departure: '',
+      departure: "",
     };
-  }, 
+  },
   watch: {
     inputPlace() {
-      this.inputDeparture();
-    }
-  },
-  methods: {
-    checkInput (){
-      if(this.isValid==true){
-        this.isChoose=true;
-      }
-    },
-    previous () {
-      this.$router.go(-1);
-    },
-    next () {
-      this.$router.go('/');
-    },
-    inputDeparture() {
-      const url = 'http://127.0.0.1:5000/findAllViewpoint';
-        axios.get(url, {
+      const url = "http://127.0.0.1:5000/findAllViewpoint";
+      axios
+        .get(url, {
           params: {
-            userInput: this.inputPlace 
-          }
+            userInput:this.inputPlace,
+          },
         })
         .then((response) => {
           let data = response.data;
-          for(var i = 0;i < this.data.length;i++) {
+          console.log(data);
+          for (var i = 0; i < data.length; i++) {
             this.searchPlace[i].id = data[i];
             this.searchPlace[i].name = data[i];
             console.log(this.searchPlace[i].id, this.searchPlace[i].name);
-          }	
+          }
           console.log(this.searchPlace);
         })
-        .catch(error => {
+        .catch((error) => {
+          console.log("fail");
           console.log(error.response);
-        })
-    }
-  }
-}
+        });
+    },
+  },
+  methods: {
+    checkInput() {
+      if (this.isValid == true) {
+        this.isChoose = true;
+      }
+    },
+    previous() {
+      this.$router.go(-1);
+    },
+    next() {
+      this.$router.go("/");
+    },
+    inputDeparture() {},
+  },
+};
 </script>
 
 <style lang="scss">
@@ -101,8 +111,8 @@ export default {
   top: 14px;
   padding: 18px 100px;
   height: 44px;
-  .dot{
-    span{
+  .dot {
+    span {
       display: inline-flex;
       justify-content: space-around;
       width: 8px;
@@ -126,7 +136,7 @@ export default {
   height: 311px;
   display: flex;
   flex-direction: column;
-  background-color: #59575B;
+  background-color: #59575b;
   border-radius: 25px;
   .content {
     position: relative;
@@ -147,7 +157,7 @@ export default {
       width: 200px;
       height: 28px;
       border: 0;
-      background-color: #EAEAEA;
+      background-color: #eaeaea;
       border-radius: 10px;
       align-content: center;
       .inputPlace {
@@ -157,7 +167,7 @@ export default {
         font-weight: normal;
         font-size: 20px;
         letter-spacing: 0.15px;
-        color: #59575B;
+        color: #59575b;
         background-color: transparent;
         border: none;
       }
@@ -167,7 +177,7 @@ export default {
       margin: 32px 22.5px;
       font-size: 16px;
       line-height: 18.75px;
-      color: #9E9E9E;
+      color: #9e9e9e;
       left: 38px;
       top: 60px;
     }
@@ -197,13 +207,13 @@ export default {
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
   }
   Button:nth-child(1) {
-      background-color: #738EEB;
+    background-color: #738eeb;
   }
   Button:nth-child(2) {
-      background-color: #9F9F9F;
-      &.active {
-          background-color: #738EEB;
-      }
+    background-color: #9f9f9f;
+    &.active {
+      background-color: #738eeb;
+    }
   }
 }
 </style>
