@@ -81,10 +81,11 @@ export default {
         })
         .then((response) => {
           let data = response.data;
+          console.log(data)
           for (var i in data) {
             this.searchPlace.push({ id: data[i].id, name: data[i].name });
           }
-          console.log(this.searchPlace);
+          // console.log(this.searchPlace);
           this.showSearchResult = true;
         })
         .catch((error) => {
