@@ -65,7 +65,7 @@ def haversine(lon1, lat1, lon2, lat2):
 def findAllViewpoints():
     userInput = request.args.get('userInput')
     viewList = {}
-    viewJson = {}
+    allJson = {}
     cursor.execute("select aId,aName from attraction where aName like '%" + userInput + "%'")
     res = cursor.fetchall()
     for (row1,row2) in res:
@@ -87,9 +87,11 @@ def findAllViewpoints():
             checkMrt.append(mrtId)
             checkMrt.append(aId)
     for i in viewList:
+        viewJson = {}
         viewJson['id'] = i
         viewJson['name'] = viewList[i]
-    return json.dumps(viewJson)
+        allJson[i] = viewJson
+    return json.dumps(allJson)
 
 @app.route('/findNearestViewpoint', methods=['GET'])
 def findNearestViewpoint():
