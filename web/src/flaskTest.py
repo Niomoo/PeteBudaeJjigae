@@ -66,6 +66,7 @@ def findAllViewpoints():
     userInput = request.args.get('userInput')
     viewList = {}
     allJson = {}
+    count = 0
     cursor.execute("select aId,aName from attraction where aName like '%" + userInput + "%'")
     res = cursor.fetchall()
     for (row1,row2) in res:
@@ -90,8 +91,12 @@ def findAllViewpoints():
         viewJson = {}
         viewJson['id'] = i
         viewJson['name'] = viewList[i]
-        allJson[i] = viewJson
-    return json.dumps(allJson)
+        allJson[count] = viewJson
+        count += 1
+    if count != 0:
+        return json.dumps(allJson)
+    else:
+        return str(count)
 
 @app.route('/findNearestViewpoint', methods=['GET'])
 def findNearestViewpoint():

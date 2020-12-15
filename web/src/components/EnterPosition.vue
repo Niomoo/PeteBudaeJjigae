@@ -75,11 +75,11 @@ export default {
         .then((response) => {
           let data = response.data;
           console.log(data);
-          for (var i = 0; i < data.length; i++) {
-            this.searchPlace.push({id: data[i].id});
-            this.searchPlace.push({name: data[i].name});
-            console.log(this.searchPlace.id, this.searchPlace.name);
-          }
+          console.log(data[0].id);
+          // for (var i = 0; i < data.length; i++) {
+          //   this.searchPlace[i].push({id: data[i].id});
+          //   this.searchPlace[i].push({name: data[i].name});
+          // }
           console.log(this.searchPlace);
         })
         .catch((error) => {
