@@ -23,16 +23,12 @@
             class="search"
             v-show="showSearchResult"
           >
-            <option
-              :value="item"
-              v-for="item in searchPlace"
-              :key="item.id"
-            >
+            <option :value="item" v-for="item in searchPlace" :key="item.id">
               {{ item.name }}
             </option>
           </select>
         </div>
-        <div class="hint" :class="{ active: checkInput }">請輸入高雄地標</div>
+        <div class="hint" :class="{ right: check==2, wrong: check==1}">請輸入高雄地標</div>
       </div>
     </div>
     <div class="step">
@@ -81,11 +77,17 @@ export default {
         })
         .then((response) => {
           let data = response.data;
-          for (var i in data) {
-            this.searchPlace.push({ id: data[i].id, name: data[i].name });
+          if (data == "nothing") {
+            this.isValid = false;
+            this.checkInput();
+          } else {
+            this.searchPlace = [];
+            for (var i in data) {
+              this.searchPlace.push({ id: data[i].id, name: data[i].name });
+            }
+            console.log(this.searchPlace);
+            this.showSearchResult = true;
           }
-          console.log(this.searchPlace);
-          this.showSearchResult = true;
         })
         .catch((error) => {
           console.log("fail");
@@ -95,19 +97,17 @@ export default {
     selected() {
       this.inputPlace = this.selected.name;
       this.isValid = true;
-      this.isChoose = true;
-    }
+      this.checkInput();
+    },
   },
   methods: {
     checkInput() {
       if (this.isValid == true) {
         this.check = 2;
         this.isChoose = true;
-      }
-      else if(this.isValid == false) {
+      } else if (this.isValid == false) {
         this.check = 1;
-      }
-      else {
+      } else {
         this.check = 0;
       }
     },
@@ -115,7 +115,10 @@ export default {
       this.$router.go(-1);
     },
     next() {
-      this.$router.push({ path: "../chooseTag", query: { place: this.selected.id } });
+      this.$router.push({
+        path: "../chooseTag",
+        query: { place: this.selected.id },
+      });
     },
     inputDeparture() {},
   },
@@ -197,6 +200,12 @@ export default {
       color: #9e9e9e;
       left: 38px;
       top: 60px;
+      &.right {
+        color: #4ad079;
+      }
+      &.wrong {
+        color: #ff5a79;
+      }
     }
   }
 }
