@@ -64,18 +64,22 @@ def haversine(lon1, lat1, lon2, lat2):
 @app.route('/findAllViewpoint', methods=['GET'])
 def findAllViewpoints():
     userInput = request.args.get('userInput')
+    if userInput == "":
+        return "noInput"
     viewList = {}
     allJson = {}
     count = 0
-    cursor.execute("select aId,aName from attraction where aName like '%" + userInput + "%'")
+    num = cursor.execute("select aId,aName from attraction where aName like '%" + userInput + "%'")
     res = cursor.fetchall()
-    if len(list(res)) == 0:
-        return "nothing"
+    if num == 0:
+        return "noPoint"
     for (row1,row2) in res:
         viewList[row1] = row2
     if len(viewList) == 0:
-        cursor.execute("select mId from mrt where mName like '%" + userInput + "%'")
+        num = cursor.execute("select mId from mrt where mName like '%" + userInput + "%'")
         res = cursor.fetchone()
+        if num == 0:
+            return "noPoint"
         for i in res:
             cursor.execute("select aId,aName,mrtId,dist from attraction where mrtId = " + str(i))
             res = cursor.fetchall()
