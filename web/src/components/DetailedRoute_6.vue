@@ -163,6 +163,7 @@ export default {
         line-height: 52px;
         letter-spacing: 0.25px;
         color: #ffffff;
+        text-align: center;
       }
       .block {
         display: flex;
@@ -171,12 +172,15 @@ export default {
         justify-content: flex-start;
         align-content: center;
         .more {
-          margin: 2px 14px 0px 0px;
-          width: 27px;
-          height: 27px;
+					top: 0px;
+          margin: 0px 14px 0px 0px;
+          width: 32px;
+          height: 32px;
           border: none;
           background-color: transparent;
           background-image: url("../assets/info.svg");
+					background-repeat: no-repeat;
+					background-position: center center;
         }
         .name {
           width: 270px;

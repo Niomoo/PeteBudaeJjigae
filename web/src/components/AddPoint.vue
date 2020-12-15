@@ -159,6 +159,7 @@ export default {
   flex-direction: column;
   align-content: center;
   overflow: auto;
+  background-color: transparent;
   .viewpoint {
     width: 370px;
     margin: 0 auto 25px auto;

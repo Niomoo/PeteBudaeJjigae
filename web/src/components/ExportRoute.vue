@@ -62,6 +62,7 @@ export default {
         line-height: 52px;
         letter-spacing: 0.25px;
         color: #ffffff;
+        text-align: center;
       }
       .name {
         display: flex;

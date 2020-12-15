@@ -135,7 +135,7 @@ export default {
         })
         .catch((error) => {
           console.log("fail");
-          this.check = 0;
+          this.check = 1;
           this.checkInput();
           console.log(error.response);
         });
@@ -151,6 +151,7 @@ export default {
   padding: 18px 100px;
   height: 44px;
   .dot {
+    text-align: center;
     span {
       display: inline-flex;
       justify-content: space-around;

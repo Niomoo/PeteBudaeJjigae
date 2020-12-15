@@ -46,6 +46,7 @@ export default {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-align: center;
 }
 .slot-modal__overlay {
   position: absolute;
@@ -77,6 +78,7 @@ export default {
   z-index: 999;
 }
 .slot-modal__content {
+  text-align: center;
   margin-bottom: 20px;
   font-size: 20px;
   line-height: 23px;
@@ -88,6 +90,7 @@ export default {
   font-size: 20px;
   line-height: 23px;
   border-radius: 10px;
+  text-align: center;
   &.btn-default {
     border: 0.5px solid #5164AB;
     background-color: #ffffff;

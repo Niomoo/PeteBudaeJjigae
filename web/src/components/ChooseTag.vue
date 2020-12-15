@@ -100,6 +100,7 @@ export default {
   padding: 18px 100px;
   height: 44px;
     .dot{
+      text-align: center;
       span{
         display: inline-flex;
         justify-content: space-around;
