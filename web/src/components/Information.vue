@@ -59,6 +59,12 @@ export default {
 				this.detail.address = data[0];
 				this.detail.star = data[1];
 				this.detail.comments = data[2];
+				if(this.detail.star == 0){
+					this.detail.star = '--';
+				}
+				if(this.detail.comments == 0){
+					this.detail.comments = '--';
+				}
 				console.log(this.detail);
 			})
       .catch(error => {

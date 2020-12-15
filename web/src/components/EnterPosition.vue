@@ -76,9 +76,9 @@ export default {
           let data = response.data;
           console.log(data);
           for (var i = 0; i < data.length; i++) {
-            this.searchPlace[i].id = data[i];
-            this.searchPlace[i].name = data[i];
-            console.log(this.searchPlace[i].id, this.searchPlace[i].name);
+            this.searchPlace.push({id: data[i].id});
+            this.searchPlace.push({name: data[i].name});
+            console.log(this.searchPlace.id, this.searchPlace.name);
           }
           console.log(this.searchPlace);
         })
