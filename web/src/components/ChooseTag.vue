@@ -18,7 +18,7 @@
     <button class="prev btn rounded ripple" @click="previous">
       上一步
       </button>
-    <button class="next btn rounded ripple" :class="{active: isChoose}" @click="next">
+    <button class="next btn rounded ripple" :class="{active: isChoose}" :disabled="isChoose == false" @click="next">
       下一步
     </button>
   </div>
@@ -28,7 +28,7 @@
 <script>
 import axios from "axios"
 export default {
-  name: 'Positioning',
+  name: 'ChooseTag',
   props: {
     isNext: {
       type: Boolean,

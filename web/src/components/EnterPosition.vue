@@ -11,21 +11,26 @@
       <div class="block">
         <div class="inputbox">
           <input
-            v-model="inputPlace"
             placeholder="請輸入你的出發地"
             class="inputPlace"
+            v-model="inputPlace"
             type="text"
           />
           <select
+            v-model="selected"
             name="searchPlace.name"
             id="searchPlace.id"
-            class="searchPlace"
-            v-for="item in searchPlace"
-            :key="item.id"
+            class="search"
+            v-show="showSearchResult"
           >
-            <option value="searchPlace">{{ item.name }}</option>
+            <option
+              :value="item"
+              v-for="item in searchPlace"
+              :key="item.id"
+            >
+              {{ item.name }}
+            </option>
           </select>
-          <div v-for="item in searchPlace" :key="item">{{ item.name }}</div>
         </div>
         <div class="hint" :class="{ active: checkInput }">請輸入高雄地標</div>
       </div>
@@ -35,6 +40,7 @@
       <button
         class="next btn rounded ripple"
         :class="{ active: isChoose }"
+        :disabled="isChoose == false"
         @click="next"
       >
         下一步
@@ -60,7 +66,8 @@ export default {
       isValid: false,
       check: 0,
       searchPlace: [],
-      departure: "",
+      selected: [],
+      showSearchResult: false,
     };
   },
   watch: {
@@ -69,36 +76,46 @@ export default {
       axios
         .get(url, {
           params: {
-            userInput:this.inputPlace,
+            userInput: this.inputPlace,
           },
         })
         .then((response) => {
           let data = response.data;
-          console.log(data);
-          console.log(data[0].id);
-          // for (var i = 0; i < data.length; i++) {
-          //   this.searchPlace[i].push({id: data[i].id});
-          //   this.searchPlace[i].push({name: data[i].name});
-          // }
+          for (var i in data) {
+            this.searchPlace.push({ id: data[i].id, name: data[i].name });
+          }
           console.log(this.searchPlace);
+          this.showSearchResult = true;
         })
         .catch((error) => {
           console.log("fail");
           console.log(error.response);
         });
     },
+    selected() {
+      this.inputPlace = this.selected.name;
+      this.isValid = true;
+      this.isChoose = true;
+    }
   },
   methods: {
     checkInput() {
       if (this.isValid == true) {
+        this.check = 2;
         this.isChoose = true;
+      }
+      else if(this.isValid == false) {
+        this.check = 1;
+      }
+      else {
+        this.check = 0;
       }
     },
     previous() {
       this.$router.go(-1);
     },
     next() {
-      this.$router.go("/");
+      this.$router.push({ path: "../chooseTag", query: { place: this.selected.id } });
     },
     inputDeparture() {},
   },
