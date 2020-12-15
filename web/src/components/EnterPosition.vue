@@ -14,21 +14,32 @@
             placeholder="請輸入你的出發地"
             class="inputPlace"
             v-model="inputPlace"
+            @key-up="getSearchPlace"
             type="text"
           />
-          <select
-            v-model="selected"
-            name="searchPlace.name"
-            id="searchPlace.id"
-            class="search"
-            v-show="showSearchResult"
-          >
-            <option :value="item" v-for="item in searchPlace" :key="item.id">
-              {{ item.name }}
-            </option>
-          </select>
         </div>
-        <div class="hint" :class="{ right: check==2, wrong: check==1}">請輸入高雄地標</div>
+          <ul v-show="showSearchResult" class="list">
+            <li
+              v-for="item in searchPlace"
+              :value="item"
+              :key="item.id"
+              class="option"
+              @click="getSelect(item)"
+            >
+              {{ item.name }}
+            </li>
+          </ul>
+        <div
+          class="hint"
+          :class="{ right: check == 2, wrong: check == 1, default: check == 0 }"
+        >
+          <div
+            class="hint-icon"
+            v-show="isValid"
+            :class="{ success: check == 2, fail: check == 1 }"
+          ></div>
+          請輸入高雄地標
+        </div>
       </div>
     </div>
     <div class="step">
@@ -66,50 +77,27 @@ export default {
       showSearchResult: false,
     };
   },
-  watch: {
-    inputPlace() {
-      const url = "http://127.0.0.1:5000/findAllViewpoint";
-      axios
-        .get(url, {
-          params: {
-            userInput: this.inputPlace,
-          },
-        })
-        .then((response) => {
-          let data = response.data;
-          if (data == "nothing") {
-            this.isValid = false;
-            this.checkInput();
-          } else {
-            this.searchPlace = [];
-            for (var i in data) {
-              this.searchPlace.push({ id: data[i].id, name: data[i].name });
-            }
-            console.log(this.searchPlace);
-            this.showSearchResult = true;
-          }
-        })
-        .catch((error) => {
-          console.log("fail");
-          console.log(error.response);
-        });
-    },
-    selected() {
-      this.inputPlace = this.selected.name;
-      this.isValid = true;
-      this.checkInput();
-    },
-  },
   methods: {
     checkInput() {
-      if (this.isValid == true) {
-        this.check = 2;
+      if (this.check == 2) {
+        this.isValid = true;
         this.isChoose = true;
-      } else if (this.isValid == false) {
-        this.check = 1;
+      } else if (this.check == 1) {
+        this.showSearchResult = false;
+        this.isValid = true;
+        this.isChoose = false;
       } else {
-        this.check = 0;
+        this.showSearchResult = false;
+        this.isValid = false;
+        this.isChoose = false;
       }
+    },
+    getSelect(item) {
+      this.selected = item;
+      this.inputPlace = this.selected.name;
+      this.showSearchResult = false;
+      this.check = 2;
+      this.checkInput();
     },
     previous() {
       this.$router.go(-1);
@@ -120,7 +108,38 @@ export default {
         query: { place: this.selected.id },
       });
     },
-    inputDeparture() {},
+    getSearchPlace() {
+      const url = "http://127.0.0.1:5000/findAllViewpoint";
+      axios
+        .get(url, {
+          params: {
+            userInput: this.inputPlace,
+          },
+        })
+        .then((response) => {
+          let data = response.data;
+          this.searchPlace = [];
+          if (String(data) == "noInput") {
+            this.check = 0;
+            this.checkInput();
+          } else if (String(data) == "noPoint") {
+            this.check = 1;
+            this.checkInput();
+          } else {
+            for (var i in data) {
+              this.searchPlace.push({ id: data[i].id, name: data[i].name });
+            }
+            console.log(this.searchPlace);
+            this.showSearchResult = true;
+          }
+        })
+        .catch((error) => {
+          console.log("fail");
+          this.check = 0;
+          this.checkInput();
+          console.log(error.response);
+        });
+    },
   },
 };
 </script>
@@ -192,7 +211,46 @@ export default {
         border: none;
       }
     }
+    .list {
+        position: absolute;
+        top: 41px;
+        margin: 0, auto;
+        height: 200px;
+        width: 240px;
+        word-wrap: none;
+        list-style-type: none;
+        text-align: left;
+        overflow: auto;
+        padding: 0;
+        z-index: 99;
+        .option {
+          position: relative;
+          margin-left: 0;
+          background-color: #eaeaea;
+          border: 1px solid #ccc;
+          opacity: 0.95;
+          box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+          border-radius: 0 0 4px 4px;
+          padding: 7px 16px;
+          font-size: 18px;
+          color: #59575b;
+        }
+      }
     .hint {
+      .hint-icon {
+        position: absolute;
+        left: -22px;
+        width: 18px;
+        height: 18px;
+        background-repeat: no-repeat;
+        background-position: center center;
+        &.success {
+          background-image: url("../assets/right.svg");
+        }
+        &.fail {
+          background-image: url("../assets/wrong.svg");
+        }
+      }
       position: absolute;
       margin: 32px 22.5px;
       font-size: 16px;
@@ -205,6 +263,9 @@ export default {
       }
       &.wrong {
         color: #ff5a79;
+      }
+      &.default {
+        color: #9e9e9e;
       }
     }
   }
