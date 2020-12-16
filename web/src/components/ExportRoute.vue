@@ -44,7 +44,6 @@ export default {
   background-color: #5164ab;
   border-radius: 20px;
   padding: 19px 30px 19px 30px;
-  text-align: center;
   .detail {
     display: flex;
     flex-direction: column;
@@ -60,6 +59,7 @@ export default {
         background-color: #28335c;
         border-radius: 5px;
         font-size: 34px;
+        text-align: center;
         line-height: 52px;
         letter-spacing: 0.25px;
         color: #ffffff;

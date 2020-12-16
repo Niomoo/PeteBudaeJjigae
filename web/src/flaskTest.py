@@ -119,7 +119,8 @@ def findNearestViewpoint():
         if d < minDist:
             minDist = d
             minId = i
-    return str(minId)
+    resNear = str(minId) + "@" + attraction[minId][1]
+    return str(resNear)
 
 def text(view, attraction, arelated, aList, aWeight, isTag):
     b = 0

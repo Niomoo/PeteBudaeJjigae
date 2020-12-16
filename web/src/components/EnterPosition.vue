@@ -150,7 +150,7 @@ export default {
             }
             console.log(this.searchPlace);
             this.showWaitResult = false;
-            if(this.inputPlace == this.searchPlace[0].name){
+            if(this.inputPlace == this.selected.name){
               this.showSearchResult = false;
               this.isSelected = true;
             }

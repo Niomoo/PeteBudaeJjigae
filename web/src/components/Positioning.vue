@@ -39,6 +39,14 @@
     <Modal :show="showPositioning">
       <div style="margin-top: 20px">定位中...</div>
     </Modal>
+    <Modal 
+      :show="showPlace" 
+      ok-text="確定"
+      @ok="confirmPlace">
+      <div style="margin-top: 20px; line-height: 28px;">距離最近的點為：<br/>
+        {{placeName}}
+      </div>
+    </Modal>
   </div>
 </template>
 
@@ -57,12 +65,14 @@ export default {
   data() {
     return {
       showPositioning: false,
+      showPlace: false,
       isChoose: false,
       btnChoose: 0,
       position: "",
       latitude: 0.0,
       longitude: 0.0,
       place: 0,
+      placeName: "",
     };
   },
   methods: {
@@ -100,10 +110,13 @@ export default {
           },
         })
         .then((response) => {
-          this.place = response.data;
-          console.log(this.place);
+          let data = response.data.split('@');
+          console.log(data);
+          this.place = data[0];
+          this.placeName = data[1];
           this.isChoose = true;
           this.showPositioning = false;
+          this.showPlace = true;
         })
         .catch((error) => {
           console.log(error.response);
@@ -112,6 +125,9 @@ export default {
     error() {
       console.log("fail to load location");
     },
+    confirmPlace() {
+      this.showPlace = false;
+    }
   },
 };
 </script>
