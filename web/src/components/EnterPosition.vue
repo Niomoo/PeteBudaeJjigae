@@ -29,6 +29,11 @@
               {{ item.name }}
             </li>
           </ul>
+          <ul v-show="showWaitResult" class="list">
+            <li class="option">
+              搜尋中...
+            </li>
+          </ul>
         <div
           class="hint"
           :class="{ right: check == 2, wrong: check == 1, default: check == 0 }"
@@ -76,26 +81,31 @@ export default {
       searchPlace: [],
       selected: [],
       showSearchResult: false,
+      showWaitResult: false,
     };
   },
   watch: {
     inputPlace() {
+      this.showWaitResult = true;
       this.debouncedGetAnswer();
     }
   },
   created() {
-    this.debouncedGetAnswer = _.debounce(this.getSearchPlace, 250)
+    this.debouncedGetAnswer = _.debounce(this.getSearchPlace, 200)
   },
   methods: {
     checkInput() {
       if (this.check == 2) {
+        this.showWaitResult = false;
         this.isValid = true;
         this.isChoose = true;
       } else if (this.check == 1) {
+        this.showWaitResult = false;
         this.showSearchResult = false;
         this.isValid = true;
         this.isChoose = false;
       } else {
+        this.showWaitResult = false;
         this.showSearchResult = false;
         this.isValid = false;
         this.isChoose = false;
@@ -117,7 +127,7 @@ export default {
         query: { place: this.selected.id },
       });
     },
-    getSearchPlace() {
+    getSearchPlace() {    
       const url = "http://127.0.0.1:5000/findAllViewpoint";
       axios
         .get(url, {
@@ -139,6 +149,7 @@ export default {
               this.searchPlace.push({ id: data[i].id, name: data[i].name });
             }
             console.log(this.searchPlace);
+            this.showWaitResult = false;
             this.showSearchResult = true;
           }
         })
