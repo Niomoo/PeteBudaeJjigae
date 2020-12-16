@@ -1,6 +1,6 @@
 <template>
-  <div class="container">
-    <div class="content">
+  <div class="boxer">
+    <div class="box">
       <div class="name">{{ name }}</div>
       <img :src="imgUrl" />
       <div class="info">
@@ -79,7 +79,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.container {
+.boxer {
   margin: 30px auto;
   width: 300px;
   height: 580px;
@@ -87,7 +87,7 @@ export default {
   border-radius: 20px;
   padding: 19px 30px;
   text-align: left;
-  .content {
+  .box {
     height: 100%;
     overflow: scroll;
     .name {

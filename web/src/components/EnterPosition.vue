@@ -8,32 +8,30 @@
     </div>
     <div class="container">
       <div class="content">請輸入你的出發地</div>
-      <div class="block">
+      <div class="blocks">
         <div class="inputbox">
           <input
             placeholder="請輸入你的出發地"
             class="inputPlace"
             v-model="inputPlace"
             type="text"
-          /> 
+          />
           <!-- @key-up="getSearchPlace" -->
         </div>
-          <ul v-show="showSearchResult" class="list">
-            <li
-              v-for="item in searchPlace"
-              :value="item"
-              :key="item.id"
-              class="option"
-              @click="getSelect(item)"
-            >
-              {{ item.name }}
-            </li>
-          </ul>
-          <ul v-show="showWaitResult" class="list">
-            <li class="option">
-              搜尋中...
-            </li>
-          </ul>
+        <ul v-show="showSearchResult" class="list">
+          <li
+            v-for="item in searchPlace"
+            :value="item"
+            :key="item.id"
+            class="option"
+            @click="getSelect(item)"
+          >
+            {{ item.name }}
+          </li>
+        </ul>
+        <ul v-show="showWaitResult" class="list">
+          <li class="option">搜尋中...</li>
+        </ul>
         <div
           class="hint"
           :class="{ right: check == 2, wrong: check == 1, default: check == 0 }"
@@ -77,6 +75,7 @@ export default {
       isChoose: false,
       inputPlace: "",
       isValid: false,
+      isSelected: false,
       check: 0,
       searchPlace: [],
       selected: [],
@@ -91,7 +90,7 @@ export default {
     }
   },
   created() {
-    this.debouncedGetAnswer = _.debounce(this.getSearchPlace, 200)
+    this.debouncedGetAnswer = _.debounce(this.getSearchPlace, 200);
   },
   methods: {
     checkInput() {
@@ -115,6 +114,7 @@ export default {
       this.selected = item;
       this.inputPlace = this.selected.name;
       this.showSearchResult = false;
+      this.isSelected = true;
       this.check = 2;
       this.checkInput();
     },
@@ -127,7 +127,7 @@ export default {
         query: { place: this.selected.id },
       });
     },
-    getSearchPlace() {    
+    getSearchPlace() {
       const url = "http://127.0.0.1:5000/findAllViewpoint";
       axios
         .get(url, {
@@ -150,7 +150,14 @@ export default {
             }
             console.log(this.searchPlace);
             this.showWaitResult = false;
-            this.showSearchResult = true;
+            if(this.inputPlace == this.searchPlace[0].name){
+              this.showSearchResult = false;
+              this.isSelected = true;
+            }
+            else{
+              this.showSearchResult = true;
+              this.isSelected = false;
+            }
           }
         })
         .catch((error) => {
@@ -204,10 +211,9 @@ export default {
     line-height: 28px;
     font-size: 24px;
     font-weight: normal;
-    text-align: center;
     color: #ffffff;
   }
-  .block {
+  .blocks {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -216,10 +222,12 @@ export default {
       padding: 16px 20px;
       width: 200px;
       height: 28px;
+      margin: 0 auto;
       border: 0;
       background-color: #eaeaea;
       border-radius: 10px;
       align-content: center;
+      z-index: 999;
       .inputPlace {
         padding: 0;
         height: 28px;

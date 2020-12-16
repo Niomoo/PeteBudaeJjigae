@@ -168,6 +168,7 @@ export default {
   background-color: #5164ab;
   border-radius: 20px;
   padding: 19px 30px 19px 30px;
+	text-align: center;
   .detail {
     display: flex;
     flex-direction: column;

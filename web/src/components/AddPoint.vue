@@ -160,6 +160,7 @@ export default {
   align-content: center;
   overflow: auto;
   background-color: transparent;
+  text-align: center;
   .viewpoint {
     width: 370px;
     margin: 0 auto 25px auto;
@@ -198,6 +199,7 @@ export default {
       margin-bottom: 10px;
       font-size: 20px;
       color: #ffffff;
+      text-align: left;
     }
     .add {
       margin: 0px 0px 21px 209px;
