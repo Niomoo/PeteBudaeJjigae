@@ -21,7 +21,7 @@ app = Flask(__name__)
 CORS(app)
 
 # 連接資料庫
-# conn = pymysql.connect(host="remotemysql.com", port=3306, user="p8LeiouBvk", password="a8ELsuTVty",db="p8LeiouBvk")
+# conn = pymysql.connect(host="remotemysql.com", port=3306, user="7laUVxPtp9", password="JBjmPdUTTM",db="7laUVxPtp9")
 # cursor = conn.cursor()
 try:
     conn = POOL.connection()
@@ -82,11 +82,9 @@ def findAllViewpoints():
         return "noPoint"
     for (row1,row2) in res:
         viewList[row1] = row2
-    if len(viewList) == 0:
-        num = cursor.execute("select mId from mrt where mName like '%" + userInput + "%'")
-        res = cursor.fetchone()
-        if num == 0:
-            return "noPoint"
+    num = cursor.execute("select mId from mrt where mName like '%" + userInput + "%'")
+    res = cursor.fetchone()
+    if num != 0:
         for i in res:
             cursor.execute("select aId,aName,mrtId,dist from attraction where mrtId = " + str(i))
             res = cursor.fetchall()
@@ -97,13 +95,19 @@ def findAllViewpoints():
                     aId = int(r1)
                     aName = r2
                     mrtId = m
-            viewList[aId] = aName
+            viewList[aId] = mrt[mrtId][1]
             checkMrt.append(mrtId)
             checkMrt.append(aId)
+    if len(viewList) == 0:
+        return "noPoint"
     for i in viewList:
         viewJson = {}
         viewJson['id'] = i
         viewJson['name'] = viewList[i]
+        if attraction[i][1] != viewList[i]:
+            viewJson['type'] = 1
+        else:
+            viewJson['type'] = 0
         allJson[count] = viewJson
         count += 1
     return json.dumps(allJson)

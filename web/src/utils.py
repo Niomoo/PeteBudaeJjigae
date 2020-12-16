@@ -13,7 +13,7 @@ POOL = PooledDB(
     ping = 0,
     host = 'remotemysql.com',
     port = 3306,
-    user = 'p8LeiouBvk',
-    password = 'a8ELsuTVty',
-    database = 'p8LeiouBvk',
+    user = '7laUVxPtp9',
+    password = 'JBjmPdUTTM',
+    database = '7laUVxPtp9',
 )

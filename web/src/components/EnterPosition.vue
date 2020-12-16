@@ -137,6 +137,7 @@ export default {
         })
         .then((response) => {
           let data = response.data;
+          console.log(data)
           this.searchPlace = [];
           if (String(data) == "noInput") {
             this.check = 0;
