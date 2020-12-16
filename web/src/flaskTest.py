@@ -15,13 +15,20 @@ from flask import Flask
 from flask_cors import CORS
 from flask import request
 import json
+from utils import POOL
 
 app = Flask(__name__)
 CORS(app)
 
 # 連接資料庫
-conn = pymysql.connect(host="remotemysql.com", port=3306, user="p8LeiouBvk", password="a8ELsuTVty",db="p8LeiouBvk")
-cursor = conn.cursor()
+# conn = pymysql.connect(host="remotemysql.com", port=3306, user="p8LeiouBvk", password="a8ELsuTVty",db="p8LeiouBvk")
+# cursor = conn.cursor()
+try:
+    conn = POOL.connection()
+    cursor = conn.cursor()
+    print("Connection")
+except:
+    print("Connection failed")
 
 # 抓DB資料存成list或dict
 cursor.execute("select * from attraction")
