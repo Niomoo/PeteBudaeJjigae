@@ -14,9 +14,9 @@
             placeholder="請輸入你的出發地"
             class="inputPlace"
             v-model="inputPlace"
-            @key-up="getSearchPlace"
             type="text"
-          />
+          /> 
+          <!-- @key-up="getSearchPlace" -->
         </div>
           <ul v-show="showSearchResult" class="list">
             <li
@@ -58,6 +58,7 @@
 
 <script>
 import axios from "axios";
+import _ from "lodash";
 export default {
   name: "Positioning",
   props: {
@@ -76,6 +77,14 @@ export default {
       selected: [],
       showSearchResult: false,
     };
+  },
+  watch: {
+    inputPlace() {
+      this.debouncedGetAnswer();
+    }
+  },
+  created() {
+    this.debouncedGetAnswer = _.debounce(this.getSearchPlace, 250)
   },
   methods: {
     checkInput() {
