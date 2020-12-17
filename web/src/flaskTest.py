@@ -74,40 +74,35 @@ def findAllViewpoints():
     if userInput == "":
         return "noInput"
     viewList = {}
+    mrtViewList = {}
     allJson = {}
     count = 0
     num = cursor.execute("select aId,aName from attraction where aName like '%" + userInput + "%'")
     res = cursor.fetchall()
-    if num == 0:
-        return "noPoint"
-    for (row1,row2) in res:
-        viewList[row1] = row2
-    num = cursor.execute("select mId from mrt where mName like '%" + userInput + "%'")
-    res = cursor.fetchone()
     if num != 0:
-        for i in res:
-            cursor.execute("select aId,aName,mrtId,dist from attraction where mrtId = " + str(i))
-            res = cursor.fetchall()
-            min = 10000
-            for (r1,r2,m,d) in res:
-                if d < min:
-                    min = d
-                    aId = int(r1)
-                    aName = r2
-                    mrtId = m
-            viewList[aId] = mrt[mrtId][1]
-            checkMrt.append(mrtId)
-            checkMrt.append(aId)
-    if len(viewList) == 0:
+        for (row1,row2) in res:
+            viewList[row1] = row2
+    num = cursor.execute("select * from mrt where mName like '%" + userInput + "%'")
+    res = cursor.fetchall()
+    if num != 0:
+        for (m,n,near) in res:
+            mrtViewList[near] = n
+            checkMrt.append(m)
+            checkMrt.append(int(near))
+    if len(viewList) == 0 and len(mrtViewList) == 0:
         return "noPoint"
     for i in viewList:
         viewJson = {}
         viewJson['id'] = i
         viewJson['name'] = viewList[i]
-        if attraction[i][1] != viewList[i]:
-            viewJson['type'] = 1
-        else:
-            viewJson['type'] = 0
+        viewJson['type'] = 0
+        allJson[count] = viewJson
+        count += 1
+    for i in mrtViewList:
+        viewJson = {}
+        viewJson['id'] = i
+        viewJson['name'] = mrtViewList[i]
+        viewJson['type'] = 1
         allJson[count] = viewJson
         count += 1
     return json.dumps(allJson)
@@ -198,24 +193,28 @@ def data(view, attraction, mrelated, aList, mWeight, isTag, mList, isMrt):
 def firstRecommend():
     start = request.args.get('start')
     inputTags = request.args.get('inputTags')
+    isType = request.args.get('isType')
     mList = []              #紀錄計算過程中有用到的捷運站
     view = []               #暫存上一個點
     aList = {}              #暫存景點結果（景點id+加權後分數）
     route = []              #回傳所有路線
     idName = [[] for i in range(5)]
     start = int(start)
-    if len(checkMrt) > 0:
-        start = checkMrt[0]
+    if isType == 1:
+        for i in mrt:
+            if mrt[i][2] == start:
+                mrtName = mrt[i][1]
+                break
         if len(result[0]) > 0:
             for i in range(5):
-                result[i][0] = mrt[start][1]
+                result[i][0] = mrtName
                 resId[i][0] = start
                 allList.append(start)
                 if len(result[i]) > 3:
                     del result[i][len(result[i])-1]
         else:
             for i in range(5):
-                result[i].append(mrt[start][1])
+                result[i].append(mrtName)
                 resId[i].append(start)
                 allList.append(start)
     else:
