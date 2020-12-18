@@ -73,6 +73,7 @@ export default {
       longitude: 0.0,
       place: 0,
       placeName: "",
+      isType: 0,
     };
   },
   methods: {
@@ -94,7 +95,7 @@ export default {
       if (this.btnChoose == 1) {
         this.$router.push("/positioning/enterPosition");
       } else if (this.btnChoose == 2) {
-        this.$router.push({ path: "ChooseTag", query: { place: this.place } });
+        this.$router.push({ path: "ChooseTag", query: { place: this.place, isType: this.isType } });
       }
     },
     success(position) {

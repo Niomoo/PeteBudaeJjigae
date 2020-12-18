@@ -46,7 +46,8 @@ export default {
         {value: '藝術文化', checked: false, id: "5"},
         {value: '歷史古蹟', checked: false, id: "6"}
       ],
-      departure: '',
+      departure: this.$route.query.place,
+      isType: this.$route.query.isType,
       inputTag: '',
       routes: []
     };
@@ -61,7 +62,6 @@ export default {
       this.$router.go(-1);
     },
     next () {
-      this.departure = this.$route.query.place;
       let tag = this.preferences;
       for(var i = 0; i < this.preferences.length; i++){
         if(tag[i].checked){
@@ -77,6 +77,7 @@ export default {
         params: {
           start: this.departure,
           inputTags: this.inputTag,
+          isType: this.isType,
         }
       })
       .then((response) => {

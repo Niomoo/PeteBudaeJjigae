@@ -124,7 +124,7 @@ export default {
     next() {
       this.$router.push({
         path: "../chooseTag",
-        query: { place: this.selected.id },
+        query: { place: this.selected.id, isType: this.selected.type},
       });
     },
     getSearchPlace() {
@@ -137,7 +137,6 @@ export default {
         })
         .then((response) => {
           let data = response.data;
-          console.log(data)
           this.searchPlace = [];
           if (String(data) == "noInput") {
             this.check = 0;
@@ -147,7 +146,7 @@ export default {
             this.checkInput();
           } else {
             for (var i in data) {
-              this.searchPlace.push({ id: data[i].id, name: data[i].name });
+              this.searchPlace.push({ id: data[i].id, name: data[i].name, type: data[i].type});
             }
             console.log(this.searchPlace);
             this.showWaitResult = false;
