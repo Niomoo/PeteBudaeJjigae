@@ -200,6 +200,7 @@ def firstRecommend():
     route = []              #回傳所有路線
     idName = [[] for i in range(5)]
     start = int(start)
+    isType = int(isType)
     if isType == 1:
         for i in mrt:
             if mrt[i][2] == start:
@@ -284,8 +285,13 @@ def firstRecommend():
                 resId[i].append(maxScore)
             allList.append(maxScore)
         if len(result[i]) > 1:
-            for n in range(len(result[i])):
-                tmp = str(resId[i][n]) + "@" + result[i][n]
+            if isType == 1:
+                tmp = str(resId[i][0]) + "@" + result[i][0] + "@" + str(1)
+            else:
+                tmp = str(resId[i][0]) + "@" + result[i][0] + "@" + str(0)
+            idName[i].append(tmp)
+            for n in range(1, len(result[i]), 1):
+                tmp = str(resId[i][n]) + "@" + result[i][n] + "@" + str(0)
                 idName[i].append(tmp)
             tmpStr = ">".join(idName[i])
             route.append(tmpStr)
@@ -294,6 +300,7 @@ def firstRecommend():
             route.append("查無景點路線")
             print("查無景點路線")
     routeStr = ",".join(route)
+    print(routeStr)
     return str(routeStr)
 
 @app.route('/findAddress', methods=['GET'])
