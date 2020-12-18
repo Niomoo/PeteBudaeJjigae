@@ -6,7 +6,10 @@
           <div class="number">景點{{ item.number }}</div>
           <div class="name">{{ item.name }}</div>
           <div class="address">{{ item.address }}</div>
-          <button class="detail" @click="getInformation(item.id)">
+          <button class="mrt" v-if="item.isType" disabled>
+            捷運景點
+          </button>
+          <button class="detail" v-else @click="getInformation(item.id)">
             詳細資訊
           </button>
         </div>

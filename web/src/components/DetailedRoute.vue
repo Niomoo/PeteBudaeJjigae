@@ -5,7 +5,8 @@
         <div class="viewpoint" v-for="item in viewpoint" :key="item.id">
           <div class="number">景點{{ item.number }}</div>
           <div class="block">
-            <button class="more" @click="getInformation(item.id)"></button>
+            <button class="mrt" v-if="item.isType"></button>
+            <button class="more" v-else @click="getInformation(item.id)"></button>
             <div class="name">{{ item.name }}</div>
           </div>
           <div class="address">{{ item.address }}</div>
@@ -204,6 +205,17 @@ export default {
           border: none;
           background-color: transparent;
           background-image: url("../assets/info.svg");
+					background-repeat: no-repeat;
+					background-position: center center;
+        }
+        .mrt {
+					top: 0px;
+          margin: 0px 14px 0px 0px;
+          width: 32px;
+          height: 32px;
+          border: none;
+          background-color: transparent;
+          background-image: url("../assets/train.svg");
 					background-repeat: no-repeat;
 					background-position: center center;
         }
