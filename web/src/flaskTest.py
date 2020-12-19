@@ -87,8 +87,6 @@ def findAllViewpoints():
     if num != 0:
         for (m,n,near) in res:
             mrtViewList[near] = n
-            checkMrt.append(m)
-            checkMrt.append(int(near))
     if len(viewList) == 0 and len(mrtViewList) == 0:
         return "noPoint"
     for i in viewList:
@@ -121,7 +119,7 @@ def findNearestViewpoint():
     resNear = str(minId) + "@" + attraction[minId][1]
     return str(resNear)
 
-def text(view, attraction, arelated, aList, aWeight, isTag):
+def text(view, attraction, arelated, aList, aWeight, isTag, allList):
     b = 0
     # 非第一個景點，可能需要關聯
     if len(view) > 1: 
@@ -144,7 +142,7 @@ def text(view, attraction, arelated, aList, aWeight, isTag):
         if dist != 0:
             aList[i] = (1/dist) * aList[i] * aWeight * attraction[i][9]
 
-def nearby(view, attraction, aList, dWeight, isTag, mList):
+def nearby(view, attraction, aList, dWeight, isTag, mList, allList):
     nearMrt = attraction[view[len(view)-1]][7]
     mList.append(nearMrt)
     for i in attraction:
@@ -156,7 +154,7 @@ def nearby(view, attraction, aList, dWeight, isTag, mList):
                 else:
                     aList[i] = (1/dist) * dWeight * attraction[i][9]
 
-def data(view, attraction, mrelated, aList, mWeight, isTag, mList, isMrt):
+def data(view, attraction, mrelated, aList, mWeight, isTag, mList, isMrt, allList):
     b = 0
     nextMrt = {}
     # 前一個景點來自可能三，可能需要關聯
@@ -182,7 +180,6 @@ def data(view, attraction, mrelated, aList, mWeight, isTag, mList, isMrt):
                 # 景點間的距離用經緯度計算
                 dist = haversine(attraction[view[len(view)-1]][6], attraction[view[len(view)-1]][5], attraction[j][6], attraction[j][5])
                 # 距離用景點跟捷運站間的距離計算
-                # dist = attraction[j][8]
                 if dist != 0:
                     if j in aList:
                         aList[j] = aList[j] + (1/dist) * nextMrt[i] * mWeight * attraction[j][9]
@@ -198,6 +195,8 @@ def firstRecommend():
     view = []               #暫存上一個點
     aList = {}              #暫存景點結果（景點id+加權後分數）
     route = []              #回傳所有路線
+    allList = []
+    tmpTag = []
     idName = [[] for i in range(5)]
     start = int(start)
     isType = int(isType)
@@ -210,44 +209,56 @@ def firstRecommend():
             for i in range(5):
                 result[i][0] = mrtName
                 resId[i][0] = start
-                allList.append(start)
-                if len(result[i]) > 3:
+                while len(result[i]) > 3:
                     del result[i][len(result[i])-1]
         else:
             for i in range(5):
                 result[i].append(mrtName)
                 resId[i].append(start)
-                allList.append(start)
     else:
         if len(result[0]) > 0:
             for i in range(5):
                 result[i][0] = attraction[start][1]
                 resId[i][0] = start
-                allList.append(start)
-                if len(result[i]) > 3:
+                while len(result[i]) > 3:
                     del result[i][len(result[i])-1]
         else:
             for i in range(5):               #第一層景點（使用者輸入的）
                 result[i].append(attraction[start][1])
                 resId[i].append(start)
-                allList.append(start)
+    allList.append(start)
     tag = [n for n in inputTags.split()] #記錄所有tag
     if len(tag) != 0:                    #有輸入tag
         for i in tags:
             if i[2] in tag:
-                isTag.append(i[1])
+                tmpTag.append(i[1])
     else:                                #沒有指定tag，故所有景點都會考慮
         for i in attraction:
-            isTag.append(i)
+            tmpTag.append(i)
+    
+    idx = 0
+    if len(tmpTag) < len(isTag):
+        while idx != len(tmpTag):
+            isTag[idx] = tmpTag[idx]
+            idx = idx + 1
+        for i in range(idx, len(isTag), 1):
+            del isTag[len(isTag)-1]
+    elif len(tmpTag) > len(isTag):
+        while idx != len(isTag):
+            isTag[idx] = tmpTag[idx]
+            idx = idx + 1
+        for i in range(idx, len(tmpTag), 1):
+            isTag.append(tmpTag[i])
+    else:
+        for i in range(0, len(isTag), 1):
+            isTag[i] = tmpTag[i]
 
     # 計算每條路線的第二個點
     view.append(start)
     
-    if len(checkMrt) > 0:
-        start = checkMrt[1]
-    text(view, attraction, arelated, aList, aWeight, isTag)
-    nearby(view, attraction, aList, dWeight, isTag, mList)
-    data(view, attraction, mrelated, aList, mWeight, isTag, mList, isMrt)
+    text(view, attraction, arelated, aList, aWeight, isTag, allList)
+    nearby(view, attraction, aList, dWeight, isTag, mList, allList)
+    data(view, attraction, mrelated, aList, mWeight, isTag, mList, isMrt, allList)
     resList = sorted(aList.items(), key=lambda item: item[1], reverse=True)
     copyOfmList = copy.copy(mList)
 
@@ -261,7 +272,8 @@ def firstRecommend():
             resId[i].append(resList[i][0])
             allList.append(resList[i][0])
 
-        # 計算每條路線的第三個點
+    # 計算每條路線的第三個點
+    for i in range(5):
         view = []
         aList = {}
         view.append(start)
@@ -271,9 +283,9 @@ def firstRecommend():
             if resList[i][0] in isMrt:
                 mList.append(isMrt[resList[i][0]])
 
-            text(view, attraction, arelated, aList, aWeight, isTag)
-            nearby(view, attraction, aList, dWeight, isTag, mList)
-            data(view, attraction, mrelated, aList, mWeight, isTag, mList, isMrt)
+            text(view, attraction, arelated, aList, aWeight, isTag, allList)
+            nearby(view, attraction, aList, dWeight, isTag, mList, allList)
+            data(view, attraction, mrelated, aList, mWeight, isTag, mList, isMrt, allList)
 
         if len(aList) != 0:
             maxScore = max(aList, key=aList.get)
@@ -295,12 +307,9 @@ def firstRecommend():
                 idName[i].append(tmp)
             tmpStr = ">".join(idName[i])
             route.append(tmpStr)
-            print(result[i])
         else:
             route.append("查無景點路線")
-            print("查無景點路線")
     routeStr = ",".join(route)
-    print(routeStr)
     return str(routeStr)
 
 @app.route('/findAddress', methods=['GET'])
@@ -381,9 +390,9 @@ def changeTheSecond(resId, index, view, aList, maxDist):
         print(result[index])
         
 def changeTheLast(resId, index, view, aList, mList):
-    text(view, attraction, arelated, aList, aWeight, isTag)
-    nearby(view, attraction, aList, dWeight, isTag, mList)
-    data(view, attraction, mrelated, aList, mWeight, isTag, mList, isMrt)
+    text(view, attraction, arelated, aList, aWeight, isTag, allList)
+    nearby(view, attraction, aList, dWeight, isTag, mList, allList)
+    data(view, attraction, mrelated, aList, mWeight, isTag, mList, isMrt, allList)
     
     if resId[index][2] in aList:
         del aList[resId[index][2]]
@@ -400,6 +409,8 @@ def changeTheLast(resId, index, view, aList, mList):
         
 @app.route('/changePoint', methods=['GET'])
 def changePoint():
+    print(len(isTag))
+
     changeIndex = request.args.get('changeIndex')
     change = request.args.get('change')
     index = int(changeIndex)
@@ -428,9 +439,9 @@ def addPoint():
     aList = {}
     allChoice = []
 
-    text(resId[index], attraction, arelated, aList, aWeight, isTag)
-    nearby(resId[index], attraction, aList, dWeight, isTag, mList)
-    data(resId[index], attraction, mrelated, aList, mWeight, isTag, mList, isMrt)
+    text(resId[index], attraction, arelated, aList, aWeight, isTag, allList)
+    nearby(resId[index], attraction, aList, dWeight, isTag, mList, allList)
+    data(resId[index], attraction, mrelated, aList, mWeight, isTag, mList, isMrt, allList)
 
     if len(aList) == 0:
         print(result[index])
@@ -504,7 +515,6 @@ change = 2              #1->替換第二個點；2->替換第三個點
 addIndex = 0            #以result第一筆作為更改範例
 
 # 變數宣告
-checkMrt =[]                         #判斷使用者是否輸入捷運站作為關鍵字
 result = [[] for i in range(5)]      #紀錄最後路線結果
 resId = [[] for i in range(5)]       #紀錄最後路線結果id
 idName = [[] for i in range(5)]      #id+名字
