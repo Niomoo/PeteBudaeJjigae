@@ -5,7 +5,7 @@
         <div class="viewpoint" v-for="item in viewpoint" :key="item.id">
           <div class="number">景點{{ item.number }}</div>
           <div class="block">
-            <button class="mrt" v-if="item.isType"></button>
+            <button class="mrt" v-if="item.isMrt==1"></button>
             <button class="more" v-else @click="getInformation(item.id)"></button>
             <div class="name">{{ item.name }}</div>
           </div>
@@ -31,7 +31,7 @@
       @ok="getNewViewpoint"
       @cancel="showAddPointConfirm = false"
     >
-      <div>開始新增後就無法更換囉</div>
+      <div>開始新增就無法更換囉</div>
     </Modal>
     <Modal
       :show="showFinishConfirm"
@@ -76,6 +76,7 @@ export default {
       for (var i = 0; i < this.viewpoint.length; i++) {
         this.viewpoint[i].pid = this.route[i].pid;
         this.viewpoint[i].name = this.route[i].name;
+        this.viewpoint[i].isMrt = this.route[i].isMrt;
       }
     },
     getAddress() {
@@ -118,6 +119,7 @@ export default {
           console.log(data);
           this.viewpoint[index].pid = data[0];
           this.viewpoint[index].name = data[1];
+          this.viewpoint[index].isMrt = data[2];
           this.getNewAddress(index);
         })
         .catch((error) => {
@@ -214,6 +216,7 @@ export default {
           width: 32px;
           height: 32px;
           border: none;
+          background-size: 32px;
           background-color: transparent;
           background-image: url("../assets/train.svg");
 					background-repeat: no-repeat;

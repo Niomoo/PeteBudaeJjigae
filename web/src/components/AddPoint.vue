@@ -12,7 +12,7 @@
           <div class="name">{{ item[1] }}</div>
           <button class="more" @click="getInformation(item[0], item[1])"></button>
         </div>
-        <div class="address">{{ item[3] }}</div>
+        <div class="address">{{ item[4] }}</div>
 				<button class="add" @click="handleClick(item)">選擇加入</button>
       </span>
     </div>
@@ -103,7 +103,8 @@ export default {
         .get(url, {
           params: {
 						routeIdx: this.id,
-						idx: el,
+            idx: el,
+            isMrt: this.chooseRoute[0].isMrt,
           },
         })
         .then((response) => {

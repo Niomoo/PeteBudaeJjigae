@@ -423,12 +423,12 @@ def changePoint():
         view.append(resId[index][2])
         maxDist = haversine(attraction[view[0]][6], attraction[view[0]][5], attraction[view[1]][6], attraction[view[1]][5])
         changeTheSecond(resId, index, view, aList, maxDist)
-        anotherPoint = str(resId[index][1]) + "," + result[index][1]
+        anotherPoint = str(resId[index][1]) + "," + result[index][1] + "," + str(0)
         return str(anotherPoint)
     elif change == 2:
         view.append(resId[index][1])
         changeTheLast(resId, index, view, aList, mList)
-        anotherPoint = str(resId[index][2]) + "," + result[index][2]
+        anotherPoint = str(resId[index][2]) + "," + result[index][2] + "," + str(0)
         return str(anotherPoint)
 
 @app.route('/addPoint', methods=['GET'])
@@ -448,7 +448,7 @@ def addPoint():
         return "沒有更好的景點了！"
     elif len(resId[index]) < 6:
         for i in aList:
-            tmpStr = str(i) + "," + attraction[i][1]
+            tmpStr = str(i) + "," + attraction[i][1] + "," + str(0)
             allChoice.append(tmpStr)
         resChoice = ">".join(allChoice)
         return str(resChoice)    #所有可新增的路線
@@ -460,17 +460,19 @@ def addPoint():
 def verifyAddPoint():
     routeIdx= request.args.get('routeIdx')
     idx= request.args.get('idx')
+    isMrt= request.args.get('isMrt')
     routeIdx = int(routeIdx)
     idx = int(idx)
     result[routeIdx].append(attraction[idx][1])
     resId[routeIdx].append(idx)
     resRoute = str(len(result[routeIdx]))
     resRoute += "~"
-    for i in range(len(result[routeIdx])):
+    resRoute += (str(resId[routeIdx][0]) + "@false@" + result[routeIdx][0] + "@" + str(isMrt) + ">")
+    for i in range(1, len(result[routeIdx]), 1):
         if i < len(result[routeIdx]) - 1:
-            resRoute += (str(resId[routeIdx][i]) + "@false@" + result[routeIdx][i] + ">")
+            resRoute += (str(resId[routeIdx][i]) + "@false@" + result[routeIdx][i] + "@" + str(0) + ">")
         else:
-            resRoute += (str(resId[routeIdx][i]) + "@true@" + result[routeIdx][i])
+            resRoute += (str(resId[routeIdx][i]) + "@true@" + result[routeIdx][i] + "@" + str(0))
     return str(resRoute)
 
 @app.route('/pointDetail', methods=['GET'])

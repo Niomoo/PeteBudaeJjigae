@@ -6,7 +6,7 @@
           <div class="number">景點{{ item.number }}</div>
           <div class="name">{{ item.name }}</div>
           <div class="address">{{ item.address }}</div>
-          <button class="mrt" v-if="item.isType" disabled>
+          <button class="mrt" v-if="item.isMrt==1" disabled>
             捷運景點
           </button>
           <button class="detail" v-else @click="getInformation(item.id)">
@@ -86,6 +86,19 @@ export default {
         margin-bottom: 10px;
         font-size: 20px;
         color: #ffffff;
+      }
+      .mrt {
+        margin: 0px 0px 3px 190px;
+        padding: 5px 10px;
+        width: 101px;
+        height: 33px;
+        background-color: #364888;
+        color: #e2e2e2;
+        border: none;
+        border-radius: 10px;
+        line-height: 23px;
+        letter-spacing: 0.15px;
+        font-size: 20px;
       }
       .detail {
         margin: 0px 0px 3px 190px;

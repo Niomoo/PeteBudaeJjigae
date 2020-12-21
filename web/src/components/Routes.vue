@@ -99,6 +99,7 @@ export default {
           let point = data.split("@").map((point) => point);
           this.route[i].viewpoint[j].pid = point[0];
           this.route[i].viewpoint[j].name = point[1];
+          this.route[i].viewpoint[j].isMrt = point[2];
         }
       }
       this.displayRoute();

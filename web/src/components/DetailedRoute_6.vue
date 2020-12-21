@@ -5,7 +5,7 @@
         <div class="viewpoint" v-for="item in viewpoint" :key="item.id">
           <div class="number">景點{{ item.number }}</div>
           <div class="block">
-            <button class="mrt" v-if="item.isType"></button>
+            <button class="mrt" v-if="item.isMrt==1"></button>
             <button class="more" v-else @click="getInformation(item.id)"></button>
             <div class="name">{{ item.name }}</div>
           </div>
@@ -77,6 +77,7 @@ export default {
         this.viewpoint[i].pid = point[0];
         this.viewpoint[i].isEnd = point[1];
         this.viewpoint[i].name = point[2];
+        this.viewpoint[i].isMrt = point[3];
       }
     },
     getAddress() {
@@ -189,6 +190,7 @@ export default {
           width: 32px;
           height: 32px;
           border: none;
+          background-size: 32px;
           background-color: transparent;
           background-image: url("../assets/train.svg");
 					background-repeat: no-repeat;
