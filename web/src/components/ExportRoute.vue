@@ -93,7 +93,7 @@ export default {
         width: 101px;
         height: 33px;
         background-color: #364888;
-        color: #e2e2e2;
+        color: #d8d8d8;
         border: none;
         border-radius: 10px;
         line-height: 23px;
