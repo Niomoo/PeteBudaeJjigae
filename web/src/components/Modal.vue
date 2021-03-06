@@ -92,13 +92,13 @@ export default {
   border-radius: 10px;
   text-align: center;
   &.btn-default {
-    border: 0.5px solid #5164AB;
+    border: 0.5px solid #9e5e25;
     background-color: #ffffff;
-    color: #5164AB;
+    color: #9e5e25;
   }
   &.btn-tertiary {
-    border: 0.5px solid #5164AB;
-    background-color: #5164AB;
+    border: 0.5px solid #9e5e25;
+    background-color: #9e5e25;
     color: #ffffff;
   }
 }

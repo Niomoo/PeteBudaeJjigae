@@ -127,7 +127,7 @@ export default {
     font-size: 24px;
     font-weight: normal;
     text-align: center;
-    color: #ffffff;
+    color: #A08F82;
   }
   .pref {
     position: relative;
@@ -152,7 +152,7 @@ export default {
       //background-image: url("../assets/cross.svg");
     }
     &.checked {
-      background-color: #738EEB;
+      background-color: #F2994A;
       .check {
         position: absolute;
         width: 30px;
@@ -186,12 +186,12 @@ export default {
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
   }
   Button:nth-child(1) {
-      background-color: #738EEB;
+      background-color: #F2994A;
   }
   Button:nth-child(2) {
       background-color: #9F9F9F;
       &.active {
-          background-color: #738EEB;
+          background-color: #F2994A;
       }
   }
 }

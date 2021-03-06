@@ -168,7 +168,7 @@ export default {
   margin: 30px auto;
   width: 300px;
   height: 580px;
-  background-color: #5164ab;
+  background-color: #F2994A;
   border-radius: 20px;
   padding: 19px 30px 19px 30px;
 	text-align: center;
@@ -184,7 +184,7 @@ export default {
         height: 52px;
         padding: 6px 10px 6px 10px;
         left: 0;
-        background-color: #28335c;
+        background-color: #9e5e25;
         border-radius: 5px;
         font-size: 34px;
         line-height: 52px;
@@ -206,7 +206,7 @@ export default {
           height: 32px;
           border: none;
           background-color: transparent;
-          background-image: url("../assets/info.svg");
+          background-image: url("../assets/info_2.svg");
 					background-repeat: no-repeat;
 					background-position: center center;
         }
@@ -244,7 +244,7 @@ export default {
         width: 101px;
         height: 33px;
         background-color: #ffffff;
-        color: #5164ab;
+        color: #9e5e25;
         border: none;
         border-radius: 10px;
         line-height: 23px;
@@ -274,7 +274,7 @@ export default {
       color: #ffffff;
       border: 0;
       border-radius: 10px;
-      background-color: #738eeb;
+      background-color: #9e5e25;
       box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
     }
   }

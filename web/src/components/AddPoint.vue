@@ -165,10 +165,10 @@ export default {
   .viewpoint {
     width: 370px;
     margin: 0 auto 25px auto;
-    background-color: #738eeb;
+    background-color: #F2994A;
     border-radius: 20px;
     &.active {
-      background-color: #40559f;
+      background-color: #D97E2E;
     }
     .block {
       display: flex;
@@ -183,7 +183,7 @@ export default {
         height: 27px;
         border: none;
         background-color: transparent;
-        background-image: url("../assets/info.svg");
+        background-image: url("../assets/info_2.svg");
       }
       .name {
         margin: auto;
@@ -208,7 +208,7 @@ export default {
       width: 101px;
       height: 33px;
       background-color: #ffffff;
-      color: #5164ab;
+      color: #9e5e25;
       border: none;
       border-radius: 10px;
       line-height: 23px;
@@ -232,7 +232,7 @@ export default {
   box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
   background-color: #9f9f9f;
   &.active {
-    background-color: #738eeb;
+    background-color: #9e5e25;
   }
 }
 </style>
