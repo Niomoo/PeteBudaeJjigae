@@ -31,7 +31,7 @@ export default {
       font-weight: normal;
       line-height: 40px;
       color: #FFFFFF;
-      background-color: #738EEB;
+      background-color: #F2994A;
       border-radius: 10px;
       border: none;
     }

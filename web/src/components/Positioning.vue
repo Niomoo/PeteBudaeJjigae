@@ -165,7 +165,7 @@ export default {
   height: 311px;
   display: flex;
   flex-direction: column;
-  background-color: #59575b;
+  background-color: #302B23;
   border-radius: 25px;
   .content {
     position: relative;
@@ -195,7 +195,7 @@ export default {
       background-color: transparent;
     }
     .btnBg {
-      color: #5164ab;
+      color: #9e5e25;
       background-color: #ffffff;
       border-radius: 10px;
     }
@@ -225,12 +225,12 @@ export default {
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
   }
   Button:nth-child(1) {
-    background-color: #738eeb;
+    background-color: #F2994A;
   }
   Button:nth-child(2) {
     background-color: #9f9f9f;
     &.active {
-      background-color: #738eeb;
+      background-color: #F2994A;
     }
   }
 }

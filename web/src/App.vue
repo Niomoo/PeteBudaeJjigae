@@ -19,7 +19,7 @@ export default {
   font-family: Roboto, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: url("assets/Background.svg");
+  background: url("assets/Background_2.svg");
   position: absolute;
   right: 0;
   left: 0;

@@ -44,7 +44,7 @@ export default {
   margin: 30px auto;
   width: 300px;
   height: 580px;
-  background-color: #5164ab;
+  background-color: #F2994A;
   border-radius: 20px;
   padding: 19px 30px 19px 30px;
   .detail {
@@ -59,7 +59,7 @@ export default {
         height: 52px;
         padding: 6px 10px 6px 10px;
         left: 0;
-        background-color: #28335c;
+        background-color: #9e5e25;
         border-radius: 5px;
         font-size: 34px;
         text-align: center;
@@ -92,7 +92,7 @@ export default {
         padding: 5px 10px;
         width: 101px;
         height: 33px;
-        background-color: #364888;
+        background-color: #9e5e25;
         color: #d8d8d8;
         border: none;
         border-radius: 10px;
@@ -106,7 +106,7 @@ export default {
         width: 101px;
         height: 33px;
         background-color: #ffffff;
-        color: #5164ab;
+        color: #9e5e25;
         border: none;
         border-radius: 10px;
         line-height: 23px;

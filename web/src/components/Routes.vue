@@ -134,7 +134,7 @@ export default {
   font-size: 24px;
   font-weight: normal;
   text-align: center;
-  color: #ffffff;
+  color: #A08F82;
 }
 .recommendation {
   position: relative;
@@ -145,7 +145,7 @@ export default {
     margin: 0px auto 18px auto;
     width: 320px;
     padding: 10px 10px;
-    background-color: #738eeb;
+    background-color: #F2994A;
     border-radius: 5px;
     line-height: 38.4px;
     font-size: 24px;
